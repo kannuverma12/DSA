@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 public class CopyFilesFromNDirectories {
 
 	public static void main(String[] args) {
-		Path start = Paths.get("/Users/karan.verma/Music/iTunes/iTunes Media/Music");
+		Path start = Paths.get("/Users/karanverma/Documents/backups/songs");
 		int maxDepth = 15;
 		try(Stream<Path> stream = Files.find(start, 
 											maxDepth, 
@@ -23,7 +23,7 @@ public class CopyFilesFromNDirectories {
 									.collect(Collectors.toList());
 			
 			for(Path p : fileName) {
-				Path path = Paths.get("/Users/karan.verma/Desktop/TestCopy/"+p.getFileName());
+				Path path = Paths.get("/Users/karanverma/Desktop/TestCopy/"+p.getFileName());
 			    Files.copy(p, path,StandardCopyOption.REPLACE_EXISTING);
 			}
 		}catch(Exception e){

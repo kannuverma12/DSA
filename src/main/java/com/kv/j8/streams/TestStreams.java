@@ -1,11 +1,13 @@
 package com.kv.j8.streams;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IntSummaryStatistics;
@@ -22,11 +24,17 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collector.Characteristics;
-
-
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+/**
+ * 
+ * @author karanverma
+ * 
+ * This file contains all the necessary functions to learn the streams in java 8.
+ *
+ */
 
 public class TestStreams {
 	
@@ -35,259 +43,47 @@ public class TestStreams {
 	public static boolean sundayDeliveryAvailable(String area, String postcode){
 		return true;
 	}
+	
 	public static void main(String... args){
+	    for(int i=0;i<10;i++){
+            list.add("String "+i);
+        }
+	    
+	    checkBitwiseOperator();
+	    
+	    groupListByEvenOrOdd();
 		
-		List<Integer> li = new ArrayList<Integer>();
-		li.add(1);
-		li.add(2);
-		li.add(3);
-		li.add(4);
-		li.add(5);
-		li.add(6);
-		
-		Map<Integer, List<Integer>> listEvenOrOd = li.stream()
-												.collect(Collectors.groupingBy(p -> p%2));
-		
-		listEvenOrOd.forEach((h,val) -> System.out.format("Age %s: %s\n",h,val));
-
-		
-		
-		List<String> sundayOpenAreas = new ArrayList<String>();
-		for (int i = 1; i <= sundayOpenAreas.size(); i++) {
-		    String area = sundayOpenAreas.get(i - 1);
-		    String postcode = "XX" + i + " 1AA";
-
-		    boolean sundayDeliveryAvailable = sundayDeliveryAvailable(area, postcode);
-		    //Assert.assertTrue(sundayDeliveryAvailable, area + " should accept deliveries on Sunday to " + postcode + "!");
-		    System.out.println(area + ", " + postcode);
-		}
-		IntStream.of(sundayOpenAreas.size())
-						.filter(i -> {
-							String postcode = "XX" + i + " 1AA";
-					        System.out.println("filter: " + i);
-					        return sundayDeliveryAvailable(String.valueOf(i), postcode);
-					    })
-						.forEach(System.out::println);
-		
-		
-		for(int i=0;i<10;i++){
-			list.add("String "+i);
-		}
-		
-		
+		someUnknownTest();
 		
 		//list.stream().collect(collector)
 		
-		Stream.of("a1","a2","a3")
-				.map(i -> i + "ds")
-				.findFirst()
-				.ifPresent(System.out::println);
+		findFirstInList();
 		
-		Arrays.asList("my", "name", "karan")
-				.stream()
-				.map(i -> "Item Length is : "+i.length())
-				.forEach(System.out::println);
+		findItemLengthInList();
 		
+		findAverageOfAllElements();
 		
-		Arrays.stream(new int[]{1, 2, 3})
-			.map(i -> 2 *i +1)
-			.average()
-			.ifPresent(System.out::println);
+		mapVsMapToObject();
 		
+		convertMapToPrimitive();
 		
-		//Convert map to primitive
-		Stream.of("a1", "a2", "a3")
-			.map(i -> i.substring(1))
-			.mapToInt(Integer::parseInt)
-			.max()
-			.ifPresent(System.out::println);
+		listManipulations();
 		
+		listAnyMatch();
 		
-		//Simple Pipeline operations
-		Integer[] intArray = {1, 2, 3, 4, 5, 6, 7, 8 };
-		List<Integer> listOfIntegers =
-		    new ArrayList<>(Arrays.asList(intArray));
-
-		System.out.println("listOfIntegers:");
-		listOfIntegers
-		    .stream()
-		    .forEach(e -> System.out.print(e + " "));
-		System.out.println("");
-
-		System.out.println("listOfIntegers sorted in reverse order:");
-		Comparator<Integer> normal = Integer::compare;
-		Comparator<Integer> reversed = normal.reversed(); 
-		Collections.sort(listOfIntegers, reversed);  
-		listOfIntegers
-		    .stream()
-		    .forEach(e -> System.out.print(e + " "));
-		System.out.println("");
-		     
-		System.out.println("Parallel stream");
-		listOfIntegers
-		    .parallelStream()
-		    .forEach(e -> System.out.print(e + " "));
-		System.out.println("");
-		    
-		System.out.println("Another parallel stream:");
-		listOfIntegers
-		    .parallelStream()
-		    .forEach(e -> System.out.print(e + " "));
-		System.out.println("");
-		     
-		System.out.println("With forEachOrdered:");
-		listOfIntegers
-		    .parallelStream()
-		    .forEachOrdered(e -> System.out.print(e + " "));
-		System.out.println("");
+		listOrderIntermediateFunctions();
 		
-		
-		//matching 
-		
-		
-		Stream.of("d2", "a2", "b1", "b3", "c")
-		    .map(s -> {
-		        System.out.println("map: " + s);
-		        return s.toUpperCase();
-		    })
-		    .anyMatch(s -> {
-		        System.out.println("anyMatch: " + s);
-		        return s.startsWith("A");
-		    });
-		
-		Stream.of("d2", "a2", "b1", "b3", "c")
-		    .map(s -> s.toUpperCase())
-		    .anyMatch(s -> s.startsWith("A"));
-		    
-			
-		Stream.of("d2", "a2", "b1", "b3", "c")
-		    .filter(s -> {
-		    	s.startsWith("b");
-		        System.out.println("filter: " + s);
-		        return true;
-		    });
-		
-		//ordering of intermediate functions  
-		// map and filter
-		Stream.of("d2", "a2", "b1", "b3", "c")
-		    .map(s -> {
-		        System.out.println("map: " + s);
-		        return s.toUpperCase();
-		    })
-		    .filter(s -> {
-		        System.out.println("filter: " + s);
-		        return s.startsWith("A");
-		    })
-		    .forEach(s -> System.out.println("forEach: " + s));
-		
-		// filter and then map
-		Stream.of("d2", "a2", "b1", "b3", "c")
-		    .filter(s -> {
-		        System.out.println("filter: " + s);
-		        return s.startsWith("a");
-		    })
-		    .map(s -> {
-		        System.out.println("map: " + s);
-		        return s.toUpperCase();
-		    })
-		    .forEach(s -> System.out.println("forEach: " + s));
-		
-		//sort, filter and map
-		Stream.of("d2", "a2", "b1", "b3", "c")
-		    .sorted((s1, s2) -> {
-		        System.out.printf("sort: %s; %s\n", s1, s2);
-		        return s1.compareTo(s2);
-		    })
-		    .filter(s -> {
-		        System.out.println("filter: " + s);
-		        return s.startsWith("a");
-		    })
-		    .map(s -> {
-		        System.out.println("map: " + s);
-		        return s.toUpperCase();
-		    })
-		    .forEach(s -> System.out.println("forEach: " + s));
-		
-		// filter, sort and map
-		System.out.println(" --- Filter Sort and Map ---");
-		Stream.of("d2", "a2", "b1", "b3", "c")
-			.filter(f -> {
-				System.out.println("filer "+f);
-				return f.startsWith("b");
-			})
-			.sorted((s1, s2) -> {
-				System.out.println("Sort "+s1+" "+s2);
-				return s1.compareTo(s2);
-			})
-			.map(m -> {
-				System.out.println("map "+m);
-				return m.toUpperCase();
-			})
-			.forEach(s -> System.out.println("forEach "+s));
-		
-		
-		/* **************** Collect Interface ***************/
-		
-
-		List<Person> persons =
-		    Arrays.asList(
-		        new Person("Max", 18),
-		        new Person("Peter", 23),
-		        new Person("Pamela", 23),
-		        new Person("David", 12),
-		        new Person("David", 12),
-		        new Person("Pam", 12));
-		
-		boolean matchedResult = persons.stream()
-                .allMatch((s) -> s.name.startsWith("P"));
-									
-		
-		System.out.println("******* Collect *******");
-		System.out.println();
-		
-		List<Person> filtered = persons.stream()
-			        	.filter(p -> p.name.startsWith("P"))
-			        	.collect(Collectors.toList());
-		
-		System.out.println("Collected List "+filtered);    // [Peter, Pamela]
-		
-		Set<Person> personSet = persons.stream()
-								.filter(p -> {
-									//System.out.println("Filter Called : "+p.name);
-									return p.age > 20;
-								})
-								.collect(Collectors.toCollection(HashSet::new));
-		System.out.println("Collected Set : "+personSet);
-		
-		
-		// Group By Age
-		Map<Integer, List<Person>> personByAge = persons.stream()
-														.collect(Collectors.groupingBy(p -> p.age));
-		personByAge.forEach((age,p) -> System.out.format("Age %s: %s\n",age,p) );
-		
-		//group by composite key
-		Map<String, List<Person>> personByAgeName = persons.stream()
-				.collect(Collectors.groupingBy(p -> (p.name+p.age)));
-		personByAgeName.forEach((age,p) -> System.out.format("Age+Name %s: %s\n",age,p) );
-		
-		
-		//Average Age
-		Double averageAge = persons.stream()
-									.collect(Collectors.averagingInt(p -> p.age));
-		System.out.println("Average age : "+averageAge);
-		
-		//Summarizing Collector
-		
-		IntSummaryStatistics intSum = persons.stream()
-											.collect(Collectors.summarizingInt(p -> p.age));
-		System.out.println("Summarizing Person Age: "+intSum);
-		
-		// Joining Phrases
-		String phrase = persons.stream()
-								.filter(p -> p.age>=18)
-								.map(p -> p.name)
-								.collect(Collectors.joining(" and ", "In India ", " are of legal age"));
-		System.out.println("Phrase : "+phrase);
+        List<Person> persons =
+            Arrays.asList(
+                new Person("Max", 18),
+                new Person("Peter", 23),
+                new Person("Pamela", 23),
+                new Person("David", 12),
+                new Person("David", 12),
+                new Person("Pam", 12));
+        
+        listCollectOperations();
+        
 		
 		//Transform to Map
 		System.out.println();
@@ -535,12 +331,274 @@ public class TestStreams {
 		
 		sort2DArray(true);
 		
+		mapAndGroupByInOneGo();
+		
 		
 	}
 	
 	
 	
-	public static void sort2DArray(boolean sortByFirstName) {
+	private static void listCollectOperations() {
+	    /* **************** Collect Interface ***************/
+	    System.out.println();
+        System.out.println("**** List - Collect Operations ****");
+        
+
+        List<Person> persons =
+            Arrays.asList(
+                new Person("Max", 18),
+                new Person("Peter", 23),
+                new Person("Pamela", 23),
+                new Person("David", 12),
+                new Person("David", 12),
+                new Person("Pam", 12));
+        
+        boolean matchedResult = persons.stream()
+                .allMatch((s) -> s.name.startsWith("P"));
+
+        List<Person> filtered = persons.stream()
+                        .filter(p -> p.name.startsWith("P"))
+                        .collect(Collectors.toList());
+        System.out.println("Persons with name starting with P  "+filtered);    // [Peter, Pamela]
+        
+        Set<Person> personSet = persons.stream()
+                                .filter(p -> p.age > 20)
+                                .collect(Collectors.toCollection(HashSet::new));
+        System.out.println("Persons having age > 20 : "+personSet);
+        
+        
+        // Group By Age
+        System.out.println("Group Persons by age -> ");
+        Map<Integer, List<Person>> personByAge = persons.stream()
+                                                        .collect(Collectors.groupingBy(p -> p.age));
+        personByAge.forEach((age,p) -> System.out.format("Age %s: %s\n",age,p) );
+        
+        //group by composite key
+        System.out.println("Group Persons by age and name -> ");
+        Map<String, List<Person>> personByAgeName = persons.stream()
+                .collect(Collectors.groupingBy(p -> (p.name+p.age)));
+        personByAgeName.forEach((age,p) -> System.out.format("Age+Name %s: %s\n",age,p) );
+        
+        
+        //Average Age
+        System.out.println("Get average age of all Persons -> ");
+        Double averageAge = persons.stream()
+                                    .collect(Collectors.averagingInt(p -> p.age));
+        System.out.println("Average age : "+averageAge);
+        
+        //Summarizing Collector
+        System.out.println("Using Summarizing Collector (IntSummaryStatistics)  -> ");
+        IntSummaryStatistics intSum = persons.stream()
+                                            .collect(Collectors.summarizingInt(p -> p.age));
+        System.out.println("Summarizing Person Age: "+intSum);
+        
+        // Joining Phrases
+        System.out.println("Joing phrases to make sentences using joining method -> ");
+        String phrase = persons.stream()
+                                .filter(p -> p.age>=18)
+                                .map(p -> p.name)
+                                .collect(Collectors.joining(" and ", "In India ", " are of legal age"));
+        System.out.println("Phrase : "+phrase);
+        
+    }
+
+    private static void listOrderIntermediateFunctions() {
+	    //ordering of intermediate functions  
+        // map and filter
+	    
+	    System.out.println();
+        System.out.println("**** List - ordering of intermediate functions ****");
+        
+        System.out.println("Map and then Filter -> ");
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .map(s -> s.toUpperCase())
+            .filter(s -> s.startsWith("A"))
+            .forEach(s -> System.out.println("Result: " + s));
+        
+        // filter and then map
+        System.out.println("Filter and then Map -> ");
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .filter(s -> s.startsWith("a"))
+            .map(s -> s.toUpperCase())
+            .forEach(s -> System.out.println("Result: " + s));
+        
+        //sort, filter and map
+        System.out.println("Sort, Filter and then Map");
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .sorted((s1, s2) -> s1.compareTo(s2))
+            .filter(s -> s.startsWith("a"))
+            .map(s -> s.toUpperCase())
+            .forEach(s -> System.out.println("Result: " + s));
+        
+        // filter, sort and map
+        System.out.println("**** Filter Sort and Map ****");
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .filter(f -> f.startsWith("b"))
+            .sorted((s1, s2) -> s1.compareTo(s2))
+            .map(m -> m.toUpperCase())
+            .forEach(s -> System.out.println("Result "+s));
+    }
+
+    private static void listAnyMatch() {
+	  //matching 
+	    System.out.println();
+        System.out.println("**** List Anymatch ****");
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .map(s -> s.toUpperCase())
+            .anyMatch(s -> s.startsWith("A"));
+        
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .map(s -> s.toUpperCase())
+            .anyMatch(s -> s.startsWith("A"));
+            
+        Stream.of("d2", "a2", "b1", "b3", "c")
+            .filter(s -> s.startsWith("b"));
+    }
+
+    private static void listManipulations() {
+	    Integer[] intArray = {1, 2, 3, 4, 5, 6, 7, 8 };
+        List<Integer> listOfIntegers =
+            new ArrayList<>(Arrays.asList(intArray));
+        System.out.println();
+        System.out.println("**** List Manipulations ****");
+        
+	    System.out.println("Print elements in list :");
+        listOfIntegers
+            .stream()
+            .forEach(e -> System.out.print(e + " "));
+        System.out.println("");
+
+        System.out.println("Sort List in reverse order:");
+        Comparator<Integer> normal = Integer::compare;
+        Comparator<Integer> reversed = normal.reversed(); 
+        Collections.sort(listOfIntegers, reversed);  
+        listOfIntegers
+            .stream()
+            .forEach(e -> System.out.print(e + " "));
+        System.out.println("");
+             
+        System.out.println("Print elements in Parallel stream (Way 1)");
+        listOfIntegers
+            .parallelStream()
+            .forEach(e -> System.out.print(e + " "));
+        System.out.println("");
+            
+        System.out.println("Print elements in parallel stream (Way 2):");
+        listOfIntegers
+            .parallelStream()
+            .forEach(e -> System.out.print(e + " "));
+        System.out.println("");
+             
+        System.out.println("Print elements in parallel stream with forEachOrdered:");
+        listOfIntegers
+            .parallelStream()
+            .forEachOrdered(e -> System.out.print(e + " "));
+        System.out.println("");
+        
+    }
+
+    private static void convertMapToPrimitive() {
+	    System.out.println();
+        System.out.println("**** Convert map to primitive ****");
+        
+        Stream.of("a1", "a2", "a3")
+            .map(i -> i.substring(1))
+            .mapToInt(Integer::parseInt)
+            .max()
+            .ifPresent(System.out::println);
+    }
+
+    private static void mapVsMapToObject() {
+	    System.out.println();
+        System.out.println("**** Map Vs MapToObject ****");
+        
+	    String x11 = Arrays.stream(new Integer[]{1, 2, 3})
+	            .map(i -> String.valueOf(i))
+	            .collect(Collectors.joining(","));
+	            System.out.println("x11 ======= "+x11);
+	            
+	            String y11 = Arrays.stream(new int[]{1, 2, 3})
+	            .mapToObj(i -> String.valueOf(i))
+	            .collect(Collectors.joining(","));
+	            System.out.println("y11 ======= "+y11);
+    }
+
+    private static void findAverageOfAllElements() {
+	    System.out.println();
+	    System.out.println("**** Find average of all element in a list ****");
+	    Arrays.stream(new int[]{1, 2, 3})
+        .map(i -> 2 *i +1)
+        .average()
+        .ifPresent(System.out::println);
+        
+    }
+
+    private static void findItemLengthInList() {
+        System.out.println();
+	    System.out.println("**** Find length of each element in a list ****");
+	    Arrays.asList("my", "name", "karan")
+        .stream()
+        .map(i -> "Item Length is : "+i.length())
+        .forEach(System.out::println);
+        
+    }
+
+    private static void someUnknownTest() {
+        System.out.println();
+        System.out.println("**** Some Unknown function ****");
+	    List<String> sundayOpenAreas = new ArrayList<String>();
+        for (int i = 1; i <= sundayOpenAreas.size(); i++) {
+            String area = sundayOpenAreas.get(i - 1);
+            String postcode = "XX" + i + " 1AA";
+
+            boolean sundayDeliveryAvailable = sundayDeliveryAvailable(area, postcode);
+            //Assert.assertTrue(sundayDeliveryAvailable, area + " should accept deliveries on Sunday to " + postcode + "!");
+            System.out.println(area + ", " + postcode);
+        }
+        IntStream.of(sundayOpenAreas.size())
+                        .filter(i -> {
+                            String postcode = "XX" + i + " 1AA";
+                            System.out.println("filter: " + i);
+                            return sundayDeliveryAvailable(String.valueOf(i), postcode);
+                        })
+                        .forEach(System.out::println);
+        
+        
+    }
+
+    private static void findFirstInList() {
+        System.out.println();
+	    System.out.println("**** Find first in a list ****");
+	    Stream.of("a1","a2","a3")
+        .map(i -> i + "ds")
+        .findFirst()
+        .ifPresent(System.out::println);
+    }
+
+    private static void groupListByEvenOrOdd() {
+        System.out.println();
+        System.out.println("**** Group list by even and odd numbers *****");
+        
+	    List<Integer> li = new ArrayList<Integer>();
+        li.add(1);
+        li.add(2);
+        li.add(3);
+        li.add(4);
+        li.add(5);
+        li.add(6);
+        
+        Map<Integer, List<Integer>> listEvenOrOd = li.stream()
+                                                .collect(Collectors.groupingBy(p -> p%2));
+        
+        listEvenOrOd.forEach((h,val) -> System.out.format("Age %s: %s\n",h,val));
+    }
+
+    private static void checkBitwiseOperator() {
+        System.out.println();
+	    System.out.println("Check bitwise operator - "+((13 & 2) == 2));
+    }
+
+    public static void sort2DArray(boolean sortByFirstName) {
 		System.out.println("***** Sorting 2D Array *****");
 		String[][] arr = {{"Bill","Jones"}, 
 						    {"Janet","Kline"},
@@ -628,7 +686,9 @@ public class TestStreams {
 		
 	}
 	
-	private static <T> Collector<T, ?, List<T>> limitingList(int limit) {
+	
+
+    private static <T> Collector<T, ?, List<T>> limitingList(int limit) {
 	    return Collector.of(
 	                ArrayList::new, 
 	                (l, e) -> { if (l.size() < limit) l.add(e); }, 
@@ -679,6 +739,32 @@ public class TestStreams {
 		
 		
 	}
+	
+	
+	
+	private static Map<Integer, List<Integer>> mapAndGroupByInOneGo() {
+        
+        List<CatalogCategoryProduct> categoryProducts = getCCPList();
+        Map<Integer, List<Integer>> categoriesByProduct = categoryProducts.stream()
+                .collect(Collectors.groupingBy(ccp -> ccp.getProductId(),
+                                                Collectors.mapping(ccp-> ccp.getCategoryId(), Collectors.toList())));
+        
+        
+        
+        
+        return categoriesByProduct;
+    }
+    
+    private static List<CatalogCategoryProduct> getCCPList() {
+        List<CatalogCategoryProduct> ccpList = new ArrayList<>();
+        for(int i =0; i<10;i++) {
+            CatalogCategoryProduct ccp =new CatalogCategoryProduct();
+            ccp.setCategoryId(i*2*5);
+            ccp.setProductId(i*3*6);
+            ccpList.add(ccp);
+        }
+        return ccpList;
+    }
 
 }
 
@@ -864,5 +950,52 @@ class Person implements Comparable<Object>{
         return name.hashCode();  
     } 
 	
+}
+
+
+
+class CatalogCategoryProduct implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+
+    private Integer productId;
+
+    private Integer categoryId;
+
+    private Integer priority;
+    
+    private Date updated_at;
+
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public Date getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Date updated_at) {
+        this.updated_at = updated_at;
+    }
 }
 

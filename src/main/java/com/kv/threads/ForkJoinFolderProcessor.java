@@ -14,16 +14,19 @@ import java.util.concurrent.TimeUnit;
 public class ForkJoinFolderProcessor {
 
 	public static void main(String[] args) {
+		
+		
+		
 		ForkJoinPool pool = new ForkJoinPool();
 		
 		
-		MyFolderProcessor hadoop = new MyFolderProcessor("/Users/karan.verma/Documents/backups/h/", "log");
-		MyFolderProcessor t8 = new MyFolderProcessor("/Users/karan.verma/Documents/apache-tomcat-9.0.2", "log");
-		MyFolderProcessor t9 = new MyFolderProcessor("/Users/karan.verma/Documents/apache-tomcat-8.5.20", "log");
+		MyFolderProcessor hadoop = new MyFolderProcessor("/Users/", "log");
+		//MyFolderProcessor t8 = new MyFolderProcessor("/Users/karan.verma/Documents/apache-tomcat-9.0.2", "log");
+		//MyFolderProcessor t9 = new MyFolderProcessor("/Users/karan.verma/Documents/apache-tomcat-8.5.20", "log");
 		
 		pool.execute(hadoop);
-		pool.execute(t8);
-		pool.execute(t9);
+		//pool.execute(t8);
+		//pool.execute(t9);
 		
 		do {
 			System.out.println("---------------------");
@@ -41,20 +44,22 @@ public class ForkJoinFolderProcessor {
 	         {
 	            e.printStackTrace();
 	         }
-		}while((!hadoop.isDone()) || (!t8.isDone()) || (!t9.isDone()));
+		}while((!hadoop.isDone()));// || (!t8.isDone()) || (!t9.isDone()));
 		
 		pool.shutdown();
 
 		List<String> results = hadoop.join();
 		System.out.println("Hadoop: Files found  : " + results.size()+" "+results.toString());
-		results = t8.join();
+		//results = t8.join();
 		System.out.println("T8: Files found  : " + results.size()+" "+results.toString());
-		results = t9.join();
+		//results = t9.join();
 		System.out.println("T9: Files found  : " + results.size()+" "+results.toString());
 		 
 	}
 
 }
+
+
 
 class MyFolderProcessor extends RecursiveTask<List<String>>{
 
