@@ -3,6 +3,25 @@ package com.kv.LinkedList;
 public class IntersactionOfLinkedList {
 
 	static Node head1, head2;
+	
+	public static void main(String[] args) {
+        IntersactionOfLinkedList list = new IntersactionOfLinkedList();
+
+        // creating first linked list
+        list.head1 = new Node(3);
+        list.head1.next = new Node(15);
+        list.head1.next.next = new Node(6);
+        list.head1.next.next.next = new Node(15);
+        list.head1.next.next.next.next = new Node(30);
+
+        // creating second linked list
+        list.head2 = new Node(10);
+        list.head2.next = new Node(15);
+        list.head2.next.next = new Node(30);
+
+        System.out.println("The node of intersection is " + list.getNode());
+
+    }
 
 	static class Node {
 
@@ -73,22 +92,5 @@ public class IntersactionOfLinkedList {
 		return count;
 	}
 
-	public static void main(String[] args) {
-		IntersactionOfLinkedList list = new IntersactionOfLinkedList();
-
-		// creating first linked list
-		list.head1 = new Node(3);
-		list.head1.next = new Node(15);
-		list.head1.next.next = new Node(6);
-		list.head1.next.next.next = new Node(15);
-		list.head1.next.next.next.next = new Node(30);
-
-		// creating second linked list
-		list.head2 = new Node(10);
-		list.head2.next = new Node(15);
-		list.head2.next.next = new Node(30);
-
-		System.out.println("The node of intersection is " + list.getNode());
-
-	}
+	
 }

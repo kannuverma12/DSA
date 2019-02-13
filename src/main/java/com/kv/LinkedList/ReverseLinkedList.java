@@ -18,6 +18,13 @@ public class ReverseLinkedList {
 	}
 
 	/* Function to reverse the linked list */
+	
+	/*
+	 *     1 -> 2   |   Next            -> Current.Next   |      N   -> CN
+	 *     2 -> 3   |   Current.Next    -> Prev           |      CN -> P
+	 *     3 -> 4   |   Prev            -> Current        |      P -> C
+	 *     4 -> 1   |   Current         -> Next           |     C -> N
+	 */
 	Node reverse(Node node) {
 		Node prev = null;
 		Node current = node;

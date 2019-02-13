@@ -4,14 +4,14 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /*
- * Given an array and an integer k, find the maximum for each and every contiguous subarray of size k.
+ * Given an array and an integer k, find the maximum in every contiguous sub-array of size k.
  */
 public class FindMaxInEachContinuousSubarray {
 
 	public static void main(String[] args) {
 
 		System.out.println("************ Method 1 *********");
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		int arr[] = { 1, 12, 3, 4, 5, 6, 7, 8, 9, 10 };
         int k = 3;
         printKMax(arr, arr.length, k);
         
@@ -24,7 +24,8 @@ public class FindMaxInEachContinuousSubarray {
 	
 	
 	/*
-	 * Run two loops. In the outer loop, take all subarrays of size k. In the inner loop, get the maximum of the current subarray.
+	 * Run two loops. In the outer loop, take all subarrays of size k. 
+	 * In the inner loop, get the maximum of the current subarray.
 	 */
 	private static void printKMax(int[] arr, int n, int k) {
 		int j, max;

@@ -4,7 +4,7 @@ public class FindRowWithMax1s {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[][] matrix = {{0,0,0,1},
+		int[][] matrix =    {{0,0,0,1},
 							{0,1,1,1},
 							{1,1,1,1},
 							{0,0,0,0}};

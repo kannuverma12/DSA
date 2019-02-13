@@ -20,7 +20,7 @@ public class Sort0s1s2s {
             {
 	            case 0:
 	            {
-	                temp   =  a[lo];
+	                temp   = a[lo];
 	                a[lo]  = a[mid];
 	                a[mid] = temp;
 	                lo++;

@@ -21,7 +21,9 @@ Two subarrays are [-1, -2, 1, -4] and [2, 8]
 
 /*Solution
  * 
- * The idea is for each index i in given array arr[0…n-1], compute maximum and minimum sum subarrays that lie in subarrays arr[0…i] and arr[i+1 …n-1]. We maintain four arrays that store the maximum and minimum sums in the subarrays arr[0…i] and arr[i+1 … n-1] for every index i in the array.
+ * The idea is for each index i in given array arr[0…n-1], compute maximum and minimum sum subarrays that
+ *  lie in subarrays arr[0…i] and arr[i+1 …n-1]. We maintain four arrays that store the maximum and 
+ *  minimum sums in the subarrays arr[0…i] and arr[i+1 … n-1] for every index i in the array.
 
 leftMax[] : An element leftMax[i] of this 
             array stores the maximum value 
@@ -45,7 +47,8 @@ rightMin[] : An element rightMin[i] of this
  * 
  * We can build above four arrays in O(n) time by using Kadane Algorithm.
 
-In order to calculate maximum sum subarray that lies in arr[0…i], we run Kadane Algorithm from 0 to n-1 and to find maximum sum subarray that lies in arr[i+1 … n-1], we run Kadane Algorithm from n-1 to 0.
+In order to calculate maximum sum subarray that lies in arr[0…i], we run Kadane Algorithm from 0 to n-1 and to find 
+maximum sum subarray that lies in arr[i+1 … n-1], we run Kadane Algorithm from n-1 to 0.
 
 Kadane’s algorithm can be modified to find minimum absolute sum of a subarray as well. The idea is to change the sign of each element in the array and run Kadane Algorithm to find maximum sum subarray that lies in arr[0…i] and arr[i+1 … n-1]. Now invert the sign of maximum subarray sum found. That will be our minimum subarray sum. This idea is taken from here.
 Now from above four arrays, we can easily find maximum absolute difference between the sum of two contiguous sub-arrays. For each index i, take maximum of

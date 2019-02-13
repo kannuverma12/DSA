@@ -1,4 +1,4 @@
-package com.kv.strings;
+package com.kv.lc;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

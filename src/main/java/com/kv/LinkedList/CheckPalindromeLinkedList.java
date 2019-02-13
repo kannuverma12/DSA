@@ -39,28 +39,19 @@ public class CheckPalindromeLinkedList {
 	
 	Node head, fast_ptr, slow_ptr, second_half;
 	
-	
-
 	public static void main(String[] args) {
-		/* Start with the empty list */
 		CheckPalindromeLinkedList llist = new CheckPalindromeLinkedList();
  
         char str[] = {'a', 'b', 'a', 'c', 'a', 'b', 'a'};
         for (int i = 0; i< 7 ; i++) {
             llist.push(str[i]);
-            llist.printList(llist.head);
-            if (llist.isPalindrome(llist.head) != false) 
-            {
+            //llist.printList(llist.head);
+            if (llist.isPalindrome(llist.head) != false){
                 System.out.println("Is Palindrome");
-                System.out.println("");
-            }
-             else
-            {
+            }else{
                 System.out.println("Not Palindrome");
-                System.out.println("");
             }
         }
-
 	}
 	
 	private boolean isPalindrome(Node head2) {
@@ -72,8 +63,7 @@ public class CheckPalindromeLinkedList {
 		boolean res = true;
 		
 		if(head != null && head.next != null) {
-			/* Get the middle of the list. Move slow_ptr by 1 and fast_ptrr by 2, 
-			 * slow_ptr will have the middle node */
+			/* Get the middle of the list. */
 			while(fast_ptr != null  && fast_ptr.next != null) {
 				fast_ptr = fast_ptr.next.next;
 				/*We need previous of the slow_ptr for linked lists  with odd elements */
@@ -81,15 +71,12 @@ public class CheckPalindromeLinkedList {
 				slow_ptr = slow_ptr.next;
 			}
 			
-			/* fast_ptr would become NULL when there are even elements 
-            in the list and not NULL for odd elements. We need to skip  
-            the middle node for odd case and store it somewhere so that
-            we can restore the original list */
-			if(fast_ptr  != null) {
+			/* fast_ptr would become NULL when there are even elements in list and not NULL for odd elements. We need 
+			 * to skip middle node for odd case and store it somewhere so that we can restore the original list */
+			if(fast_ptr != null) {
 				midNode = slow_ptr;
 				slow_ptr = slow_ptr.next;
 			}
-			
 			
 			// Now reverse the second half and compare it with first half
 			second_half = slow_ptr;
@@ -100,20 +87,17 @@ public class CheckPalindromeLinkedList {
 			/* Construct the original list back */
 			reverse();
 			
-			if (midNode != null) 
-            {
+			if (midNode != null) {
                 // If there was a mid node (odd size case) which                                                         
                 // was not part of either first half or second half.
                 prev_of_slow_ptr.next = midNode;
                 midNode.next = second_half;
             } else
                 prev_of_slow_ptr.next = second_half;
-			
 		}
 		
 		return res;
 	}
-
 	
 	private boolean compareList(Node head1, Node head2) {
 		Node temp1 = head1;
@@ -132,8 +116,7 @@ public class CheckPalindromeLinkedList {
 		return false;
 	}
 
-	/* Function to reverse the linked list  Note that this
-    function may change the head */
+	/* Function to reverse the linked list  Note that this function may change the head */
 	private void reverse() {
 		Node prev = null;
 		Node current = second_half;
@@ -147,8 +130,6 @@ public class CheckPalindromeLinkedList {
 			
 		}
 		second_half = prev;
-		
-		
 	}
 
 	public void push(char new_data) {

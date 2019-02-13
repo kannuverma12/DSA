@@ -4,13 +4,6 @@ public class LengthOfCircularLinkedList {
 	
 	static Node head;
 	
-	static public void push(int new_data)
-    {
-        Node new_node = new Node(new_data);
-        new_node.next = head;
-        head = new_node;
-    }
-
 	public static void main(String[] args) {
 		LengthOfCircularLinkedList llist = new LengthOfCircularLinkedList();
         
@@ -39,5 +32,12 @@ public class LengthOfCircularLinkedList {
 		}
 		return count;
 	}
+	
+	static public void push(int new_data)
+    {
+        Node new_node = new Node(new_data);
+        new_node.next = head;
+        head = new_node;
+    }
 
 }

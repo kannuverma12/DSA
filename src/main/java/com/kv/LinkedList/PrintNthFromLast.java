@@ -1,5 +1,6 @@
 package com.kv.LinkedList;
 
+
 public class PrintNthFromLast {
 	Node head;
 
@@ -17,6 +18,9 @@ public class PrintNthFromLast {
 
         
         llist.printNthFromLastUsing2Pointers(2);
+        
+        llist.removeNthFromLast(llist.head,2);
+        llist.printList();
 	}
 
 	
@@ -43,7 +47,7 @@ public class PrintNthFromLast {
 		}
 		
 		temp = head;
-		for(int i=1; i< n-len+1 ;i++) {
+		for(int i=1; i< len-n+1 ;i++) {
 			temp = temp.next;
 		}
 		System.out.println(temp.data);
@@ -56,7 +60,7 @@ public class PrintNthFromLast {
         head = new_node;
     }
 
-	
+	//using recursion
 	void printNthFromLast(Node head, int n) 
 	{
 	    int i = 0;
@@ -108,4 +112,41 @@ public class PrintNthFromLast {
 		}
 		
 	}
+	
+	void removeNthFromLast(Node head, int n) {
+	    System.out.println("Deleting "+n+"th node from last");
+	    int len = 0;
+        Node temp = head;
+        Node prev = null;
+        
+        while(temp != null) {
+            temp = temp.next;
+            len++;
+        }
+        //System.out.println("Length : "+len);
+        if(n >len) {
+            System.out.println("Lenght of list is less than : "+n);
+            
+        }
+        
+        for(int i=1; i< len-n+1 ;i++) {
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = temp.next;
+        //System.out.println(temp.data);
+	        
+	}
+	
+	
+	
+	void printList()
+    {
+        Node temp = head;
+        while (temp != null)
+        {
+           System.out.print(temp.data+" ");
+           temp = temp.next;
+        }
+    }
 }

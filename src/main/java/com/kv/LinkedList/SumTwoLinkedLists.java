@@ -2,15 +2,6 @@ package com.kv.LinkedList;
 
 public class SumTwoLinkedLists {
 	static Node head1, head2;
-
-	
-	void printList(Node head) {
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
-        }
-        System.out.println("");
-    }
 	
 	public static void main(String[] args) {
 
@@ -19,13 +10,13 @@ public class SumTwoLinkedLists {
         // creating first list
         list.head1 = new Node(7);
         list.head1.next = new Node(5);
-        list.head1.next.next = new Node(9);
-        list.head1.next.next.next = new Node(4);
-        list.head1.next.next.next.next = new Node(6);
+        //list.head1.next.next = new Node(9);
+        //list.head1.next.next.next = new Node(4);
+        //list.head1.next.next.next.next = new Node(6);
         System.out.print("First List is ");
         list.printList(head1);
  
-        // creating seconnd list
+        // creating second list
         list.head2 = new Node(8);
         list.head2.next = new Node(4);
         System.out.print("Second List is ");
@@ -62,8 +53,7 @@ public class SumTwoLinkedLists {
             // Create a new node with sum as data
             temp = new Node(sum);
  
-            // if this is the first node then set it as head of
-            // the resultant list
+            // if this is the first node then set it as head of the resultant list
             if (res == null) {
                 res = temp;
             } else // If this is not the first node then connect it to the rest.
@@ -90,5 +80,13 @@ public class SumTwoLinkedLists {
         // return head of the resultant list
         return res;
 	}
+	
+	void printList(Node head) {
+        while (head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+        System.out.println("");
+    }
 
 }

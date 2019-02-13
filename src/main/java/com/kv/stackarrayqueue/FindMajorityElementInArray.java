@@ -35,7 +35,6 @@ public class FindMajorityElementInArray {
 			for(int j=0;j<n;j++) {
 				if(arr[i] == arr[j])
 					count++;
-				
 			}
 			if(count > maxCount) {
 				maxCount = count;

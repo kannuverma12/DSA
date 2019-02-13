@@ -1,4 +1,4 @@
-package com.kv.strings;
+package com.kv.lc;
 
 public class FindFirstNonRepeatingChar {
     public static void main(String[] args) {
