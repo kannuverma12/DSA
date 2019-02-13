@@ -3,8 +3,10 @@ package com.kv.trees;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
- * LCA in Binary Tree
+/**
+ * 
+ * @author karanverma
+ *  Java program to find Least Common Ancestor in a Binary Tree
  */
 public class FindLeastCommonAncestor {
 	
@@ -44,6 +46,7 @@ public class FindLeastCommonAncestor {
         System.out.println("***********  Ends ************");
         System.out.println();
         System.out.println("*********** Method 2 ************");
+        
         FindLeastCommonAncestor tree2 = new FindLeastCommonAncestor();
         tree2.root = new Node(1);
         tree2.root.left = new Node(2);
@@ -106,23 +109,18 @@ public class FindLeastCommonAncestor {
         if (root == null) {
             return false;
         }
- 
         path.add(root.data);
  
         if (root.data == n) {
             return true;
         }
- 
         if (root.left != null && findPath(root.left, n, path)) {
             return true;
         }
- 
         if (root.right != null && findPath(root.right, n, path)) {
             return true;
         }
- 
         path.remove(path.size()-1);
- 
         return false;
     }
 	
@@ -130,7 +128,7 @@ public class FindLeastCommonAncestor {
 	
 	
 	/*
-	 * Method 2 (Using Single Traversal)
+	 *  Method 2 (Using Single Traversal)
 		The method 1 finds LCA in O(n) time, but requires three tree traversals plus extra spaces for path arrays. 
 		If we assume that the keys n1 and n2 are present in Binary Tree, we can find LCA using single traversal of 
 		Binary Tree and without extra storage for path arrays.
@@ -148,7 +146,6 @@ public class FindLeastCommonAncestor {
 	
 	Node findLCA2(Node node, int n1, int n2)
     {
-        // Base case
         if (node == null)
             return null;
  

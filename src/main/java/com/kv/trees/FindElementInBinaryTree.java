@@ -3,7 +3,11 @@ package com.kv.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
+/**
+ * 
+ *  @author karanverma
+ *  Java program to find an element in a Binary Tree.
+ */
 public class FindElementInBinaryTree {
 
 	public static void main(String[] args) {
@@ -21,6 +25,23 @@ public class FindElementInBinaryTree {
 
 	}
 
+	//Using Recursion
+	private static boolean findElementInBT(Node root, int data) {
+        boolean temp;
+        if(root == null)
+            return false;
+        else {
+            if(root.data == data)
+                return true;
+            else {
+                temp = findElementInBT(root.left, data);
+                if(temp)
+                    return true;
+                else
+                    return findElementInBT(root.right, data);   
+            }
+        }
+    }
 	
 	// it can be done using a queue
 	private static boolean findElementInBTWithoutRecursion(Node root1, int data) {
@@ -36,27 +57,8 @@ public class FindElementInBinaryTree {
 				q.add(temp.left);
 			if(temp.right != null)
 				q.add(temp.right);
-			
 		}
-		
 		return false;
-	}
-
-	private static boolean findElementInBT(Node root, int data) {
-		boolean temp;
-		if(root == null)
-			return false;
-		else {
-			if(root.data == data)
-				return true;
-			else {
-				temp = findElementInBT(root.left, data);
-				if(temp)
-					return true;
-				else
-					return findElementInBT(root.right, data);	
-			}
-		}
 	}
 
 }
