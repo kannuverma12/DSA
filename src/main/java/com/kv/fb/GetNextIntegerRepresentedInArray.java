@@ -2,6 +2,14 @@ package com.kv.fb;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * @author karanverma
+ * 
+ * "given an array representing a non-negative integer (ex: 123 represented as [1,2,3]), return the next integer 
+ * (output: [1,2,4]). Run through all edge cases (ex: [9,9,9,9,9,9,9,9] etc)" 
+ * 
+ */
 public class GetNextIntegerRepresentedInArray {
 
     public static void main(String[] args) {

@@ -2,6 +2,14 @@ package com.kv.fb;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author karanverma
+ * 
+ * "Given an arbitrary tree remove nodes which have data value 0. 
+ * As it stats arbitrary tree, I assumed n-ary tree.
+ *
+ */
 public class Remove0ValueNodeFromTree {
 
     public static void main(String[] args) {

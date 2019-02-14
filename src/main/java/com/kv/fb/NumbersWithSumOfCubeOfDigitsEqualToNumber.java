@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author karanverma
+ *
+ *  find all numbers the sum of cube of each digits is the number itself.
+ *  ex:153=1^3+5^3+3^3
+ */
 public class NumbersWithSumOfCubeOfDigitsEqualToNumber {
     public static void main(String[] args) {
 //        System.out.print("Enter the limit : ");

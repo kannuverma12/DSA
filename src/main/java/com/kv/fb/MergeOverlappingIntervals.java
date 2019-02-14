@@ -1,9 +1,19 @@
 package com.kv.fb;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Stack;
 
+/**
+ * 
+ * @author karanverma
+ *  
+ *  
+ *  You have two sorted arrays, where each element is an interval. Now, merge the two array, overlapping intervals can be merged as a single one.
+ *  I/P: List 1 [1,2] , [3,9] 
+ *       List 2 [4,5], [8, 10], [11,12] 
+ *  O/P [1,2], [3,10], [11,12]
+ *
+ */
 public class MergeOverlappingIntervals {
 
     public static void main(String[] args) {

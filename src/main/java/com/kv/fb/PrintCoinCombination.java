@@ -4,6 +4,17 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 
+ * @author karanverma
+ * 
+ * "Given many coins of 3 different face values, print the combination sums of the coins up to 1000. 
+ * Must be printed in order
+ * 
+ * eg: coins(10, 15, 55) 
+ * print: 10 15 20 25 30 . . 1000
+ * 
+ */
 public class PrintCoinCombination {
 
     public static void main(String[] args) {

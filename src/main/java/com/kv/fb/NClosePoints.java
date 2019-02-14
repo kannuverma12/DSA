@@ -7,6 +7,14 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+/**
+ * 
+ * @author karanverma
+ *
+ *  "You are given n points (x1, y1), (x2, y2), ..... (xm, ym) of a two dimensional graph. Find 'n' 
+ *  closest points to (0,0) [ n <= m ]. 
+ *  Euclidean distance can be used to find the distance between 2 points.
+ */
 public class NClosePoints {
     static List<Point> list;
 

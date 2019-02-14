@@ -1,19 +1,23 @@
 package com.kv.fb;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 
-//Java program to add two linked lists 
-
+/**
+ * 
+ * @author karanverma
+ * 
+ * "You are given two non-empty linked lists representing two non-negative integers. The most significant 
+ * digit comes first and each of their nodes contain a single digit. Add the two numbers and return it 
+ * as a linked list.
+ * 
+ * Java program to add two linked lists 
+ *
+ */
 public class SumTwoLinkedList2 {
     
     node head1, head2, result;
     int carry;
     
- // Driver program to test above functions
     public static void main(String args[]) {
         SumTwoLinkedList2 list = new SumTwoLinkedList2();
         list.head1 = null;
@@ -162,7 +166,6 @@ public class SumTwoLinkedList2 {
     }
 
     
-
     node cur;
 
     // This function is called after the smaller list is

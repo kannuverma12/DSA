@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 
+ * @author karanverma
+ *  Given two unsorted arrays, one with event start times and one with end times, find out if 
+ *  any two events overlap
+ *
+ */
 public class FindOverlappingEvents {
 
     public static void main(String[] args) {

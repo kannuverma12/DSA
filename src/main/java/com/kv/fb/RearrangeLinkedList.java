@@ -30,10 +30,11 @@ public class RearrangeLinkedList {
     
     
     /*
-     * 1) Find the middle point using tortoise and hare method.
-        2) Split the linked list into two halves using found middle point in step 1.
-        3) Reverse the second half.
-        4) Do alternate merge of first and second halves. 
+     *  1) Find the middle point using tortoise and hare method.
+     *  2) Split the linked list into two halves using found middle point in step 1.
+     *  3) Reverse the second half.
+     *  4) Do alternate merge of first and second halves. 
+     *  
      */
     void rearrange(Node node) { 
         

@@ -9,6 +9,22 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.Vector;
 
+
+/**
+ * 
+ * @author karanverma
+ *
+ *  "Given the root of a binary tree, print the nodes column wise and row wise.
+ *  ..............6
+ *  ............/....\
+ *  ...........9......4
+ *  ........../..\......\
+ *  .........5....1.....3
+ *  ..........\........./
+ *  ...........0.......7
+ *  
+ *  The answer would be 5 9 0 6 1 4 7 3.
+ */
 public class PrintNodesColumnWiseAndRowWise {
 
     public static void main(String[] args) {

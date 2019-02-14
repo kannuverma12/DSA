@@ -7,6 +7,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * 
+ * @author karanverma
+ * 
+ * 
+ *
+ *"How to evaluate a mathematical expression by compiler design. The
+"program will ask the user to input a value (say n). Then user will
+"input n lines of input each of which contains an identifier and its
+"corresponding value. Then program will ask the user again to input a
+"value (say m). Then user will input m lines of expressions. Calculate
+"the final value for each of the given expression using first n lines
+"of input. If you can't evaluate any expression from given numbers of
+"identifiers then output 'Compilation Error'. Allowed mathematical
+"operators are +(add), -(subtract), x(multiply), /(divide). Example: a
+"= 1  b = 2  c = 2    a x b + a x c + b x c output 8  a x c - b / c +
+"c x c out put 5    g = 2  p = 3  t = 1  w = 2   g + p x t - w x p
+"output -1 t - g + t - w output -2  e + t x t - m output compilation
+"error
+ *  
+ */
 public class EvaluateExpression {
     private static abstract class Node {
         Node left;
