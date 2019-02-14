@@ -11,6 +11,8 @@ This project contains the problems related the different concepts in java 8 like
 
 Following are the list of algorithms in this project:
 
+Trees : 
+
 1. Java program to check if all leaves are at same level.   -   com.kv.trees.CHeckBTLeafs.java
 2. Java implementation to check if given Binary tree is a BST or not.   -   com.kv.trees.CheckIfBTisBST.java
 3. Java program to find distance between two node in a Binary Tree. -   com.kv.trees.FindDistanceBtwTwoNodesInBT.java
@@ -22,4 +24,8 @@ Following are the list of algorithms in this project:
 9. Java program to get the mirror image of a binary tree.   -   com.kv.trees.MirrorOfBinaryTree.java
 10. Java program to print the top view of a binary tree.    -   com.kv.trees.TopViewOfBinaryTree.java
 11. Given a Binary Tree, find vertical sum of the nodes that are in same vertical line. -   com.kv.trees.VerticalSumOfBT.java
+
+Dynamic Programming:
+
+1. Given an array, find the largest sum in a contiguous sub-array.   -   com.kv.dp.LargestSumContiguousSubarray
     

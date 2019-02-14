@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class FindLeastCommonAncestor {
 	
-	
 	/*
 	 * The LCA of n1 and n2 in T is the shared ancestor of n1 and n2 that is located farthest from the root. 
 	 * Computation of lowest common ancestors may be useful, for instance, as part of a procedure for determining 
