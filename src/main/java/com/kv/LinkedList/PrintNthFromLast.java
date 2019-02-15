@@ -128,7 +128,7 @@ public class PrintNthFromLast {
             System.out.println("Lenght of list is less than : "+n);
             
         }
-        
+        temp = head;
         for(int i=1; i< len-n+1 ;i++) {
             prev = temp;
             temp = temp.next;
