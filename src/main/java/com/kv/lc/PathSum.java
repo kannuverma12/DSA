@@ -6,7 +6,8 @@ import java.util.LinkedList;
  * 
  * @author karanverma
  * 
- * Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+ * Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that 
+ * adding up all the values along the path equals the given sum.
  * For example:
  * Given the below binary tree and sum = 22,
  * 
@@ -30,51 +31,51 @@ public class PathSum {
         System.out.println("Is valid treenode = " + hasPathSum(root, 12));
 
     }
-    
-    //using recursion - use this
+
+    // using recursion - use this
     public static boolean hasPathSum(TreeNode root, int sum) {
         if (root == null)
             return false;
         if (root.val == sum && (root.left == null && root.right == null))
             return true;
-     
-        return hasPathSum(root.left, sum - root.val)
-                || hasPathSum(root.right, sum - root.val);
+
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
     }
-    
+
     // Method 2 - Iterative
-    
+
     public boolean hasPathSumIterative(TreeNode root, int sum) {
-        if(root == null) return false;
- 
+        if (root == null)
+            return false;
+
         LinkedList<TreeNode> nodes = new LinkedList<TreeNode>();
         LinkedList<Integer> values = new LinkedList<Integer>();
- 
+
         nodes.add(root);
         values.add(root.val);
- 
-        while(!nodes.isEmpty()){
+
+        while (!nodes.isEmpty()) {
             TreeNode curr = nodes.poll();
             int sumValue = values.poll();
- 
-            if(curr.left == null && curr.right == null && sumValue==sum){
+
+            if (curr.left == null && curr.right == null && sumValue == sum) {
                 return true;
             }
- 
-            if(curr.left != null){
+
+            if (curr.left != null) {
                 nodes.add(curr.left);
-                values.add(sumValue+curr.left.val);
+                values.add(sumValue + curr.left.val);
             }
- 
-            if(curr.right != null){
+
+            if (curr.right != null) {
                 nodes.add(curr.right);
-                values.add(sumValue+curr.right.val);
+                values.add(sumValue + curr.right.val);
             }
         }
- 
+
         return false;
     }
-    
+
     static class TreeNode {
         int val;
         TreeNode left;

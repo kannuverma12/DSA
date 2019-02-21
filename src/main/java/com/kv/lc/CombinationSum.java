@@ -50,6 +50,7 @@ public class CombinationSum {
 
         for (int i = start; i < candidates.length; i++) {
             list.add(candidates[i]);
+            // check this condition for dfs
             helper(candidates, i, target, sum + candidates[i], list, result);
             list.remove(list.size() - 1);
         }

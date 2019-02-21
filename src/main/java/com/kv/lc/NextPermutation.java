@@ -1,5 +1,7 @@
 package com.kv.lc;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author karanverma
@@ -34,7 +36,9 @@ public class NextPermutation {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-
+        int[] arr = {1,2,3};
+        nextPermutation(arr);
+        System.out.println("Next permutation : "+Arrays.toString(arr));
     }
     
     public static void nextPermutation(int[] nums) {

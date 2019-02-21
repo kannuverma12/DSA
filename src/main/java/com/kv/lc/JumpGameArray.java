@@ -36,12 +36,9 @@ public class JumpGameArray {
         //System.out.println("max = "+max);
         for(int i=0; i<A.length; i++){
             //if not enough to go to next
-            //System.out.println();
-            //System.out.println("i = "+i);
             if(max <= i && A[i] == 0) 
                 return false;
      
-            //System.out.println("max = "+max + ", (i + A[i]) = "+(i + A[i]));
             //update max    
             if(i + A[i] > max){
                 max = i + A[i];

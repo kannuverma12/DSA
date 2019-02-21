@@ -19,6 +19,7 @@ public class SingleNumber2 {
         System.out.println("Single number : "+singleNumber(arr));
     }
     
+    // important trick
     public static int singleNumber(int[] A) {
         int ones = 0, twos = 0, threes = 0;
         for (int i = 0; i < A.length; i++) {

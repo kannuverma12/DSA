@@ -1,7 +1,5 @@
 package com.kv.lc;
 
-import com.kv.lc.SwapNodesInPair.ListNode;
-
 /**
  * 
  * @author karanverma
@@ -27,7 +25,6 @@ public class RotateLinkedListRight {
         System.out.println("After rotating");
         llist.printList(hListNode);
         
-        
     }
     
     public static ListNode rotateRight(ListNode head, int n) {
@@ -52,29 +49,29 @@ public class RotateLinkedListRight {
         fast.next = head;
         return newHead;
     }
-    
+
     static public class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
-   }
-   
-   public void push(int new_data)
-   {
-       ListNode new_node = new ListNode(new_data);
-       new_node.next = head;
-       head = new_node;
-   }
-   
-   void printList(ListNode l)
-   {
-       ListNode temp = l;
-       while (temp != null)
-       {
-          System.out.print(temp.val+" ");
-          temp = temp.next;
-       }
-       System.out.println();
-   }
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
+
+    public void push(int new_data) {
+        ListNode new_node = new ListNode(new_data);
+        new_node.next = head;
+        head = new_node;
+    }
+
+    void printList(ListNode l) {
+        ListNode temp = l;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 
 }

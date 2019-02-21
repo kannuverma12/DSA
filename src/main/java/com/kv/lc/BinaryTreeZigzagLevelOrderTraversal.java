@@ -63,8 +63,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
                 // print the data in it
                 System.out.print(node.data + " ");
 
-                // store data according to current
-                // order.
+                // store data according to current order.
                 if (leftToRight) {
                     if (node.leftChild != null) {
                         nextLevel.push(node.leftChild);

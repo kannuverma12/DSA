@@ -16,7 +16,6 @@ import java.util.List;
 public class Permutations {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         int[] arr = { 1, 2, 3 };
 
         System.out.println("Iterative : "+Arrays.toString(permute(arr).toArray()));
@@ -39,7 +38,7 @@ public class Permutations {
 
         for (int i = 0; i < num.length; i++) {
             // list of list in current iteration of the array num
-            ArrayList<ArrayList<Integer>> current = new ArrayList<ArrayList<Integer>>();
+            List<List<Integer>> current = new ArrayList<List<Integer>>();
 
             for (List<Integer> l : result) {
                 // # of locations to insert is largest index + 1
@@ -47,11 +46,9 @@ public class Permutations {
                     // + add num[i] to different locations
                     l.add(j, num[i]);
 
-                    ArrayList<Integer> temp = new ArrayList<Integer>(l);
+                    List<Integer> temp = new ArrayList<Integer>(l);
                     current.add(temp);
-
-                    // System.out.println(temp);
-
+                    
                     // - remove num[i] add
                     l.remove(j);
                 }
@@ -74,7 +71,7 @@ public class Permutations {
 
     private static void helper(int start, int[] nums, List<List<Integer>> result) {
         if (start == nums.length - 1) {
-            ArrayList<Integer> list = new ArrayList<>();
+            List<Integer> list = new ArrayList<>();
             for (int num : nums) {
                 list.add(num);
             }

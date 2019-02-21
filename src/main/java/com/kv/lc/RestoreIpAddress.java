@@ -1,6 +1,7 @@
 package com.kv.lc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,30 +13,29 @@ import java.util.List;
 public class RestoreIpAddress {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        System.out.println("Valid IP Addresses : "+Arrays.toString(restoreIpAddresses("10026249").toArray()));
     }
-    
-    public List<String> restoreIpAddresses(String s) {
+
+    public static List<String> restoreIpAddresses(String s) {
         List<List<String>> result = new ArrayList<List<String>>();
         List<String> t = new ArrayList<String>();
         dfs(result, s, 0, t);
-     
+
         List<String> finalResult = new ArrayList<String>();
-     
-        for(List<String> l: result){
+
+        for (List<String> l : result) {
             StringBuilder sb = new StringBuilder();
-            for(String str: l){
-                sb.append(str+".");
+            for (String str : l) {
+                sb.append(str + ".");
             }
             sb.setLength(sb.length() - 1);
             finalResult.add(sb.toString());
         }
-     
+
         return finalResult;
     }
-     
-    public void dfs(List<List<String>> result, String s, int start, List<String> t) {
+
+    public static void dfs(List<List<String>> result, String s, int start, List<String> t) {
         // if already get 4 numbers, but s is not consumed, return
         if (t.size() >= 4 && start != s.length())
             return;

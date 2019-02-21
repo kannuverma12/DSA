@@ -1,7 +1,5 @@
 package com.kv.lc;
 
-import com.kv.lc.ParitionLinkedList.ListNode;
-
 /**
  * 
  * @author karanverma
@@ -26,20 +24,20 @@ public class ReverseLinkedListFromNtoM {
         l2.push(1);
         System.out.println("Original list");
         l2.printList(l2.head);
-        
+
         System.out.println("Partitioned List");
         ListNode lpartition = reverseBetween(l2.head, 2, 4);
         l2.printList(lpartition);
-        
+
     }
-    
+
     public static ListNode reverseBetween(ListNode head, int m, int n) {
         if (m == n)
             return head;
 
-        ListNode prev = null;// track (m-1)th node
-        ListNode first = new ListNode(0);// first's next points to mth
-        ListNode second = new ListNode(0);// second's next points to (n+1)th
+        ListNode prev = null;               // track (m-1)th node
+        ListNode first = new ListNode(0);   // first's next points to mth
+        ListNode second = new ListNode(0);      // second's next points to (n+1)th
 
         int i = 0;
         ListNode p = head;
@@ -83,29 +81,29 @@ public class ReverseLinkedListFromNtoM {
 
         return head;
     }
-    
+
     static public class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
-   }
-   
-   public void push(int new_data)
-   {
-       ListNode new_node = new ListNode(new_data);
-       new_node.next = head;
-       head = new_node;
-   }
-   
-   void printList(ListNode l)
-   {
-       ListNode temp = l;
-       while (temp != null)
-       {
-          System.out.print(temp.val+" ");
-          temp = temp.next;
-       }
-       System.out.println();
-   }
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
+
+    public void push(int new_data) {
+        ListNode new_node = new ListNode(new_data);
+        new_node.next = head;
+        head = new_node;
+    }
+
+    void printList(ListNode l) {
+        ListNode temp = l;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 
 }

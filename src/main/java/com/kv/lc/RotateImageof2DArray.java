@@ -15,7 +15,6 @@ public class RotateImageof2DArray {
      */
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
         System.out.println("Original : ");
         print2DArray(matrix);
@@ -23,7 +22,6 @@ public class RotateImageof2DArray {
         rotate(matrix);
         System.out.println("Rotated : ");
         print2DArray(matrix);
-
     }
     
     public static void rotate(int[][] matrix) {

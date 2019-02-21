@@ -1,7 +1,5 @@
 package com.kv.lc;
 
-import java.util.concurrent.SynchronousQueue;
-
 /**
  * 
  * @author karanverma
@@ -16,7 +14,8 @@ import java.util.concurrent.SynchronousQueue;
 public class ImplementPowerOperation {
     
     /*
-     * This is a great example to illustrate how to solve a problem during a technical interview. The first and second solution exceeds time limit; the third and fourth are accepted.
+     * This is a great example to illustrate how to solve a problem during a technical interview. 
+     * The first and second solution exceeds time limit; the third and fourth are accepted.
      */
 
     public static void main(String[] args) {
@@ -32,6 +31,17 @@ public class ImplementPowerOperation {
         System.out.println("Pow 3 : "+pow3(2, 10)+", Pow3 time : "+(System.currentTimeMillis()-t));
     }
     
+    // Most effective
+    public static double pow2(int x, int n) {
+        if (x == 0)
+            return 0;
+        if (n == 0)
+            return 1;
+        if (n < 0)
+            return 1 / pow2(x, -n);
+        return x * pow2(x, n - 1);
+    }
+    
     //taking longest time
     static double pow1(double x, int n) {
         if (n == 0)
@@ -45,16 +55,7 @@ public class ImplementPowerOperation {
             return half * half / x;
     }
 
-    // Most effective
-    public static double pow2(int x, int n) {
-        if (x == 0)
-            return 0;
-        if (n == 0)
-            return 1;
-        if (n < 0)
-            return 1 / pow2(x, -n);
-        return x * pow2(x, n - 1);
-    }
+    
 
     public static double pow3(int x, int n) {
         double result = 1;

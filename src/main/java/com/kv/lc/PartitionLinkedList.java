@@ -1,7 +1,5 @@
 package com.kv.lc;
 
-import com.kv.lc.MergeTwoSortedLinkedListLC.ListNode;
-
 /**
  * 
  * @author karanverma
@@ -13,12 +11,12 @@ import com.kv.lc.MergeTwoSortedLinkedListLC.ListNode;
  *  Input: head = 1->4->3->2->5->2, x = 3
  *  Output: 1->2->2->4->3->5
  */
-public class ParitionLinkedList {
+public class PartitionLinkedList {
 
     ListNode head;
     
     public static void main(String[] args) {
-        ParitionLinkedList l2 = new ParitionLinkedList();
+        PartitionLinkedList l2 = new PartitionLinkedList();
         l2.push(2);
         l2.push(5);
         l2.push(2);
@@ -34,60 +32,61 @@ public class ParitionLinkedList {
     }
     
     public static ListNode partition(ListNode head, int x) {
-        if(head == null) return null;
- 
+        if (head == null)
+            return null;
+
         ListNode fakeHead1 = new ListNode(0);
         ListNode fakeHead2 = new ListNode(0);
         fakeHead1.next = head;
- 
+
         ListNode p = head;
         ListNode prev = fakeHead1;
         ListNode p2 = fakeHead2;
- 
-        while(p != null){
-            if(p.val < x){
+
+        while (p != null) {
+            if (p.val < x) {
                 p = p.next;
                 prev = prev.next;
-            }else{
- 
+            } else {
+
                 p2.next = p;
                 prev.next = p.next;
- 
+
                 p = prev.next;
                 p2 = p2.next;
-            } 
+            }
         }
- 
+
         // close the list
         p2.next = null;
- 
+
         prev.next = fakeHead2.next;
- 
+
         return fakeHead1.next;
     }
-    
+
     static public class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
-   }
-   
-   public void push(int new_data)
-   {
-       ListNode new_node = new ListNode(new_data);
-       new_node.next = head;
-       head = new_node;
-   }
-   
-   void printList(ListNode l)
-   {
-       ListNode temp = l;
-       while (temp != null)
-       {
-          System.out.print(temp.val+" ");
-          temp = temp.next;
-       }
-       System.out.println();
-   }
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
+
+    public void push(int new_data) {
+        ListNode new_node = new ListNode(new_data);
+        new_node.next = head;
+        head = new_node;
+    }
+
+    void printList(ListNode l) {
+        ListNode temp = l;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 
 }

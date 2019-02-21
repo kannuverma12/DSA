@@ -34,18 +34,21 @@ public class MultiplyStrings {
         //multiply each digit and sum at the corresponding positions
         for(int i=0; i<n1.length(); i++){
             for(int j=0; j<n2.length(); j++){
+                // logic for multiplication
                 d[i+j] += (n1.charAt(i)-'0') * (n2.charAt(j)-'0');
+                System.out.println("i : "+i+", j : "+j+", i th : "+(n1.charAt(i)-'0')+", j th : "+(n2.charAt(j)-'0')+", i+j : "+(i+j)+", d[i+j] : "+d[i+j]);
+                 
             }
         }
      
         StringBuilder sb = new StringBuilder();
      
-        //calculate each digit
-        for(int i=0; i<d.length; i++){
-            int mod = d[i]%10;
-            int carry = d[i]/10;
-            if(i+1<d.length){
-                d[i+1] += carry;
+        // calculate each digit
+        for (int i = 0; i < d.length; i++) {
+            int mod = d[i] % 10;
+            int carry = d[i] / 10;
+            if (i + 1 < d.length) {
+                d[i + 1] += carry;
             }
             sb.insert(0, mod);
         }

@@ -1,7 +1,5 @@
 package com.kv.lc;
 
-import static org.mockito.Mockito.never;
-
 import java.util.ArrayList;
 
 /**

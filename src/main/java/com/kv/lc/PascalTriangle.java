@@ -7,7 +7,8 @@ import java.util.List;
  * 
  * @author karanverma
  *
- *  Given numRows, generate the first numRows of Pascal's triangle. For example, given numRows = 5, the result should be:
+ *  Given numRows, generate the first numRows of Pascal's triangle. For example, given numRows = 5, 
+ *  the result should be:
  *  [
  *      [1],
  *     [1,1],

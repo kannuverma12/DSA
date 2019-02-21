@@ -1,6 +1,7 @@
 package com.kv.lc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,7 +21,21 @@ import java.util.List;
 public class GroupAnagrams {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+//        int[] aa = {1,2,3};
+//        System.out.println(Arrays.toString(aa));
+//        for(int i : aa) {
+//            int x = aa[i]++;
+//            System.out.println("x = "+x);
+//        }
+//        System.out.println(Arrays.toString(aa));
+        
+        char x = '\u0000';
+        System.out.println("x = "+(char)(x++));
+        System.out.println("x = "+(char)(x));
+        
+        
+        String[] arr = {"zat", "tea", "tan", "ate", "nat", "bat"};
+        System.out.println("Anagram Groups : "+Arrays.deepToString(groupAnagrams(arr).toArray()));
 
     }
     
@@ -30,15 +45,22 @@ public class GroupAnagrams {
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         for(String str: strs){
             char[] arr = new char[26];
+            System.out.println("str : "+str);
             for(int i=0; i<str.length(); i++){
-                arr[str.charAt(i)-'a']++;
+                int index = str.charAt(i)-'a';
+                System.out.println("index = "+index+", arr[index] = "+arr[index]);
+                arr[index]++;
+                System.out.println("after arr[index] = "+new String(""+(char)arr[index]));
             }
             String ns = new String(arr);
+            System.out.println("arr = "+Arrays.toString(arr)+", ns = "+ns);
      
             if(map.containsKey(ns)){
+                System.out.println("contains key ns = "+ns);
                 map.get(ns).add(str);
             }else{
                 ArrayList<String> al = new ArrayList<String>();
+                System.out.println("new ns = "+ns);
                 al.add(str);
                 map.put(ns, al);
             }

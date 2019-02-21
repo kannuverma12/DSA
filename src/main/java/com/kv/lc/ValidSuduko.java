@@ -4,13 +4,14 @@ package com.kv.lc;
  * 
  * @author karanverma
  * 
- *  Determine if a Sudoku is valid. The Sudoku board could be partially filled,
+ *   Determine if a Sudoku is valid. The Sudoku board could be partially filled,
  *   where empty cells are filled with the character '.'.
  *   
- *   Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
- *   Each row must contain the digits 1-9 without repetition.
- *   Each column must contain the digits 1-9 without repetition.
- *   Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+ *   Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to 
+ *   the following rules:
+ *   1. Each row must contain the digits 1-9 without repetition.
+ *   2. Each column must contain the digits 1-9 without repetition.
+ *   3. Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.
  */
 public class ValidSuduko {
 
@@ -63,6 +64,7 @@ public class ValidSuduko {
         //check each 3*3 matrix
         for (int block = 0; block < 9; block++) {
             boolean[] m = new boolean[9];
+            // check the following condition for matrix /////
             for (int i = block / 3 * 3; i < block / 3 * 3 + 3; i++) {
                 for (int j = block % 3 * 3; j < block % 3 * 3 + 3; j++) {
                     if (board[i][j] != '.') {

@@ -38,7 +38,7 @@ public class Permutation2 {
      
     private static void helper(int start, int[] nums, List<List<Integer>> result){
         if(start==nums.length-1){
-            ArrayList<Integer> list = new ArrayList<>();
+            List<Integer> list = new ArrayList<>();
             for(int num: nums){
                 list.add(num);
             }
