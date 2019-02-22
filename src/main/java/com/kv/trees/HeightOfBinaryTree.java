@@ -2,7 +2,7 @@ package com.kv.trees;
 
 /**
  * 
- * @author karanverma
+ *  @author karanverma
  *  Program to find the height of a binary tree
  */
 public class HeightOfBinaryTree {
@@ -21,6 +21,13 @@ public class HeightOfBinaryTree {
 
         System.out.println("Height : " + tree.getHeight(root));
     }
+    
+    private int getHeight(NodeH node) {
+        if (node == null)
+            return 0;
+        else
+            return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+    }
 
     private static void addMoreNodes(NodeH root) {
         for (int i = 0; i < 10; i++) {
@@ -31,12 +38,7 @@ public class HeightOfBinaryTree {
         }
     }
 
-    private int getHeight(NodeH node) {
-        if (node == null)
-            return 0;
-        else
-            return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
-    }
+    
 }
 
 class NodeH {

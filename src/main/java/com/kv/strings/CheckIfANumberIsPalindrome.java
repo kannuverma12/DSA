@@ -1,5 +1,10 @@
 package com.kv.strings;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class CheckIfANumberIsPalindrome {
 
 	public static void main(String[] args) {

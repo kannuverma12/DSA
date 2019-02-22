@@ -25,42 +25,42 @@ public class FindMaxInBinaryTree {
 		System.out.println(findMaxInBTWithoutRecursion(root));
 	}
 
-	private static int findMaxInBT(Node root) {
-		int root_val, left, right, max = Integer.MIN_VALUE;
-		if(root != null) {
-			root_val = root.data;
-			
-			left = findMaxInBT(root.left);
-			right = findMaxInBT(root.right);
-			
-			if(left > right)
-				max = left;
-			else
-				max = right;
-			
-			if(root_val > max)
-				max = root_val;
-			
-		}
-		return max;
-	}
-	
-	private static int findMaxInBTWithoutRecursion(Node root) {
+    private static int findMaxInBT(Node root) {
+        int root_val, left, right, max = Integer.MIN_VALUE;
+        if (root != null) {
+            root_val = root.data;
+
+            left = findMaxInBT(root.left);
+            right = findMaxInBT(root.right);
+
+            if (left > right)
+                max = left;
+            else
+                max = right;
+
+            if (root_val > max)
+                max = root_val;
+
+        }
+        return max;
+    }
+
+    private static int findMaxInBTWithoutRecursion(Node root) {
         Node temp;
         int max = Integer.MIN_VALUE;
-        
+
         Queue<Node> q = new LinkedList<Node>();
         q.add(root);
-        
-        while(!q.isEmpty()) {
+
+        while (!q.isEmpty()) {
             temp = q.poll();
-            
-            if(max < temp.data)
+
+            if (max < temp.data)
                 max = temp.data;
-            if(temp.left != null)
+            if (temp.left != null)
                 q.add(temp.left);
-            if(temp.right != null)
-            q.add(temp.right);
+            if (temp.right != null)
+                q.add(temp.right);
         }
         return max;
     }

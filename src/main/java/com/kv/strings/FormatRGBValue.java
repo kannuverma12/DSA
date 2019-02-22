@@ -13,6 +13,7 @@ public class FormatRGBValue {
 
     public static String toHex ( int c ) {
         String s = Integer.toHexString ( c );
+        System.out.println("Hexcode for "+c+" is = "+ s);
         return ( s.length() == 1 ) ? "0" + s : s;
     }
 

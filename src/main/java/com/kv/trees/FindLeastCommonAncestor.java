@@ -169,6 +169,7 @@ public class FindLeastCommonAncestor {
     }
 	
 	
+	// Method 3
 	 Node getLCA(Node curr, Node a, Node b) {
 		if(curr == null)
 			return null;

@@ -1,20 +1,12 @@
 package com.kv.strings;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class StringPermutation {
-
-    private static void permutation(String perm, String word) {
-        if (word.isEmpty()) {
-            System.err.println(perm + word);
-
-        } else {
-            for (int i = 0; i < word.length(); i++) {
-                // System.out.println("first prams:"+perm + word.charAt(i) +"second params::"+);
-                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length()));
-            }
-        }
-
-    }
-
+    
     public static void main(String[] args) {
         // String str = "aban";
         // int n = str.length();
@@ -27,6 +19,19 @@ public class StringPermutation {
         System.out.println("String permutations = ");
 
         permute("abce", 0, 2);
+
+    }
+
+    private static void permutation(String perm, String word) {
+        if (word.isEmpty()) {
+            System.err.println(perm + word);
+
+        } else {
+            for (int i = 0; i < word.length(); i++) {
+                // System.out.println("first prams:"+perm + word.charAt(i) +"second params::"+);
+                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length()));
+            }
+        }
 
     }
 

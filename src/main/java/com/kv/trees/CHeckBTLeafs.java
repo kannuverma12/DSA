@@ -1,6 +1,11 @@
 package com.kv.trees;
 
-//Java program to check if all leaves are at same level
+/**
+ * 
+ * @author karanverma
+ *
+ * Java program to check if all leaves are at same level
+ */
 public class CHeckBTLeafs {
 
     Node1 root;
@@ -26,7 +31,7 @@ public class CHeckBTLeafs {
         return checkUtil(node, level, mylevel);
     }
 
-    //Recursive function which checks whether all leaves are at same level
+    // Recursive function which checks whether all leaves are at same level
     boolean checkUtil(Node1 node, int level, Leaf leafLevel) {
         if (node == null)
             return true;

@@ -1,17 +1,18 @@
 package com.kv.trees;
 
-/*
+/**
+ * 
+ * @author karanverma
+ * 
  * Given a binary tree, print boundary nodes of the binary tree Anti-Clockwise starting from the root. 
  * For example, boundary traversal of the following tree is “20 8 4 10 14 25 22”
- */
-
-/*
+ * 
  * We break the problem in 3 parts:
-	1. Print the left boundary in top-down manner.
-	2. Print all leaf nodes from left to right, which can again be sub-divided into two sub-parts:
-	…..2.1 Print all leaf nodes of left sub-tree from left to right.
-	…..2.2 Print all leaf nodes of right subtree from left to right.
-	3. Print the right boundary in bottom-up manner.
+ *	1. Print the left boundary in top-down manner.
+ *	2. Print all leaf nodes from left to right, which can again be sub-divided into two sub-parts:
+ *	…..2.1 Print all leaf nodes of left sub-tree from left to right.
+ *	…..2.2 Print all leaf nodes of right subtree from left to right.
+ *	3. Print the right boundary in bottom-up manner.
  */
 public class BoundryTravesalOfBT {
     Node root;
@@ -52,10 +53,10 @@ public class BoundryTravesalOfBT {
         if (node != null) {
             if (node.left != null) {
                 // to ensure top down order, print the node before calling itself for left subtree
-                System.out.println(node.data + " ");
+                System.out.println(node.data + " BL L");
                 printBoundryLeft(node.left);
             } else if (node.right != null) {
-                System.out.print(node.data + " ");
+                System.out.print(node.data + " BL R");
                 printBoundryLeft(node.right);
             }
             // do nothing if it is a leaf node, this way we avoid duplicates in output
@@ -71,10 +72,10 @@ public class BoundryTravesalOfBT {
             if (node.right != null) {
                 // to ensure bottom up order, first call for right subtree, then print this node
                 printBoundryRight(node.right);
-                System.out.println(node.data + " ");
+                System.out.println(node.data + " BR R");
             } else if (node.left != null) {
                 printBoundryRight(node.left);
-                System.out.println(node.data + " ");
+                System.out.println(node.data + " BR L");
             }
             // do nothing if it is a leaf node, this way we avoid duplicates in output
         }
@@ -85,7 +86,7 @@ public class BoundryTravesalOfBT {
             printLeaves(node.left);
 
             if (node.left == null && node.right == null)
-                System.out.println(node.data + " ");
+                System.out.println(node.data + " LEAF");
 
             printLeaves(node.right);
         }

@@ -1,17 +1,20 @@
 package com.kv.strings;
 
-/*
- * There were 2 strings given we have to find out the maximum number of 
-modification we can do to make the 2 strings anagram of each other. 
-for eg a = “abb” b = “bcb” so the ans in this case is 1 i.e replace a with c or c with a. 
-In case when both strings were of unequal size return -1.
- */
 
-/*
+/**
+ * 
+ * @author karanverma
+ *
+ * There were 2 strings given. We have to find out the maximum number of 
+ * modification we can do to make the 2 strings anagram of each other. 
+ * for eg a = “abb” b = “bcb” so the ans in this case is 1 i.e replace a with c or c with a. 
+ * In case when both strings were of unequal size return -1.
+
  * Minimum Number of Manipulations required to make two Strings Anagram Without Deletion of Character
-Given two strings s1 and s2, we need to find the minimum number of manipulations required to make two 
-strings anagram without deleting any character.
-Note:- The anagram strings have same set of characters, sequence of characters can be different.
+ * Given two strings s1 and s2, we need to find the minimum number of manipulations required to make two 
+ * strings anagram without deleting any character.
+ * 
+ * Note:- The anagram strings have same set of characters, sequence of characters can be different.
  */
 public class AnagramDifference {
 

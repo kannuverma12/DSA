@@ -1,6 +1,12 @@
 package com.kv.strings;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class FindFirstNonRepeatingChar {
+    
     public static void main(String[] args) {
         String s = "test";
         for (int i = 0; i < s.length(); i++) {

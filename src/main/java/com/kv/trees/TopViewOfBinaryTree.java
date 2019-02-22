@@ -5,7 +5,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * @author karanverma Java program to print the top view of a binary tree.
+ * @author karanverma 
+ * Java program to print the top view of a binary tree.
  *
  */
 public class TopViewOfBinaryTree {

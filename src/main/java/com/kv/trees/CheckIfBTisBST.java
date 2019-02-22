@@ -2,13 +2,13 @@ package com.kv.trees;
 
 /**
  * 
- *  @author karanverma
- *  Java implementation to check if given Binary tree is a BST or not
+ * @author karanverma 
+ * Java implementation to check if given Binary tree is a BST or not
  */
 public class CheckIfBTisBST {
-	Node2 root;
-	
-	/* Driver program to test above functions */
+    Node2 root;
+
+    /* Driver program to test above functions */
     public static void main(String args[]) {
         CheckIfBTisBST tree = new CheckIfBTisBST();
         tree.root = new Node2(4);
@@ -22,24 +22,24 @@ public class CheckIfBTisBST {
         else
             System.out.println("Not a BST");
     }
-    
-	boolean isBST() {
-		return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-	}
 
-	// Returns true if the given tree is a BST and its values are >= min and <= max.
- 	boolean isBSTUtil(Node2 node, int min, int max) {
-		if (node == null)
-			return true;
+    boolean isBST() {
+        return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
 
-		/* false if this node violates the min/max constraints */
-		if (node.data < min || node.data > max)
-			return false;
+    // Returns true if the given tree is a BST and its values are >= min and <= max.
+    boolean isBSTUtil(Node2 node, int min, int max) {
+        if (node == null)
+            return true;
 
-		//otherwise check the subtrees recursively tightening the min/max constraints
-		// Allow only distinct values
-		return (isBSTUtil(node.left, min, node.data - 1) && isBSTUtil(node.right, node.data + 1, max));
-	}
+        /* false if this node violates the min/max constraints */
+        if (node.data < min || node.data > max)
+            return false;
+
+        // otherwise check the subtrees recursively tightening the min/max constraints
+        // Allow only distinct values
+        return (isBSTUtil(node.left, min, node.data - 1) && isBSTUtil(node.right, node.data + 1, max));
+    }
 }
 
 class Node2 {
@@ -51,4 +51,3 @@ class Node2 {
         left = right = null;
     }
 }
-
