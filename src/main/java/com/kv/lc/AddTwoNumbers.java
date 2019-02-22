@@ -6,9 +6,12 @@ package com.kv.lc;
  *   ----------------   medium ----------
  *   
  *   
- *   Algorithm
-
-Just like how you would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of l1l1 and l2l2. Since each digit is in the range of 0 \ldots 90…9, summing two digits may "overflow". For example 5 + 7 = 125+7=12. In this case, we set the current digit to 22 and bring over the carry = 1carry=1 to the next iteration. carrycarry must be either 00 or 11 because the largest possible sum of two digits (including the carry) is 9 + 9 + 1 = 199+9+1=19.
+ *   Just like how you would sum two numbers on a piece of paper, we begin by summing the 
+ *   least-significant digits, which is the head of l1l1 and l2l2. Since each digit is in 
+ *   the range of 0 \ldots 90…9, summing two digits may "overflow". For example 5 + 7 = 125+7=12. 
+ *   In this case, we set the current digit to 22 and bring over the carry = 1carry=1 to the next 
+ *   iteration. carrycarry must be either 00 or 11 because the largest possible sum of two digits 
+ *   (including the carry) is 9 + 9 + 1 = 199+9+1=19.
 
 The pseudo code is as following:
 

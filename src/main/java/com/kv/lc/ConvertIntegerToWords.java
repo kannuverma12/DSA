@@ -31,23 +31,18 @@ public class ConvertIntegerToWords {
         Integer parsedNum = Integer.parseInt(num);
         
         int crore = parsedNum/CRORE;
-        
         int croreModulo = parsedNum % CRORE;
         
         int lakh = croreModulo/LAKH;
-        
         int lakhModulo = croreModulo%LAKH;
         
         int thousands = lakhModulo/THOUSAND;
-        
         int thousandModulu = lakhModulo % THOUSAND;
         
         int hundreds = thousandModulu / HUNDRED;
-        
         int hundredModulo = thousandModulu % HUNDRED;
         
         int tensp = hundredModulo /TEN;
-        
         int tensModulo = hundredModulo % TEN;
         
         if(crore != 0) {

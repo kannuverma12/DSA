@@ -6,16 +6,16 @@ import java.util.Arrays;
  * 
  * @author karanverma
  * 
- * "given an array representing a non-negative integer (ex: 123 represented as [1,2,3]), return the next integer 
+ * Given an array representing a non-negative integer (ex: 123 represented as [1,2,3]), return the next integer 
  * (output: [1,2,4]). Run through all edge cases (ex: [9,9,9,9,9,9,9,9] etc)" 
  * 
  */
 public class GetNextIntegerRepresentedInArray {
 
     public static void main(String[] args) {
-        System.out.print("Next Integer: " + Arrays.toString(nextInteger(new int[]{1, 2, 9})));
+        System.out.print("Next Integer: " + Arrays.toString(nextInteger(new int[] { 1, 2, 9 })));
     }
-    
+
     private static int[] nextInteger(int[] input) {
         if (input.length == 0) {
             return input;
@@ -26,8 +26,8 @@ public class GetNextIntegerRepresentedInArray {
             sum = input[i] + carry;
             input[i] = sum > 9 ? sum - 10 : sum;
             carry = sum > 9 ? 1 : 0;
-            
-            //System.out.println("i = "+i+", sum = "+sum+", input[i] = "+input[i]+", carry = "+carry);
+
+            // System.out.println("i = "+i+", sum = "+sum+", input[i] = "+input[i]+", carry = "+carry);
         }
         if (carry == 0) {
             return input;

@@ -1,37 +1,33 @@
 package com.kv.LinkedList;
 
-
-/*
+/**
+ * 
+ * @author karanverma
+ * 
+ * Merge two sorted Linked List.
+ * 
  * Let head be the first node of the linked list to be sorted and headRef be the pointer to head. 
  * Note that we need a reference to head in MergeSort() as the below implementation changes next links to 
  * sort the linked lists (not data at the nodes), so head node has to be changed if the data at original 
  * head is not the smallest value in linked list.
- */
 
-/*
  * MergeSort(headRef)
-1) If head is NULL or there is only one element in the Linked List 
-    then return.
-2) Else divide the linked list into two halves.  
-      FrontBackSplit(head, &a, &b); // a and b are two halves 
-3) Sort the two halves a and b.
-      MergeSort(a);
-      MergeSort(b);
-4) Merge the sorted a and b (using SortedMerge() discussed here) 
-   and update the head pointer using headRef.
-     *headRef = SortedMerge(a, b);
+ * 1) If head is NULL or there is only one element in the Linked List then return.
+ * 2) Else divide the linked list into two halves.  
+ *      FrontBackSplit(head, &a, &b); // a and b are two halves 
+ * 3) Sort the two halves a and b.
+ *          MergeSort(a);
+ *          MergeSort(b);
+ * 4) Merge the sorted a and b (using SortedMerge() discussed here) and update the head pointer using headRef.
+ *          *headRef = SortedMerge(a, b);
+ *
  */
-
 public class MergeTwoSortedLinkedList {
 
 	Node head;
 	
 	public static void main(String[] args) {
 		MergeTwoSortedLinkedList li = new MergeTwoSortedLinkedList();
-        /*
-         * Let us create a unsorted linked lists to test the functions Created
-         * lists shall be a: 2->3->20->5->10->15
-         */
         li.push(15);
         li.push(10);
         li.push(5);
@@ -47,78 +43,75 @@ public class MergeTwoSortedLinkedList {
         li.printList(li.head);
 
 	}
-
 	
-	Node mergeSort(Node h) {
-		// Base case : if head is null
-		if (h == null || h.next == null) {
-			return h;
-		}
+    Node mergeSort(Node h) {
+        if (h == null || h.next == null) {
+            return h;
+        }
 
-		// get the middle of the list
-		Node middle = getMiddle(h);
-		Node nextofmiddle = middle.next;
+        // get the middle of the list
+        Node middle = getMiddle(h);
+        Node nextofmiddle = middle.next;
 
-		middle.next = null;
+        middle.next = null;
 
-		Node left = mergeSort(h);
+        Node left = mergeSort(h);
 
-		// Apply mergeSort on right list
-		Node right = mergeSort(nextofmiddle);
+        // Apply mergeSort on right list
+        Node right = mergeSort(nextofmiddle);
 
-		// Merge the left and right lists
-		Node sortedlist = sortedMerge(left, right);
-		return sortedlist;
-	}
-	
-	Node sortedMerge(Node a, Node b) 
-    {
+        // Merge the left and right lists
+        Node sortedlist = sortedMerge(left, right);
+        return sortedlist;
+    }
+
+    Node sortedMerge(Node a, Node b) {
         Node result = null;
         if (a == null)
             return b;
         if (b == null)
             return a;
- 
+
         /* Pick either a or b, and recur */
         if (a.data <= b.data) {
             result = a;
             result.next = sortedMerge(a.next, b);
-        } 
-        else {
+        } else {
             result = b;
             result.next = sortedMerge(a, b.next);
         }
         return result;
- 
+
     }
-	
-	Node getMiddle(Node h)  {
+
+    Node getMiddle(Node h) {
         if (h == null)
             return h;
         Node fastptr = h.next;
         Node slowptr = h;
-         
-        // Move fastptr by two and slow ptr by one Finally slowptr will point to middle node
+
+        // Move fastptr by two and slow ptr by one Finally slowptr will point to middle
+        // node
         while (fastptr != null) {
             fastptr = fastptr.next;
-            if(fastptr!=null) {
+            if (fastptr != null) {
                 slowptr = slowptr.next;
-                fastptr=fastptr.next;
+                fastptr = fastptr.next;
             }
         }
         return slowptr;
     }
-	
-	void push(int new_data) {
-		Node new_node = new Node(new_data);
-		new_node.next = head;
-		head = new_node;
-	}
 
-	void printList(Node headref) {
-		while (headref != null) {
-			System.out.print(headref.data + " ");
-			headref = headref.next;
-		}
-	}
+    void push(int new_data) {
+        Node new_node = new Node(new_data);
+        new_node.next = head;
+        head = new_node;
+    }
+
+    void printList(Node headref) {
+        while (headref != null) {
+            System.out.print(headref.data + " ");
+            headref = headref.next;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package com.kv.LinkedList;
 
+// wrong algo
 public class LengthOfCircularLinkedList {
 	
 	static Node head;
@@ -11,10 +12,10 @@ public class LengthOfCircularLinkedList {
         llist.push(4);
         llist.push(15);
         llist.push(10);
-        llist.push(20);
+        llist.push(30);
          
         /*Create loop for testing */
-        llist.head.next.next.next.next = llist.head;
+        llist.head.next.next.next = llist.head;
  
         System.out.println("Length = "+findLength(head));
         

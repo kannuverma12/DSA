@@ -1,5 +1,10 @@
 package com.kv.LinkedList;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class ImplementStackUsingLinkedList {
 	static Node top = null;
 	

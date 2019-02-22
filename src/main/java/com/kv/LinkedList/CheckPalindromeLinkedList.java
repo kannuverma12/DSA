@@ -35,6 +35,11 @@ package com.kv.LinkedList;
  * 
  * 
  */
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class CheckPalindromeLinkedList {
 	
 	Node head, fast_ptr, slow_ptr, second_half;
