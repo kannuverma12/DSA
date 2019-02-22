@@ -8,9 +8,9 @@ package com.kv.dp;
 
 /*
  * The Longest Increasing Subsequence problem is to find the longest increasing
- * subsequence of a given sequence. Given a sequence S= {a1 , a2 , a3, a4,
- * ............., an-1, an } we have to find a longest subset such that for all
- * j and i, j<i in the subset aj<ai.
+ * subsequence of a given sequence. Given a sequence 
+ *          S= {a1 , a2 , a3, a4, ............., an-1, an } 
+ * we have to find a longest subset such that for all j and i, j<i in the subset aj<ai.
  */
 public class LongestIncreasingSubsequence {
 
@@ -19,9 +19,10 @@ public class LongestIncreasingSubsequence {
 	public static void main(String[] args) {
 		int arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 };
 		int n = arr.length;
-		System.out.println("Length of lis is " + lis(arr, n) + "n");
+		System.out.println("Length of lis is " + lis(arr, n) );
 	}
 
+	//Method 1
 	static int lis(int[] arr, int n) {
 		max_ref = 1;
 		_lis(arr, n);
@@ -29,9 +30,9 @@ public class LongestIncreasingSubsequence {
 	}
 
 	/*
-	 * To make use of recursive calls, this function must return two things: 1)
-	 * Length of LIS ending with element arr[n-1]. We use max_ending_here for this
-	 * purpose 2) Overall maximum as the LIS may end with an element before arr[n-1]
+	 * To make use of recursive calls, this function must return two things: 
+	 * 1) Length of LIS ending with element arr[n-1]. We use max_ending_here for this purpose 
+	 * 2) Overall maximum as the LIS may end with an element before arr[n-1]
 	 * max_ref is used this purpose. The value of LIS of full array of size n is
 	 * stored in *max_ref which is our final result
 	 */

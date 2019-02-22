@@ -3,23 +3,17 @@ package com.kv.dp;
 /**
  * @author karan.verma
  *  Given an array, find the largest sum in a contiguous sub-array.
- */
-
-
-/*
- * Kadane’s Algorithm:
+ *  
+ *  Kadane’s Algorithm:
  * 
- *  Initialize:
-    max_so_far = 0
-    max_ending_here = 0
-
-    Loop for each element of the array
-      (a) max_ending_here = max_ending_here + a[i]
-      (b) if(max_ending_here < 0)
-                max_ending_here = 0
-      (c) if(max_so_far < max_ending_here)
-                max_so_far = max_ending_here
-    return max_so_far
+ *  Initialize: max_so_far = 0, max_ending_here = 0
+ *  Loop for each element of the array
+ *     (a) max_ending_here = max_ending_here + a[i]
+ *     (b) if(max_ending_here < 0)
+ *               max_ending_here = 0
+ *     (c) if(max_so_far < max_ending_here)
+ *               max_so_far = max_ending_here
+ *   return max_so_far
  * 
  * Explanation: Simple idea of the Kadane's algorithm is to look for all
  * positive contiguous segments of the array (max_ending_here is used for this).
@@ -31,9 +25,7 @@ public class LargestSumContiguousSubarray {
 
 	public static void main(String[] args) {
 		int [] a = {-2, -3, 4, -1, -2, 1, 5, -3};
-        System.out.println("Maximum contiguous sum is " +
-                                       maxSubArraySum(a));
-
+        System.out.println("Maximum contiguous sum is " + maxSubArraySum(a));
 	}
 
 	private static int maxSubArraySum(int[] n) {

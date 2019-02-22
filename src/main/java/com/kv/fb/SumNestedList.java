@@ -12,6 +12,27 @@ import java.util.List;
  */
 public class SumNestedList {
 
+    public static void main(String[] args) {
+        List<Object> list = new ArrayList<>();
+
+        list.add(8);
+        list.add(3);
+        list.add(2);
+
+        List<Object> inner1 = new ArrayList<>();
+        inner1.add(5);
+        inner1.add(6);
+
+        List<Object> inner2 = new ArrayList<>();
+        inner2.add(9);
+        inner1.add(inner2);
+
+        list.add(inner1);
+
+        list.add(6);
+
+        System.out.println(calculate(list, 1));
+    }
 
     public static int calculate(List<Object> a, int multiplier) {
         int sum = 0;
@@ -29,25 +50,4 @@ public class SumNestedList {
         return sum;
     }
 
-    public static void main(String[] args) {
-        List<Object> list  = new ArrayList<>();
-        
-            list.add(8);
-            list.add(3);
-            list.add(2);
-        
-            List<Object> inner1 = new ArrayList<>();
-            inner1.add(5);
-            inner1.add(6);
-        
-            List<Object> inner2 = new ArrayList<>();
-            inner2.add(9);
-            inner1.add(inner2);  
-        
-            list.add(inner1);
-        
-            list.add(6);
-        
-            System.out.println(calculate(list, 1));
-    }
 }

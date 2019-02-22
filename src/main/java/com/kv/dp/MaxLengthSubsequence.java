@@ -1,8 +1,9 @@
 package com.kv.dp;
-
-
-/*
- * Given an array of n integers. The problem is to find maximum length of the subsequence with difference
+/**
+ * 
+ * @author karanverma 
+ * 
+ *  Given an array of n integers. The problem is to find maximum length of the subsequence with difference
  *  between adjacent elements as either 0 or 1.
  */
 public class MaxLengthSubsequence {
@@ -37,8 +38,6 @@ public class MaxLengthSubsequence {
 			if(mls[i] > max)
 				max = mls[i];
 		}
-		
-			
 		
 		return max;
 	}

@@ -1,5 +1,10 @@
 package com.kv.pt;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class FindMissingElementInAP {
 
 	
@@ -23,21 +28,22 @@ public class FindMissingElementInAP {
 	}
 
 	private static Object findMissing(int[] arr, int low, int high, int diff) {
-		// TODO Auto-generated method stub
 		if(high <= low)
 			return Integer.MAX_VALUE;
 		int mid = low + (high -low)/2;
 		
-		if(arr[mid+1] - arr[mid] != diff)
+		if(arr[mid+1] - arr[mid] != diff) {
+		    System.out.println("arr[mid + diff] = "+arr[mid + diff]);
 			return arr[mid + diff];
+		}
 		
 		if(mid > 0 && (arr[mid] -arr[mid-1] != diff))
 			return arr[mid-1] + diff;
 		
-		
-		//If the middle 
-		 // element is equal to n/2th term in Arithmetic Series (Let n be the number of elements in input array), 
-		 // then missing element lies in right half
+		/*
+		 * If the middle element is equal to n/2th term in Arithmetic Series (Let n be the number of elements in input array), 
+		 * then missing element lies in right half
+		 * */
 		if(arr[mid] == arr[0]+mid*diff )
 			return findMissing(arr, mid+1, high, diff);
 		

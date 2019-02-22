@@ -8,6 +8,10 @@ public class StringRegex {
 
     public static void main(String[] args) {
         String str = "Yellow & Black)";
+        
+        String str1 = "{\"statusCode:\":\"R0006\",\"statusMessage:\":\"Some Error Occured\"}";
+        System.out.println(str1.replaceAll("[a-z:]", "[a-z]"));
+        
         String[] strArr = str.split(" ");
         for(String s: strArr) {
             //System.out.println(s+" has special chars "+(s.indexOf("[^A-Za-z0-9]")>=0)); 
@@ -30,9 +34,6 @@ public class StringRegex {
         kk = kk.replace("my", "your");
         System.out.println("kk = "+kk);
         
-        
-        
-
     }
 
 }

@@ -1,15 +1,18 @@
 package com.kv.dp;
 
-
-
 /**
  * 
  * @author karan.verma
- *
- */
-
-/*
- * Kadane’s algorithm for 1D array can be used to reduce the time complexity to O(n^3). The idea is to fix the left and right columns one by one and find the maximum sum contiguous rows for every left and right column pair. We basically find top and bottom row numbers (which have maximum sum) for every fixed left and right column pair. To find the top and bottom row numbers, calculate sun of elements in every row from left to right and store these sums in an array say temp[]. So temp[i] indicates sum of elements from left to right in row i. If we apply Kadane’s 1D algorithm on temp[], and get the maximum sum subarray of temp, this maximum sum would be the maximum possible sum with left and right as boundary columns. To get the overall maximum sum, we compare this sum with the maximum sum so far.
+ * 
+ * Kadane’s algorithm for 1D array can be used to reduce the time complexity to O(n^3). 
+ * The idea is to fix the left and right columns one by one and find the maximum sum 
+ * contiguous rows for every left and right column pair. We basically find top and bottom 
+ * row numbers (which have maximum sum) for every fixed left and right column pair. To find 
+ * the top and bottom row numbers, calculate sun of elements in every row from left to right 
+ * and store these sums in an array say temp[]. So temp[i] indicates sum of elements from left 
+ * to right in row i. If we apply Kadane’s 1D algorithm on temp[], and get the maximum sum subarray 
+ * of temp, this maximum sum would be the maximum possible sum with left and right as boundary 
+ * columns. To get the overall maximum sum, we compare this sum with the maximum sum so far.
  */
 public class MaxSumRectangleIn2DMatrix {
 
@@ -25,9 +28,7 @@ public class MaxSumRectangleIn2DMatrix {
 	}
 	
 	/**
-     * To find maxSum in 1d array
-     * 
-     * return {maxSum, left, right}
+     * To find maxSum in 1d array return {maxSum, left, right}
      */
     public static int[] kadane(int[] a) {
         //result[0] == maxSum, result[1] == start, result[2] == end;
