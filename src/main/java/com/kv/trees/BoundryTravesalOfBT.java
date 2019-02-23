@@ -15,25 +15,25 @@ package com.kv.trees;
  *	3. Print the right boundary in bottom-up manner.
  */
 public class BoundryTravesalOfBT {
-    Node root;
+    TreeNode root;
 
     public static void main(String[] args) {
         BoundryTravesalOfBT tree = new BoundryTravesalOfBT();
-        tree.root = new Node(20);
-        tree.root.left = new Node(8);
-        tree.root.left.left = new Node(4);
-        tree.root.left.right = new Node(12);
-        tree.root.left.right.left = new Node(10);
-        tree.root.left.right.right = new Node(14);
-        tree.root.right = new Node(22);
-        tree.root.right.right = new Node(25);
+        tree.root = new TreeNode(20);
+        tree.root.left = new TreeNode(8);
+        tree.root.left.left = new TreeNode(4);
+        tree.root.left.right = new TreeNode(12);
+        tree.root.left.right.left = new TreeNode(10);
+        tree.root.left.right.right = new TreeNode(14);
+        tree.root.right = new TreeNode(22);
+        tree.root.right.right = new TreeNode(25);
 
         tree.printBoundaryAntiClockWise(tree.root);
         // tree.printBoundaryClockWise(tree.root); //not working fine...need to be modified
 
     }
 
-    private void printBoundaryAntiClockWise(Node node) {
+    private void printBoundaryAntiClockWise(TreeNode node) {
         if (node != null) {
             System.out.println(node.data + " ");
 
@@ -49,7 +49,7 @@ public class BoundryTravesalOfBT {
 
     // A function to print all left boundry nodes, except a leaf node.
     // Print the nodes in TOP DOWN manner
-    private void printBoundryLeft(Node node) {
+    private void printBoundryLeft(TreeNode node) {
         if (node != null) {
             if (node.left != null) {
                 // to ensure top down order, print the node before calling itself for left subtree
@@ -66,7 +66,7 @@ public class BoundryTravesalOfBT {
 
     // A function to print all right boundry nodes, except a leaf node
     // Print the nodes in BOTTOM UP manner
-    private void printBoundryRight(Node node) {
+    private void printBoundryRight(TreeNode node) {
 
         if (node != null) {
             if (node.right != null) {
@@ -81,7 +81,7 @@ public class BoundryTravesalOfBT {
         }
     }
 
-    private void printLeaves(Node node) {
+    private void printLeaves(TreeNode node) {
         if (node != null) {
             printLeaves(node.left);
 
@@ -93,7 +93,7 @@ public class BoundryTravesalOfBT {
 
     }
 
-    private void printBoundaryClockWise(Node node) {
+    private void printBoundaryClockWise(TreeNode node) {
         if (node != null) {
             System.out.println(node.data + " ");
 

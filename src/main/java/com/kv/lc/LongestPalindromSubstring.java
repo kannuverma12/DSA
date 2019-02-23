@@ -1,12 +1,14 @@
 package com.kv.lc;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class LongestPalindromSubstring {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        
         System.out.println(longestPalindrome("aabaabbc"));
-
     }
     
     public static String longestPalindrome(String s) {

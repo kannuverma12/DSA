@@ -10,13 +10,14 @@ import java.util.Stack;
  *  Valid operators are +, -, *, /. Each operand may be an integer or another expression.
  *  Note:
  *  Division between two integers should truncate toward zero.
- *  The given RPN expression is always valid. That means the expression would always evaluate to a result and there won't be any divide by zero operation.
+ *  The given RPN expression is always valid. That means the expression would always evaluate 
+ *  to a result and there won't be any divide by zero operation.
  *  
  *  Input: ["2", "1", "+", "3", "*"]
  *  Output: 9
  *  Explanation: ((2 + 1) * 3) = 9
  */
-public class EvaluateReverseolishNotation {
+public class EvaluateReversePolishNotation {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub

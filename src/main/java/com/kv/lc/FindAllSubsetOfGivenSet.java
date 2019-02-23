@@ -1,8 +1,9 @@
 package com.kv.lc;
 
-
-
-/*
+/**
+ * 
+ * @author karanverma
+ *
  * Starting from right, 1 at ith position shows that the ith element of the set is present 
  * as 0 shows that the element is absent. Therefore, what we have to do is just generate 
  * the binary numbers from 0 to 2^n – 1, where n is the length of the set or the numbers of 
@@ -20,7 +21,7 @@ public class FindAllSubsetOfGivenSet {
 
 	private static void printSubsets(char[] set) {
 		int n = set.length;
-		System.out.println("n = "+n+" << = "+(1<<n));
+		//System.out.println("n = "+n+" << = "+(1<<n) +" and result = " +(1 & 1));
 		// Run a loop for printing all 2^n subsets one by one
 		for (int i = 0; i < (1<<n); i++) {
 			System.out.print("{");

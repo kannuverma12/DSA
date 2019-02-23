@@ -35,22 +35,22 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
             return null;
         }
 
-        int val = preorder[preStart];
-        TreeNode p = new TreeNode(val);
+        int rootVal = preorder[preStart];
+        TreeNode root = new TreeNode(rootVal);
 
         // find parent element index from inorder
         int k = 0;
         for (int i = 0; i < inorder.length; i++) {
-            if (val == inorder[i]) {
+            if (rootVal == inorder[i]) {
                 k = i;
                 break;
             }
         }
 
-        p.left = construct(preorder, preStart + 1, preStart + (k - inStart), inorder, inStart, k - 1);
-        p.right = construct(preorder, preStart + (k - inStart) + 1, preEnd, inorder, k + 1, inEnd);
+        root.left = construct(preorder, preStart + 1, preStart + (k - inStart), inorder, inStart, k - 1);
+        root.right = construct(preorder, preStart + (k - inStart) + 1, preEnd, inorder, k + 1, inEnd);
 
-        return p;
+        return root;
     }
 
     static public class TreeNode {

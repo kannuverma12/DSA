@@ -18,7 +18,7 @@ public class FindLeastCommonAncestor {
 	 * common ancestor.
 	 */
 	
-	static Node root;
+	static TreeNode root;
     private List<Integer> path1 = new ArrayList<>();
     private List<Integer> path2 = new ArrayList<>();
 
@@ -26,13 +26,13 @@ public class FindLeastCommonAncestor {
 		
 		System.out.println("*********** Method 1 ************");
 		FindLeastCommonAncestor tree = new FindLeastCommonAncestor();
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        tree.root.left.left = new Node(4);
-        tree.root.left.right = new Node(5);
-        tree.root.right.left = new Node(6);
-        tree.root.right.right = new Node(7);
+        tree.root = new TreeNode(1);
+        tree.root.left = new TreeNode(2);
+        tree.root.right = new TreeNode(3);
+        tree.root.left.left = new TreeNode(4);
+        tree.root.left.right = new TreeNode(5);
+        tree.root.right.left = new TreeNode(6);
+        tree.root.right.right = new TreeNode(7);
  
         System.out.println("LCA(4, 5): " + tree.findLCA(4,5));
         System.out.println("LCA(4, 6): " + tree.findLCA(4,6));
@@ -47,13 +47,13 @@ public class FindLeastCommonAncestor {
         System.out.println("*********** Method 2 ************");
         
         FindLeastCommonAncestor tree2 = new FindLeastCommonAncestor();
-        tree2.root = new Node(1);
-        tree2.root.left = new Node(2);
-        tree2.root.right = new Node(3);
-        tree2.root.left.left = new Node(4);
-        tree2.root.left.right = new Node(5);
-        tree2.root.right.left = new Node(6);
-        tree2.root.right.right = new Node(7);
+        tree2.root = new TreeNode(1);
+        tree2.root.left = new TreeNode(2);
+        tree2.root.right = new TreeNode(3);
+        tree2.root.left.left = new TreeNode(4);
+        tree2.root.left.right = new TreeNode(5);
+        tree2.root.right.left = new TreeNode(6);
+        tree2.root.right.right = new TreeNode(7);
         System.out.println("LCA(4, 5) = " +
                             tree2.findLCA2(4, 5).data);
         System.out.println("LCA(4, 6) = " +
@@ -68,7 +68,7 @@ public class FindLeastCommonAncestor {
         
         System.out.println();
         System.out.println("*********** Method 3 IDeserve ************");
-        Node lca = tree.getLCA(tree.root, tree2.root.left.right, tree2.root.left.left);
+        TreeNode lca = tree.getLCA(tree.root, tree2.root.left.right, tree2.root.left.left);
         System.out.println("LCA(3, 6) = " +lca.data);
 	}
 	
@@ -85,7 +85,7 @@ public class FindLeastCommonAncestor {
         return findLCAInternal(root, n1, n2);
     }
 	
-	private int findLCAInternal(Node root, int n1, int n2) {
+	private int findLCAInternal(TreeNode root, int n1, int n2) {
 		 
         if (!findPath(root, n1, path1) || !findPath(root, n2, path2)) {
             System.out.println((path1.size() > 0) ? "n1 is present" : "n1 is missing");
@@ -103,7 +103,7 @@ public class FindLeastCommonAncestor {
         return path1.get(i-1);
     }
 	
-	private boolean findPath(Node root, int n, List<Integer> path)
+	private boolean findPath(TreeNode root, int n, List<Integer> path)
     {
         if (root == null) {
             return false;
@@ -138,12 +138,12 @@ public class FindLeastCommonAncestor {
 		lies in right subtree.
 	 */
 	
-	Node findLCA2(int n1, int n2)
+	TreeNode findLCA2(int n1, int n2)
     {
         return findLCA2(root, n1, n2);
     }
 	
-	Node findLCA2(Node node, int n1, int n2)
+	TreeNode findLCA2(TreeNode node, int n1, int n2)
     {
         if (node == null)
             return null;
@@ -155,8 +155,8 @@ public class FindLeastCommonAncestor {
             return node;
  
         // Look for keys in left and right subtrees
-        Node left_lca = findLCA2(node.left, n1, n2);
-        Node right_lca = findLCA2(node.right, n1, n2);
+        TreeNode left_lca = findLCA2(node.left, n1, n2);
+        TreeNode right_lca = findLCA2(node.right, n1, n2);
  
         // If both of the above calls return Non-NULL, then one key
         // is present in once subtree and other is present in other,
@@ -170,14 +170,14 @@ public class FindLeastCommonAncestor {
 	
 	
 	// Method 3
-	 Node getLCA(Node curr, Node a, Node b) {
+	 TreeNode getLCA(TreeNode curr, TreeNode a, TreeNode b) {
 		if(curr == null)
 			return null;
 		if(curr == a || curr == b)
 			return curr;
 		
-		Node left = getLCA(curr.left, a, b);
-		Node right = getLCA(curr.right, a, b);
+		TreeNode left = getLCA(curr.left, a, b);
+		TreeNode right = getLCA(curr.right, a, b);
 		
 		if(left != null && right != null)
 			return curr;

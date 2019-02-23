@@ -97,8 +97,8 @@ public class CopyListWithRandomPointer {
     
     static class RandomListNode {
         int label;
-             RandomListNode next, random;
-             RandomListNode(int x) { this.label = x; }
-         };
+        RandomListNode next, random;
+        RandomListNode(int x) { this.label = x; }
+    };
 
 }

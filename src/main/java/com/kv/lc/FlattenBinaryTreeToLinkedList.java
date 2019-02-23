@@ -49,6 +49,7 @@ public class FlattenBinaryTreeToLinkedList {
  
             p = p.right;
         }
+        
     }
     
     static class TreeNode {

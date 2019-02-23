@@ -1,9 +1,14 @@
 package com.kv.lc;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class MedianOfTwoSortedArray {
 
     public static void main(String[] args) {
-        int arr1[] = {900};  
+        int arr1[] = {9, 15};  
         int arr2[] = {5, 8, 10, 20};  
         
         System.out.println(getMedian(arr1, arr2, arr1.length, arr2.length));

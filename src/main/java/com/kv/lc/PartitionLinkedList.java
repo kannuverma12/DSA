@@ -48,7 +48,6 @@ public class PartitionLinkedList {
                 p = p.next;
                 prev = prev.next;
             } else {
-
                 p2.next = p;
                 prev.next = p.next;
 
@@ -56,7 +55,6 @@ public class PartitionLinkedList {
                 p2 = p2.next;
             }
         }
-
         // close the list
         p2.next = null;
 

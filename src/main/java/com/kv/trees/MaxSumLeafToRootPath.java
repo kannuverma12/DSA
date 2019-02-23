@@ -20,17 +20,17 @@ public class MaxSumLeafToRootPath {
      * 
      */
 
-    Node root;
-    Node target_leaf = null;
+    TreeNode root;
+    TreeNode target_leaf = null;
     int max = Integer.MIN_VALUE;
 
     public static void main(String[] args) {
         MaxSumLeafToRootPath tree = new MaxSumLeafToRootPath();
-        tree.root = new Node(10);
-        tree.root.left = new Node(-2);
-        tree.root.right = new Node(7);
-        tree.root.left.left = new Node(8);
-        tree.root.left.right = new Node(-4);
+        tree.root = new TreeNode(10);
+        tree.root.left = new TreeNode(-2);
+        tree.root.right = new TreeNode(7);
+        tree.root.left.left = new TreeNode(8);
+        tree.root.left.right = new TreeNode(-4);
         System.out.println("Following are the nodes on maximum sum path");
         int sum = tree.maxSumPath();
         System.out.println("");
@@ -53,7 +53,7 @@ public class MaxSumLeafToRootPath {
 
     // This function Sets the target_leaf_ref to refer the leaf node of the maximum
     // path sum. Also, returns the max_sum using max_sum_ref
-    private void getTargetLeaf(Node node, int max2, int curr_sum) {
+    private void getTargetLeaf(TreeNode node, int max2, int curr_sum) {
         if (node == null)
             return;
         // Update current sum to hold sum of nodes on path from root to this node
@@ -76,7 +76,7 @@ public class MaxSumLeafToRootPath {
     }
 
     // A utility function that prints all nodes on the path from root to target_leaf
-    private boolean printPath(Node node, Node target_leaf) {
+    private boolean printPath(TreeNode node, TreeNode target_leaf) {
         if (node == null)
             return false;
 

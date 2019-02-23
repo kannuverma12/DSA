@@ -18,14 +18,14 @@ public class FindDistanceBtwTwoNodesInBT {
 	static int dist = 0;
 
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
-		root.right.left.right = new Node(8);
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		root.right.left = new TreeNode(6);
+		root.right.right = new TreeNode(7);
+		root.right.left.right = new TreeNode(8);
 
 		System.out.println("Dist(4, 5) = " + findDistance(root, 4, 5));
 		System.out.println("Dist(4, 6) = " + findDistance(root, 4, 6));
@@ -37,11 +37,11 @@ public class FindDistanceBtwTwoNodesInBT {
 
 	// The main function that returns distance between n1 and n2
 	// This function returns -1 if either n1 or n2 is not present in Binary Tree.
-	static int findDistance(Node root, int n1, int n2) {
+	static int findDistance(TreeNode root, int n1, int n2) {
 		d1 = -1;
 		d2 = -1;
 		dist = 0;
-		Node lca = findDistUtil(root, n1, n2, 1);
+		TreeNode lca = findDistUtil(root, n1, n2, 1);
 
 		// If both n1 and n2 were present in Binary Tree, return dist
 		if (d1 != -1 && d2 != -1)
@@ -68,7 +68,7 @@ public class FindDistanceBtwTwoNodesInBT {
 	// d2 --> To store distance of n2 from root
 	// lvl --> Level (or distance from root) of current node
 	// dist --> To store distance between n1 and n2
-	static Node findDistUtil(Node root, int n1, int n2, int lvl) {
+	static TreeNode findDistUtil(TreeNode root, int n1, int n2, int lvl) {
 
 		if (root == null)
 			return null;
@@ -85,8 +85,8 @@ public class FindDistanceBtwTwoNodesInBT {
 		}
 
 		// Look for n1 and n2 in left and right subtrees
-		Node left_lca = findDistUtil(root.left, n1, n2, lvl + 1);
-		Node right_lca = findDistUtil(root.right, n1, n2, lvl + 1);
+		TreeNode left_lca = findDistUtil(root.left, n1, n2, lvl + 1);
+		TreeNode right_lca = findDistUtil(root.right, n1, n2, lvl + 1);
 
 		// If both of the above calls return Non-NULL, then one key is present in once
 		// subtree and other is present in other, So this node is the LCA
@@ -100,7 +100,7 @@ public class FindDistanceBtwTwoNodesInBT {
 	}
 
 	// Returns level of key k if it is present in tree,otherwise returns -1
-	static int findLevel(Node root, int k, int level) {
+	static int findLevel(TreeNode root, int k, int level) {
 		// Base Case
 		if (root == null)
 			return -1;

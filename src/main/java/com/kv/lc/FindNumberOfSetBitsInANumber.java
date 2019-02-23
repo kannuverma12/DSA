@@ -40,6 +40,7 @@ public class FindNumberOfSetBitsInANumber {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
+        System.out.println("left shift 2 by 0 : "+(1<<1));
     }
 
 }

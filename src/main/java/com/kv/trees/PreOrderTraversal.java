@@ -3,14 +3,14 @@ package com.kv.trees;
 public class PreOrderTraversal {
 
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
 		
 		preOrderTraversal(root);
 	}
 
-	private static void preOrderTraversal(Node root) {
+	private static void preOrderTraversal(TreeNode root) {
 		if(root != null) {
 			System.out.println(root.data);
 			preOrderTraversal(root.left);

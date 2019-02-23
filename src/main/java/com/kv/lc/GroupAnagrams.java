@@ -45,22 +45,22 @@ public class GroupAnagrams {
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         for(String str: strs){
             char[] arr = new char[26];
-            System.out.println("str : "+str);
+            //System.out.println("str : "+str);
             for(int i=0; i<str.length(); i++){
                 int index = str.charAt(i)-'a';
-                System.out.println("index = "+index+", arr[index] = "+arr[index]);
+                //System.out.println("index = "+index+", arr[index] = "+arr[index]);
                 arr[index]++;
-                System.out.println("after arr[index] = "+new String(""+(char)arr[index]));
+                //System.out.println("after arr[index] = "+new String(""+(char)arr[index]));
             }
             String ns = new String(arr);
-            System.out.println("arr = "+Arrays.toString(arr)+", ns = "+ns);
+            //System.out.println("arr = "+Arrays.toString(arr)+", ns = "+ns + ", value of = "+String.copyValueOf(arr));
      
             if(map.containsKey(ns)){
-                System.out.println("contains key ns = "+ns);
+                //System.out.println("contains key ns = "+ns);
                 map.get(ns).add(str);
             }else{
                 ArrayList<String> al = new ArrayList<String>();
-                System.out.println("new ns = "+ns);
+                //System.out.println("new ns = "+ns);
                 al.add(str);
                 map.put(ns, al);
             }

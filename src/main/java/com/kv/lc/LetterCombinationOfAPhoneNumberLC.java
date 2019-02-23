@@ -8,9 +8,10 @@ import java.util.List;
 /**
  * 
  * @author karanverma 
+ * 
  *         Given a digit string, return all possible letter
  *         combinations that the number could represent. (Check out your
- *         cellphone to see the mappings) Input:Digit string "23", Output:
+ *         cell phone to see the mappings) Input:Digit string "23", Output:
  *         ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
  */
 public class LetterCombinationOfAPhoneNumberLC {
@@ -21,10 +22,7 @@ public class LetterCombinationOfAPhoneNumberLC {
      */
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         System.out.println(Arrays.toString(letterCombinations("23").toArray()));
-        ;
-
     }
 
     public static List<String> letterCombinations(String digits) {

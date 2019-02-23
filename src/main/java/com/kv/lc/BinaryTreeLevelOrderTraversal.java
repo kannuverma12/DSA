@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 
@@ -42,7 +43,7 @@ public class BinaryTreeLevelOrderTraversal {
      
         nodeQueue.offer(root);
         levelQueue.offer(1);//start from 1
-     
+        
         while(!nodeQueue.isEmpty()){
             TreeNode node = nodeQueue.poll();
             int level = levelQueue.poll();
@@ -69,6 +70,27 @@ public class BinaryTreeLevelOrderTraversal {
         }
      
         return result;
+    }
+    
+    // basic algorithm is this
+    private static void levelOrderTravesal(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        
+        if(root == null)
+            return;
+        
+        q.add(root);
+        
+        while(!q.isEmpty()) {
+            TreeNode temp = q.poll();
+            System.out.println(temp.val);
+            
+            if(temp.left != null)
+                q.add(temp.left);
+            if(temp.right != null)
+                q.add(temp.right);
+        }
+        
     }
     
     public List<List<Integer>> levelOrder(TreeNode root) {

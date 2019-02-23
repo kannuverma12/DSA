@@ -3,9 +3,17 @@ package com.kv.lc;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author karanverma
+ * 
+ * Given an integer, print an English phrase that describes the integer
+ *   (eg, "Two hundred and thirty four", “One Thousand, Two Hundred and Thirty Four”)
+ *   
+ *   Duplicate of NumberToEnglishPhrase.java
+ *
+ */
 public class ConvertIntegerToWords {
-
-    
 
     static int CRORE = 10000000;
     static int LAKH = 100000;
@@ -21,9 +29,45 @@ public class ConvertIntegerToWords {
     static String[] tens = {"","","twenty", "thirty", "forty", "fifty" ,"sixty", "seventy", "eighty", "ninety"};    
     
     public static void main(String[] args) {
-        
         String num = "10120000";
         parseNumbers(num);
+        
+        // use this
+        convertIntoWordsUsingRecursion(Long.parseLong(num));
+    }
+    
+    private static String convertIntoWordsUsingRecursion(long number) {
+        if (number == 0)
+            return "zero";
+        if (number < 0)
+            return "minus " + convertIntoWordsUsingRecursion(Math.abs(number));
+        String words = "";
+        if ((number / 10000000) > 0) {
+            words += convertIntoWordsUsingRecursion(number / 10000000) + " crores ";
+            number %= 10000000;
+        }
+        if ((number / 100000) > 0) {
+            words += convertIntoWordsUsingRecursion(number / 100000) + " lacs ";
+            number %= 100000;
+        }
+        if ((number / 1000) > 0) {
+            words += convertIntoWordsUsingRecursion(number / 1000) + " thousand ";
+            number %= 1000;
+        }
+        if ((number / 100) > 0) {
+            words += convertIntoWordsUsingRecursion(number / 100) + " hundred ";
+            number %= 100;
+        }
+        if (number > 0) {
+            if (number < 20)
+                words += ones[(int) number];
+            else {
+                words += tens[(int) number / 10];
+                if ((number % 10) > 0)
+                    words += " " + ones[(int) number % 10];
+            }
+        }
+        return words;
     }
 
     private static String parseNumbers(String num) {
@@ -71,6 +115,7 @@ public class ConvertIntegerToWords {
         return null;
     }
 
+    // logic in block is not good practice 
     private static String convertToWords(int num) {
         String w = null;
         try {

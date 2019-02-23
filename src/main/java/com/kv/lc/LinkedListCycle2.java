@@ -1,9 +1,5 @@
 package com.kv.lc;
 
-import com.kv.lc.MergeTwoSortedLinkedListLC.ListNode;
-
-import ch.qos.logback.core.pattern.parser.Node;
-
 /**
  * 
  * @author karanverma
@@ -30,6 +26,7 @@ public class LinkedListCycle2 {
         l2.push(3);
         l2.push(7);
         System.out.println("l2");
+        l2.head.next = l2.head.next.next.next;
         l2.printList(l2.head);
         
         System.out.println("Merged l1 and l2");

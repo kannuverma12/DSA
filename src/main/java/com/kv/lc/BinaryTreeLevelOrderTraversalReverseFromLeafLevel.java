@@ -5,7 +5,16 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BinaryTreeLevelOrderTraversal2 {
+/**
+ * 
+ * @author karanverma
+ *
+ *  Given a binary tree, return the level order traversal of its nodes' values. 
+ *  (ie, from left to right, level by level).
+ *  
+ *  Return the list in reverse manner from lowest level
+ */
+public class BinaryTreeLevelOrderTraversalReverseFromLeafLevel {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);

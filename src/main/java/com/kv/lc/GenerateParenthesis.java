@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 
+ * @author karanverma
+ *
+ */
 public class GenerateParenthesis {
 
     public static void main(String[] args) {

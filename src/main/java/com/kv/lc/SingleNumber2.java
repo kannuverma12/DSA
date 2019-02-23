@@ -17,6 +17,7 @@ public class SingleNumber2 {
     public static void main(String[] args) {
         int[] arr = {2,2,3,2};
         System.out.println("Single number : "+singleNumber(arr));
+        //System.out.println("Single number  2: "+singleNumberOthersNumberTwice(arr));
     }
     
     // important trick
@@ -42,7 +43,7 @@ public class SingleNumber2 {
      * 
      */
     
-    public int singleNumberOthersNumberTwice(int[] A) {
+    public static int singleNumberOthersNumberTwice(int[] A) {
         int x = 0;
         for (int a : A) {
             x = x ^ a;

@@ -9,15 +9,15 @@ package com.kv.trees;
 public class MirrorOfBinaryTree {
 	//https://www.geeksforgeeks.org/write-an-efficient-c-function-to-convert-a-tree-into-its-mirror-tree/
 
-    static Node root;
+    static TreeNode root;
     
 	public static void main(String[] args) {
 	    MirrorOfBinaryTree tree = new MirrorOfBinaryTree(); 
-        tree.root = new Node(1); 
-        tree.root.left = new Node(2); 
-        tree.root.right = new Node(3); 
-        tree.root.left.left = new Node(4); 
-        tree.root.left.right = new Node(5); 
+        tree.root = new TreeNode(1); 
+        tree.root.left = new TreeNode(2); 
+        tree.root.right = new TreeNode(3); 
+        tree.root.left.left = new TreeNode(4); 
+        tree.root.left.right = new TreeNode(5); 
   
         /* print inorder traversal of the input tree */
         System.out.println("Inorder traversal of input tree is :"); 
@@ -33,11 +33,11 @@ public class MirrorOfBinaryTree {
 
 	}
 	
-	Node mirror(Node node){
+	TreeNode mirror(TreeNode node){
 	    if(node == null)
 	        return node;
-	    Node left = mirror(node.left);
-	    Node right = mirror(node.right);
+	    TreeNode left = mirror(node.left);
+	    TreeNode right = mirror(node.right);
 	    
 	    node.right = left;
 	    node.left = right;
@@ -45,7 +45,7 @@ public class MirrorOfBinaryTree {
 	    return node;
 	}
 	
-	void inOrder(Node node) {
+	void inOrder(TreeNode node) {
 	    if(node == null)
 	        return;
 	    

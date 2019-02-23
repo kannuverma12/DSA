@@ -56,8 +56,8 @@ public class GasStation {
     }
     
     public static int canCompleteCircuit(int[] gas, int[] cost) {
-        int sumRemaining = 0; // track current remaining
-        int total = 0; // track total remaining
+        int sumRemaining = 0;   // track current remaining
+        int total = 0;          // track total remaining
         int start = 0; 
      
         for (int i = 0; i < gas.length; i++) {

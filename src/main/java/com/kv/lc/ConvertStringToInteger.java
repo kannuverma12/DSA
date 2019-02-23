@@ -18,17 +18,40 @@ public class ConvertStringToInteger {
      */
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        System.out.println("toInt method : "+toInt("-5.87-gd5"));
+        
+        System.out.println("atoi method : "+atoi("-5.78-gd"));
     }
     
-    public int atoi(String str) {
+    // Best Solution Leetcode solution |
+    public static int toInt(String str) {
+        int i = 0;
+        int num = 0;
+        boolean isNeg = false;
+
+        // Check for negative sign; if it's there, set the isNeg flag
+        if (str.charAt(0) == '-') {
+            isNeg = true;
+            i = 1;
+        }
+
+        // Process each character of the string;
+        while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+            num *= 10;
+            num += str.charAt(i++) - '0'; // Minus the ASCII code of '0' to get the value of the charAt(i++).
+        }
+
+        if (isNeg)
+            num = -num;
+        return num;
+    }
+    
+    // method 2
+    public static int atoi(String str) {
         if (str == null || str.length() < 1)
             return 0;
      
-        // trim white spaces
         str = str.trim();
-     
         char flag = '+';
      
         // check negative or positive
@@ -62,6 +85,10 @@ public class ConvertStringToInteger {
      
         return (int) result;
     }
+    
+    
+    
+    
     
     static int kvImplementation(String str) {
         str = str.trim();

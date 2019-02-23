@@ -12,20 +12,20 @@ import java.util.Queue;
 public class FindMaxInBinaryTree {
 
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		root.right.left = new TreeNode(6);
+		root.right.right = new TreeNode(7);
 		
 		System.out.println(findMaxInBT(root));
 		
 		System.out.println(findMaxInBTWithoutRecursion(root));
 	}
 
-    private static int findMaxInBT(Node root) {
+    private static int findMaxInBT(TreeNode root) {
         int root_val, left, right, max = Integer.MIN_VALUE;
         if (root != null) {
             root_val = root.data;
@@ -45,11 +45,11 @@ public class FindMaxInBinaryTree {
         return max;
     }
 
-    private static int findMaxInBTWithoutRecursion(Node root) {
-        Node temp;
+    private static int findMaxInBTWithoutRecursion(TreeNode root) {
+        TreeNode temp;
         int max = Integer.MIN_VALUE;
 
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.add(root);
 
         while (!q.isEmpty()) {

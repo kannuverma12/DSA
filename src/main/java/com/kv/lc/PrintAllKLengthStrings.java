@@ -1,6 +1,11 @@
 package com.kv.lc;
 
-//Java program to print all possible strings of length k
+/**
+ * 
+ * @author karanverma
+ *
+ *Java program to print all possible strings of length k
+ */
 public class PrintAllKLengthStrings {
 
 	// Driver method to test below methods

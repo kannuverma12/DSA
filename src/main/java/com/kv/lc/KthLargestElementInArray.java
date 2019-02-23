@@ -43,10 +43,12 @@ public class KthLargestElementInArray {
          */
         PriorityQueue<Integer> q = new PriorityQueue<Integer>(k);
         for(int i: nums){
+            //System.out.println("i = "+i);
             q.offer(i);
      
             if(q.size()>k){
-                q.poll();
+                int x = q.poll();
+                //System.out.println("polled x = "+x);
             }
         }
      

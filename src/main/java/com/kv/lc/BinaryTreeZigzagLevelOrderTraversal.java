@@ -6,7 +6,8 @@ import java.util.Stack;
  * 
  * @author karanverma
  *
- *  Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+ *  Given a binary tree, return the zigzag level order traversal of its nodes' values. 
+ *  (ie, from left to right, then right to left for the next level and alternate between).
  *  For example:
  *  Given binary tree [3,9,20,null,null,15,7],
  *       3
@@ -21,24 +22,23 @@ import java.util.Stack;
 public class BinaryTreeZigzagLevelOrderTraversal {
 
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree(); 
-        tree.rootNode = new Node(1); 
-        tree.rootNode.leftChild = new Node(2); 
-        tree.rootNode.rightChild = new Node(3); 
-        tree.rootNode.leftChild.leftChild = new Node(7); 
-        tree.rootNode.leftChild.rightChild = new Node(6); 
-        tree.rootNode.rightChild.leftChild = new Node(5); 
-        tree.rootNode.rightChild.rightChild = new Node(4); 
-      
-        System.out.println("ZigZag Order traversal of binary tree is"); 
-        tree.printZigZagTraversal(); 
+        BinaryTree tree = new BinaryTree();
+        tree.rootNode = new Node(1);
+        tree.rootNode.leftChild = new Node(2);
+        tree.rootNode.rightChild = new Node(3);
+        tree.rootNode.leftChild.leftChild = new Node(7);
+        tree.rootNode.leftChild.rightChild = new Node(6);
+        tree.rootNode.rightChild.leftChild = new Node(5);
+        tree.rootNode.rightChild.rightChild = new Node(4);
+
+        System.out.println("ZigZag Order traversal of binary tree is");
+        tree.printZigZagTraversal();
     }
-    
+
     static class BinaryTree {
         Node rootNode;
 
-        // function to print the
-        // zigzag traversal
+        // function to print the zigzag traversal
         void printZigZagTraversal() {
 
             // if null then return

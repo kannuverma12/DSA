@@ -11,13 +11,13 @@ import java.util.Queue;
 public class FindElementInBinaryTree {
 
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		root.right.left = new TreeNode(6);
+		root.right.right = new TreeNode(7);
 		
 		System.out.println(findElementInBT(root, 1));
 		
@@ -26,7 +26,7 @@ public class FindElementInBinaryTree {
 	}
 
 	//Using Recursion
-	private static boolean findElementInBT(Node root, int data) {
+	private static boolean findElementInBT(TreeNode root, int data) {
         boolean temp;
         if(root == null)
             return false;
@@ -44,9 +44,9 @@ public class FindElementInBinaryTree {
     }
 	
 	// it can be done using a queue
-	private static boolean findElementInBTWithoutRecursion(Node root1, int data) {
-		Node temp;
-		Queue<Node> q = new LinkedList<Node>();
+	private static boolean findElementInBTWithoutRecursion(TreeNode root1, int data) {
+		TreeNode temp;
+		Queue<TreeNode> q = new LinkedList<TreeNode>();
 		if(root1 == null) return false;
 		q.add(root1);
 		while(!q.isEmpty()) {

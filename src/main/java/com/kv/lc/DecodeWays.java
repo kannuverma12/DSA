@@ -21,7 +21,7 @@ public class DecodeWays {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        System.out.println(numDecodings("112"));
+        System.out.println(numDecodings("20"));
     }
     
     public static int numDecodings(String s) {

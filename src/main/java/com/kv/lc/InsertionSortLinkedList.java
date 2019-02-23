@@ -5,19 +5,39 @@ package com.kv.lc;
  * 
  * @author karanverma
  *
- *  ort a linked list using insertion sort.
+ *  Sort a linked list using insertion sort.
  *  
  *  A graphical example of insertion sort. The partial sorted list (black) initially contains only the first element in the list.
  *  With each iteration one element (red) is removed from the input data and inserted in-place into the sorted list
+ *  
  *  Algorithm of Insertion Sort:
  *  Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list
- *  At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.
+ *  At each iteration, insertion sort removes one element from the input data, finds the location it belongs
+ *  within the sorted list, and inserts it there.
  *  It repeats until no input elements remain.
  *  
  *  Input: 4->2->1->3
  *  Output: 1->2->3->4
  */
 public class InsertionSortLinkedList {
+    
+    public static void main(String[] args) {
+        ListNode n1 = new ListNode(2);
+        ListNode n2 = new ListNode(3);
+        ListNode n3 = new ListNode(4);
+        ListNode n4 = new ListNode(3);
+        ListNode n5 = new ListNode(4);
+        ListNode n6 = new ListNode(5);
+
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+
+        n1 = insertionSortList(n1);
+        printList(n1);
+    }
 
     public static ListNode insertionSortList(ListNode head) {
 
@@ -61,27 +81,6 @@ public class InsertionSortLinkedList {
         }
 
         return newHead;
-    }
-
-    public static void main(String[] args) {
-        ListNode n1 = new ListNode(2);
-        ListNode n2 = new ListNode(3);
-        ListNode n3 = new ListNode(4);
-
-        ListNode n4 = new ListNode(3);
-        ListNode n5 = new ListNode(4);
-        ListNode n6 = new ListNode(5);
-
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        n4.next = n5;
-        n5.next = n6;
-
-        n1 = insertionSortList(n1);
-
-        printList(n1);
-
     }
 
     public static void printList(ListNode x) {

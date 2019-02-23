@@ -19,20 +19,20 @@ import java.util.Queue;
 public class LevelOrderTraversal {
 
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		root.right.left = new TreeNode(6);
+		root.right.right = new TreeNode(7);
 		
 		levelOrderTravesal(root);
 
 	}
 
-	private static void levelOrderTravesal(Node root) {
-		Queue<Node> q = new LinkedList<Node>();
+	private static void levelOrderTravesal(TreeNode root) {
+		Queue<TreeNode> q = new LinkedList<TreeNode>();
 		
 		if(root == null)
 			return;
@@ -40,7 +40,7 @@ public class LevelOrderTraversal {
 		q.add(root);
 		
 		while(!q.isEmpty()) {
-			Node temp = q.poll();
+			TreeNode temp = q.poll();
 			System.out.println(temp.data);
 			
 			if(temp.left != null)

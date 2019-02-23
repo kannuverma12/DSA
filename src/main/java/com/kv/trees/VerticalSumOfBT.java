@@ -10,20 +10,20 @@ import java.util.Map;
  *         vertical line. Print all sums through different vertical lines.
  */
 public class VerticalSumOfBT {
-    private Node root;
+    private TreeNode root;
 
-    public VerticalSumOfBT(Node node) {
+    public VerticalSumOfBT(TreeNode node) {
         this.root = node;
     }
 
     public static void main(String[] args) {
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = (new Node(3));
-        root.left.left = (new Node(4));
-        root.left.right = (new Node(5));
-        root.right.left = (new Node(6));
-        root.right.right = (new Node(7));
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = (new TreeNode(3));
+        root.left.left = (new TreeNode(4));
+        root.left.right = (new TreeNode(5));
+        root.right.left = (new TreeNode(6));
+        root.right.right = (new TreeNode(7));
         VerticalSumOfBT t = new VerticalSumOfBT(root);
 
         System.out.println("********* Method 1 : Using HashMap ************");
@@ -35,13 +35,13 @@ public class VerticalSumOfBT {
         System.out.println();
         System.out.println("********* Method 2 : Using Doubly Linked List ************");
 
-        Node root1 = new Node(1);
-        root1.left = new Node(2);
-        root1.right = new Node(3);
-        root1.left.left = new Node(4);
-        root1.left.right = new Node(5);
-        root1.right.left = new Node(6);
-        root1.right.right = new Node(7);
+        TreeNode root1 = new TreeNode(1);
+        root1.left = new TreeNode(2);
+        root1.right = new TreeNode(3);
+        root1.left.left = new TreeNode(4);
+        root1.left.right = new TreeNode(5);
+        root1.right.left = new TreeNode(6);
+        root1.right.right = new TreeNode(7);
 
         System.out.println("Vertical Sums are");
         verticalSumDLL(root1);
@@ -61,7 +61,7 @@ public class VerticalSumOfBT {
      * the Horizontal Distance as Horizontal Distance of root plus 1.
      */
 
-    private void verticalSum(Node root) {
+    private void verticalSum(TreeNode root) {
         if (root == null)
             return;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -77,7 +77,7 @@ public class VerticalSumOfBT {
 
     // Traverses the tree in Inoorder form and builds
     // a hashMap hM that contains the vertical sum
-    private void verticalSumUtil(Node root, int i, Map<Integer, Integer> map) {
+    private void verticalSumUtil(TreeNode root, int i, Map<Integer, Integer> map) {
 
         if (root == null)
             return;
@@ -128,7 +128,7 @@ public class VerticalSumOfBT {
 
     // Prints vertical sum of different vertical lines in tree. This method mainly uses
     // verticalSumDLLUtil().
-    static void verticalSumDLL(Node root) {
+    static void verticalSumDLL(TreeNode root) {
         // Create a doubly linked list node to store sum of lines going through root.
         // Vertical sum is initialized as 0.
         LLNode llnode = new LLNode(0);
@@ -149,7 +149,7 @@ public class VerticalSumOfBT {
     }
 
     // Constructs linked list
-    static void verticalSumDLLUtil(Node tnode, LLNode llnode) {
+    static void verticalSumDLLUtil(TreeNode tnode, LLNode llnode) {
         // Add current node's data to its vertical line
         llnode.data = llnode.data + tnode.data;
 

@@ -1,7 +1,5 @@
 package com.kv.lc;
 
-import com.kv.lc.PopulateNextRightPointerOfEachNode.Node;
-
 /**
  * 
  * @author karanverma

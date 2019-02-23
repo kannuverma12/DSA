@@ -21,20 +21,20 @@ public class TopViewOfBinaryTree {
      * distance of x plus 1.
      */
 
-    Node root;
+    TreeNode root;
 
-    public TopViewOfBinaryTree(Node n) {
+    public TopViewOfBinaryTree(TreeNode n) {
         root = n;
     }
 
     public static void main(String[] args) {
 
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.right = new Node(4);
-        root.left.right.right = new Node(5);
-        root.left.right.right.right = new Node(6);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.right = new TreeNode(4);
+        root.left.right.right = new TreeNode(5);
+        root.left.right.right.right = new TreeNode(6);
         TopViewOfBinaryTree t = new TopViewOfBinaryTree(root);
         System.out.println("Following are nodes in top view of Binary Tree");
         t.printTopView();
@@ -59,7 +59,7 @@ public class TopViewOfBinaryTree {
             // Remove the front item and get its details
             QItem qi = Q.remove();
             int hd = qi.hd;
-            Node n = qi.node;
+            TreeNode n = qi.node;
 
             // If this is the first node at its horizontal distance, then this node is in
             // top view
@@ -80,10 +80,10 @@ public class TopViewOfBinaryTree {
     // order traversal. Every Queue item contains node and horizontal
     // distance of node from root
     class QItem {
-        Node node;
+        TreeNode node;
         int hd;
 
-        public QItem(Node n, int h) {
+        public QItem(TreeNode n, int h) {
             node = n;
             hd = h;
         }
