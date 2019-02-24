@@ -10,7 +10,6 @@ package com.kv.fb;
 public class AddTwoVeryLargeNumbers {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         System.out.println("Sum Strings "+ sumStrings("124","123"));
 
     }

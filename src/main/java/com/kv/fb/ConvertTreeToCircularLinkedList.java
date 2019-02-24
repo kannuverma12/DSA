@@ -25,19 +25,6 @@ public class ConvertTreeToCircularLinkedList {
         tree.display(head);
     }
 }
-// Java Program to convert a Binary Tree to a
-// Circular Doubly Linked List
-
-// Node class represents a Node of a Tree
-class Node {
-    int val;
-    Node left, right;
-
-    public Node(int val) {
-        this.val = val;
-        left = right = null;
-    }
-}
 
 // A class to represent a tree
 class Tree {
@@ -46,8 +33,9 @@ class Tree {
     public Tree() {
         root = null;
     }
-    
-    // Method converts a tree to a circular Link List and then returns the head of the Link List
+
+    // Method converts a tree to a circular Link List and then returns the head of
+    // the Link List
     public Node bTreeToCList(Node root) {
         if (root == null)
             return null;
@@ -100,8 +88,6 @@ class Tree {
         return leftList;
     }
 
-    
-
     // Display Circular Link List
     public void display(Node head) {
         System.out.println("Circular Linked List is :");
@@ -113,3 +99,14 @@ class Tree {
         System.out.println();
     }
 }
+
+class Node {
+    int val;
+    Node left, right;
+
+    public Node(int val) {
+        this.val = val;
+        left = right = null;
+    }
+}
+

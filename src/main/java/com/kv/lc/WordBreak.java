@@ -55,7 +55,8 @@ public class WordBreak {
     
     //method 2
     /*
-     * In Solution 2, if the size of the dictionary is very large, the time is bad. Instead we can solve the problem in O(n^2) time (n is the length of the string).
+     * In Solution 2, if the size of the dictionary is very large, the time is bad. Instead we 
+     * can solve the problem in O(n^2) time (n is the length of the string).
      */
     public boolean wordBreak2(String s, Set<String> wordDict) {
         int[] pos = new int[s.length()+1];

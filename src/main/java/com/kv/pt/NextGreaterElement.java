@@ -75,7 +75,7 @@ public class NextGreaterElement {
 		s.push(arr[0]);
 		for(i=1;i<n;i++) {
 			next = arr[i];
-			if(s.isEmpty() == false) {
+			if(!s.isEmpty()) {
 				// if stack is not empty, then pop an element from stack
 				element = s.pop();
 				

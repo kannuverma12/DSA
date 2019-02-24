@@ -2,7 +2,9 @@ package com.kv.trees;
 
 /**
  * 
- * @author karanverma Given a Binary Tree, find the maximum sum path from a leaf to root
+ * @author karanverma 
+ * 
+ * Given a Binary Tree, find the maximum sum path from a leaf to root
  *
  */
 

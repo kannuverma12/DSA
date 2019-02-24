@@ -25,10 +25,10 @@ public class RightRotateArray {
     }
 
     // Function to right rotate arr[] of size n by d
-    static void rightRotate(int arr[], int d, int n) {
+    static void rightRotate(int arr[], int k, int n) {
         reverseArray(arr, 0, n - 1);
-        reverseArray(arr, 0, d - 1);
-        reverseArray(arr, d, n - 1);
+        reverseArray(arr, 0, k - 1);
+        reverseArray(arr, k, n - 1);
     }
 
     static void reverseArray(int arr[], int start, int end) {

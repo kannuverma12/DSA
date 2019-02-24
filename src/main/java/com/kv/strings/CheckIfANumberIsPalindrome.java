@@ -9,14 +9,14 @@ public class CheckIfANumberIsPalindrome {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	    int num = -121, reversedInteger = 0, remainder, originalInteger;
+	    int num = 121, reversedInteger = 0, remainder, originalInteger;
 	    boolean isNeg = false;
         originalInteger = num;
-        if(num<0) {
-            System.out.println(originalInteger + " is not a palindrome.");
-            return;
-        }
-            
+//        if(num<0) {
+//            System.out.println(originalInteger + " is not a palindrome.");
+//            return;
+//        }
+//            
 
         // reversed integer is stored in variable 
         while( num != 0 )
