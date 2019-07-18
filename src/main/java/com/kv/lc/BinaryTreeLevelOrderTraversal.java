@@ -34,7 +34,7 @@ public class BinaryTreeLevelOrderTraversal {
     public static List<List<Integer>> levelOrder1(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
      
-        if(root==null){
+        if (root == null) {
             return result;
         }
      
@@ -44,28 +44,28 @@ public class BinaryTreeLevelOrderTraversal {
         nodeQueue.offer(root);
         levelQueue.offer(1);//start from 1
         
-        while(!nodeQueue.isEmpty()){
+        while (!nodeQueue.isEmpty()) {
             TreeNode node = nodeQueue.poll();
             int level = levelQueue.poll();
-     
-            List<Integer> l=null;
-            if(result.size()<level){
+
+            List<Integer> l = null;
+            if (result.size() < level) {
                 l = new ArrayList<>();
                 result.add(l);
-            }else{
-                l = result.get(level-1);
+            } else {
+                l = result.get(level - 1);
             }
-     
+
             l.add(node.val);
-     
-            if(node.left!=null){
+
+            if (node.left != null) {
                 nodeQueue.offer(node.left);
-                levelQueue.offer(level+1);
+                levelQueue.offer(level + 1);
             }
-     
-            if(node.right!=null){
+
+            if (node.right != null) {
                 nodeQueue.offer(node.right);
-                levelQueue.offer(level+1);
+                levelQueue.offer(level + 1);
             }
         }
      
@@ -73,7 +73,7 @@ public class BinaryTreeLevelOrderTraversal {
     }
     
     // basic algorithm is this
-    private static void levelOrderTravesal(TreeNode root) {
+    private static void levelOrderTraversal(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<TreeNode>();
         
         if(root == null)

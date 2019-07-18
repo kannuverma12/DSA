@@ -12,10 +12,9 @@ import java.util.Arrays;
  *  output: l2=[1,1,2,3,3,4,6,7]
  *  
  */
-public class MergeTwoArrays {
+public class MergeTwoSortedArrays {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         merge();
     }
 

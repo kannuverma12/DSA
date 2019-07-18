@@ -17,7 +17,7 @@ package com.kv.lc;
  *  2. Right -> Down -> Right
  *  3. Down -> Right -> Right
  */
-public class UniquePaths {
+public class DP14_UniquePaths {
 
     public static void main(String[] args) {
         int m = 3, n = 3;

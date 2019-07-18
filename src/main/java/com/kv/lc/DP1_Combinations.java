@@ -14,20 +14,19 @@ import java.util.List;
  *  Output:
  *  [[2,4],[3,4],[2,3],[1,2],[1,3],[1,4]]
  */
-public class Combinations {
+public class DP1_Combinations {
 
     public static void main(String[] args) {
         System.out.println(Arrays.deepToString(combine(4, 2).toArray()));
-
     }
     
     public static List<List<Integer>> combine(int n, int k) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
      
         if (n <= 0 || n < k)
             return result;
      
-        List<Integer> item = new ArrayList<Integer>();
+        List<Integer> item = new ArrayList<>();
         dfs(n, k, 1, item, result); // because it need to begin from 1
      
         return result;
@@ -35,8 +34,9 @@ public class Combinations {
      
     private static void dfs(int n, int k, int start, List<Integer> item,
             List<List<Integer>> res) {
+
         if (item.size() == k) {
-            res.add(new ArrayList<Integer>(item));
+            res.add(new ArrayList<>(item));
             return;
         }
      

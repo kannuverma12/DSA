@@ -161,7 +161,11 @@ public class DataTime {
 	    parseMyDate(parser, "2016-12-07");
 	    parseMyDate(parser, "2016-12-07T15:31:12");
 	    parseMyDate(parser, "2016-12-07T15:31:12-0500");
-	    parseMyDate(parser, "2016-12-07Hello");
+	    parseMyDate(parser, "2016-12-07");
+	    
+	    DateTimeFormatter parser1 = DateTimeFormatter.ofPattern("HH:mm:ss");
+	    LocalDateTime ldd1 = LocalDateTime.now();
+        System.out.println("DateTimeFormatter ldd1 = " + parser1.format(ldd1));
 	    
 	    
 	    DateTimeFormatter customFormatter = new DateTimeFormatterBuilder()

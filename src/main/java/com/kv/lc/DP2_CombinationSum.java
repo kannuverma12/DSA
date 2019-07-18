@@ -19,7 +19,7 @@ import java.util.List;
  *  Input: candidates = [2,3,6,7], target = 7, 
  *  A solution set is: [[7],[2,2,3]]
  */
-public class CombinationSum {
+public class DP2_CombinationSum {
     /*
      * The first impression of this problem should be depth-first search(DFS). 
      * To solve DFS problem, recursion is a normal implementation.
@@ -33,11 +33,11 @@ public class CombinationSum {
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
-        helper(candidates, 0, target, 0, temp, result);
+        dfs(candidates, 0, target, 0, temp, result);
         return result;
     }
 
-    private static void helper(int[] candidates, int start, int target, int sum, List<Integer> list,
+    private static void dfs(int[] candidates, int start, int target, int sum, List<Integer> list,
             List<List<Integer>> result) {
         if (sum > target) {
             return;
@@ -51,7 +51,7 @@ public class CombinationSum {
         for (int i = start; i < candidates.length; i++) {
             list.add(candidates[i]);
             // check this condition for dfs
-            helper(candidates, i, target, sum + candidates[i], list, result);
+            dfs(candidates, i, target, sum + candidates[i], list, result);
             list.remove(list.size() - 1);
         }
     }

@@ -7,7 +7,7 @@ package com.kv.lc;
  *         Given a binary tree, determine if it is a valid binary search tree
  *         (BST).
  */
-public class ValidateBinarySearchTree {
+public class DP16_ValidateBinarySearchTree {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);

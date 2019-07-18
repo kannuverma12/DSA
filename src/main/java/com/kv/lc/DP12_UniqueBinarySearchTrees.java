@@ -16,7 +16,7 @@ package com.kv.lc;
  *  /     /       \                 \
  * 2     1         2                 3
  */
-public class UniqueBinarySearchTrees {
+public class DP12_UniqueBinarySearchTrees {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub

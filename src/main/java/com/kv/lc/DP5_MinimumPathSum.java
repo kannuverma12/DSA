@@ -17,7 +17,7 @@ package com.kv.lc;
  *  Output: 7
  *  Explanation: Because the path 1→3→1→1→1 minimizes the sum.
  */
-public class MinimumPathSum {
+public class DP5_MinimumPathSum {
 
     public static void main(String[] args) {
         int[][] matrix = {{1,3,1},{1,5,1},{4,2,1}};
@@ -68,7 +68,7 @@ public class MinimumPathSum {
      */
     // not accepted
     public static int minPathSum(int[][] grid) {
-        return dfs(0,0,grid);
+        return dfs(0, 0, grid);
     }
      
     public static int dfs(int i, int j, int[][] grid){

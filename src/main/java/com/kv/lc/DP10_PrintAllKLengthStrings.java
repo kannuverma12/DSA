@@ -6,7 +6,7 @@ package com.kv.lc;
  *
  *Java program to print all possible strings of length k
  */
-public class PrintAllKLengthStrings {
+public class DP10_PrintAllKLengthStrings {
 
 	// Driver method to test below methods
 	public static void main(String[] args) {

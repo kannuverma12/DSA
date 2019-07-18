@@ -85,10 +85,10 @@ public class RearrangeLinkedList {
     Node reverselist(Node node) { 
         Node prev = null, curr = node, next; 
         while (curr != null) { 
-            next = curr.next; 
-            curr.next = prev; 
-            prev = curr; 
-            curr = next; 
+            next = curr.next;   //n -> c.n
+            curr.next = prev;   //c.n -> p
+            prev = curr;        //p -> c
+            curr = next;        //c -> n
         } 
         node = prev; 
         return node; 

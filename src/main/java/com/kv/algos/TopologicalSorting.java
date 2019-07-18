@@ -51,7 +51,7 @@ public class TopologicalSorting {
         for (int i = 0; i < V; i++)
             visited[i] = false;
 
-        // Call the recursive helper function to store
+        // Call the recursive dfs function to store
         // Topological Sort starting from all vertices
         // one by one
         for (int i = 0; i < V; i++)

@@ -20,7 +20,7 @@ public class FindTopKOccurancesInALargeFileUsingHM {
 
     public static void main(String a[]) {
         FindTopKOccurancesInALargeFileUsingHM mdc = new FindTopKOccurancesInALargeFileUsingHM();
-        Map<String, Integer> wordMap = mdc.getWordCount("/Users/karan.verma/Downloads/bigFile.txt");
+        Map<String, Integer> wordMap = mdc.getWordCount("/Users/karanverma/Downloads/bigFile.txt");
         List<Entry<String, Integer>> list = mdc.sortByValue(wordMap);
         for (int i = 0; i < 10; i++) {
             // for (Map.Entry<String, Integer> entry : list) {

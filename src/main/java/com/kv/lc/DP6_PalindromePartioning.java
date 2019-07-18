@@ -18,7 +18,7 @@ import java.util.List;
  *      ["a","a","b"]
  *  ]
  */
-public class PalindromePartioning {
+public class DP6_PalindromePartioning {
 
     public static void main(String[] args) {
         String string = "aab";

@@ -14,7 +14,7 @@ import java.util.List;
  *  2) Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
  *  3) The solution set must not contain duplicate combinations.
  */
-public class CombinationSum2 {
+public class DP3_CombinationSum2 {
     /*
      * This problem is an extension of Combination Sum. The difference is one number in the array 
      * can only be used ONCE.
@@ -26,14 +26,14 @@ public class CombinationSum2 {
     }
     
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> temp = new ArrayList<Integer>();
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
         Arrays.sort(candidates);
-        helper(candidates, 0, target, temp, result);
+        dfs(candidates, 0, target, temp, result);
         return result;
     }
     
-    public static void helper(int[] candidates, int start, int target, List<Integer> temp, List<List<Integer>> result) {
+    public static void dfs(int[] candidates, int start, int target, List<Integer> temp, List<List<Integer>> result) {
         if (target == 0) {
             result.add(new ArrayList<Integer>(temp));
             return;
@@ -47,7 +47,7 @@ public class CombinationSum2 {
         for (int i = start; i < candidates.length; i++) {
             if (prev != candidates[i]) {        // each time start from different element
                 temp.add(candidates[i]);
-                helper(candidates, i + 1, target - candidates[i], temp, result); // and use next element only
+                dfs(candidates, i + 1, target - candidates[i], temp, result); // and use next element only
                 temp.remove(temp.size() - 1);
                 prev = candidates[i];
             }

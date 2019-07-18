@@ -19,7 +19,7 @@ public class GenerateInfiniteStream {
 						"2018-06-12 10:31:38,014 INFO org.apache.hadoop.util.JvmPauseMonitor: Detected pause in JVM or host machine (eg GC): pause of approximately 1035ms\n" + 
 						"No GCs detected"+ i;
 				
-				Files.write(Paths.get("/Users/karan.verma/Downloads/bigFile.txt"), content.getBytes(), StandardOpenOption.APPEND);
+				Files.write(Paths.get("/Users/karanverma/Downloads/bigFile.txt"), content.getBytes(), StandardOpenOption.APPEND);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

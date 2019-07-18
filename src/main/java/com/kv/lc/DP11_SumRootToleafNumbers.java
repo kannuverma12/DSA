@@ -19,7 +19,7 @@ package com.kv.lc;
  *  The root-to-leaf path 1->3 represents the number 13.
  *  Therefore, sum = 12 + 13 = 25.
  */
-public class SumRootToleafNumbers {
+public class DP11_SumRootToleafNumbers {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub

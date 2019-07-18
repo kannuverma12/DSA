@@ -40,9 +40,10 @@ public class FindTopKOccurancesInALargeFile {
 		
 		//getWordCount("/Users/karan.verma/Downloads/bigFile.txt");
 		
-		getWordCountUsingJ8FileAndPath("/Users/karan.verma/Downloads/bigFile.txt");
+		getWordCountUsingJ8FileAndPath("/Users/karanverma/Downloads/bigFile.txt");
 		
 		//getWordCountAdhoc();
+		
 		
 		
 	}

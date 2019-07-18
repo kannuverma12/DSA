@@ -15,7 +15,7 @@ import java.util.Set;
  *  Output: [ [1,1,2], [1,2,1], [2,1,1] ]
  *  
  */
-public class Permutation2 {
+public class DP9_Permutation2 {
     /*
      * Based on Permutation, we can add a set to track if an element is duplicate and no need to swap.
      */

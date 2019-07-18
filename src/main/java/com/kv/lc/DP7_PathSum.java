@@ -19,7 +19,7 @@ import java.util.LinkedList;
  *       /  \      \
  *      7    2      1
  */
-public class PathSum {
+public class DP7_PathSum {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);
@@ -43,7 +43,6 @@ public class PathSum {
     }
 
     // Method 2 - Iterative
-
     public boolean hasPathSumIterative(TreeNode root, int sum) {
         if (root == null)
             return false;

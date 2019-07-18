@@ -9,25 +9,25 @@ import java.util.List;
  * @author karanverma
  *
  */
-public class GenerateParenthesis {
+public class DP4_GenerateParenthesis {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         List<String> pp = generateParenthesis(3);
         System.out.println(Arrays.toString(pp.toArray()));
 
     }
     
     public static List<String> generateParenthesis(int n) {
-        ArrayList<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         dfs(result, "", n, n);
         return result;
     }
+
     /*
     left and right represents the remaining number of ( and ) that need to be added. 
     When left > right, there are more ")" placed than "(". Such cases are wrong and the method stops. 
     */
-    public static void dfs(ArrayList<String> result, String s, int left, int right) {
+    public static void dfs(List<String> result, String s, int left, int right) {
         if (left > right)
             return;
 
@@ -44,17 +44,18 @@ public class GenerateParenthesis {
             dfs(result, s + ")", left, right - 1);
         }
     }
-    
+
+    // not good
     public static List<String> generateParenthesisMethod2(int n) {
-        ArrayList<String> result = new ArrayList<String>();
-        ArrayList<Integer> diff = new ArrayList<Integer>();
+        List<String> result = new ArrayList<>();
+        List<Integer> diff = new ArrayList<>();
      
         result.add("");
         diff.add(0);
      
         for (int i = 0; i < 2 * n; i++) {
-            ArrayList<String> temp1 = new ArrayList<String>();
-            ArrayList<Integer> temp2 = new ArrayList<Integer>();
+            List<String> temp1 = new ArrayList<>();
+            List<Integer> temp2 = new ArrayList<>();
      
             for (int j = 0; j < result.size(); j++) {
                 String s = result.get(j);

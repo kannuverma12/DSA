@@ -13,7 +13,7 @@ package com.kv.lc;
  *  Output: 2
  *  Explanation: It could be decoded as "AB" (1 2) or "L" (12).
  */
-public class DecodeWays {
+public class DP17_DecodeWays {
     /*
      * This problem can be solve by using dynamic programming. It is similar to the problem 
      * of counting ways of climbing stairs. The relation is dp[n]=dp[n-1]+dp[n-2].
@@ -21,6 +21,7 @@ public class DecodeWays {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+        System.out.println(0%2);
         System.out.println(numDecodings("20"));
     }
     

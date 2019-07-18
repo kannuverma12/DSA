@@ -27,7 +27,7 @@ import java.util.List;
  *      [5,8,4,5]
  *   ]
  */
-public class PathSum2 {
+public class DP8_PathSum2 {
 
     /*
      * This problem can be converted to be a typical depth-first search problem. A recursive 
@@ -50,11 +50,11 @@ public class PathSum2 {
     }
 
     public static List<List<Integer>> pathSum(TreeNode root, int sum) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         if (root == null)
             return result;
 
-        List<Integer> l = new ArrayList<Integer>();
+        List<Integer> l = new ArrayList<>();
         l.add(root.val);
         dfs(root, sum - root.val, result, l);
         return result;

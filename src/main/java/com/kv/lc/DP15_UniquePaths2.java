@@ -23,7 +23,7 @@ package com.kv.lc;
  *      1. Right -> Right -> Down -> Down
  *      2. Down -> Down -> Right -> Right
  */
-public class UniquePaths2 {
+public class DP15_UniquePaths2 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub

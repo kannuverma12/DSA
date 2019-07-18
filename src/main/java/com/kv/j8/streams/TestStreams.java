@@ -24,6 +24,9 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collector.Characteristics;
+
+import org.springframework.data.domain.AbstractAggregateRoot;
+
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -44,7 +47,19 @@ public class TestStreams {
 		return true;
 	}
 	
+	public static  void  testList0Index() {
+	    List<Integer> list = new ArrayList<>();
+	    list.add(0, 0);
+	    list.add(1, 1);
+	    
+	    System.out.println("List = : "+list.toString());
+	    
+	    list.add(0, 1);
+	    System.out.println("List = : "+list.toString());
+	}
+	
 	public static void main(String... args){
+	    testList0Index();
 	    for(int i=0;i<10;i++){
             list.add("String "+i);
         }
@@ -102,6 +117,14 @@ public class TestStreams {
 				                        		 p -> p.name,
 				                        		 (name1, name2) -> name1+";"+name2));
 		
+		//resolves duplicate key exception
+		Set<Person> personSet = new HashSet<>(persons);
+		Map<Integer, String> mb2 = personSet.stream()
+                .collect(Collectors.toMap(
+                        p -> p.age, 
+                        p -> p.name, 
+                        (name1, name2) -> name1+";"+name2));
+		
 		Map<Boolean, List<Person>> partitioned = persons.stream().
                 collect(Collectors.partitioningBy(p -> p.age > 20));
 
@@ -146,6 +169,9 @@ public class TestStreams {
 						(j1, j2) -> j1.merge(j2),			//combiner
 						StringJoiner::toString,
 						Characteristics.CONCURRENT);			//finisher
+		
+		
+		
 		
 		String names = persons.stream()
 			    .collect(personNameCollector);
@@ -651,10 +677,6 @@ public class TestStreams {
 			c.setTeacher(t);
 			courses.add(c);
 		}
-		
-		
-		
-		
 		
 		Map<Integer, List<Course>>  result = courses.stream()
 		        .collect(Collectors.groupingBy(c -> c.getTeacher().getTeacherId(), 

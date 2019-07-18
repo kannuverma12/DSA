@@ -1,6 +1,7 @@
 package com.kv.fb;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -52,26 +53,26 @@ public class PrintNodesColumnWiseAndRowWise {
     // The main function to print vertical oder of a binary tree with given root
     static void printVerticalOrder(Node root) {
         // Create a map and store vertical oder in map using function getVerticalOrder()
-        TreeMap<Integer, Vector<Integer>> m = new TreeMap<>();
+        TreeMap<Integer, List<Integer>> m = new TreeMap<>();
         int hd = 0;
         getVerticalOrder(root, hd, m);
 
         // Traverse the map and print nodes at every horizontal distance (hd)
-        for (Entry<Integer, Vector<Integer>> entry : m.entrySet()) {
+        for (Entry<Integer, List<Integer>> entry : m.entrySet()) {
             System.out.println(entry.getValue());
         }
     }
 
-    static void getVerticalOrder(Node root, int hd, TreeMap<Integer, Vector<Integer>> m) {
+    static void getVerticalOrder(Node root, int hd, TreeMap<Integer, List<Integer>> m) {
         if (root == null)
             return;
 
         // get the vector list at 'hd'
-        Vector<Integer> get = m.get(hd);
+        List<Integer> get = m.get(hd);
 
         // Store current node in map 'm'
         if (get == null) {
-            get = new Vector<>();
+            get = new ArrayList<>();
             get.add(root.val);
         } else
             get.add(root.val);
