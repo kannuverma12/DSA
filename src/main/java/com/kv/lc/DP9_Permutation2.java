@@ -37,7 +37,7 @@ public class DP9_Permutation2 {
     }
      
     private static void helper(int start, int[] nums, List<List<Integer>> result){
-        if(start==nums.length-1){
+        if(start == nums.length-1){
             List<Integer> list = new ArrayList<>();
             for(int num: nums){
                 list.add(num);
@@ -46,7 +46,7 @@ public class DP9_Permutation2 {
             return;
         }
      
-        HashSet<Integer> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
      
         for(int i=start; i<nums.length; i++){
             if(set.contains(nums[i])){
@@ -68,22 +68,22 @@ public class DP9_Permutation2 {
     
     // method 2 : use sets
     public static List<List<Integer>> permuteUniqueUsingSet(int[] num) {
-        List<List<Integer>> returnList = new ArrayList<List<Integer>>();
+        List<List<Integer>> returnList = new ArrayList<>();
         returnList.add(new ArrayList<Integer>());
-     
+
         for (int i = 0; i < num.length; i++) {
-            Set<ArrayList<Integer>> currentSet = new HashSet<ArrayList<Integer>>();
+            Set<List<Integer>> currentSet = new HashSet<>();
             for (List<Integer> l : returnList) {
                 for (int j = 0; j < l.size() + 1; j++) {
                     l.add(j, num[i]);
-                    ArrayList<Integer> T = new ArrayList<Integer>(l);
+                    List<Integer> T = new ArrayList<>(l);
                     l.remove(j);
                     currentSet.add(T);
                 }
             }
-            returnList = new ArrayList<List<Integer>>(currentSet);
+            returnList = new ArrayList<>(currentSet);
         }
-     
+
         return returnList;
     }
     

@@ -27,17 +27,17 @@ public class BinaryTreeLevelOrderTraversalReverseFromLeafLevel {
     }
     
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> result = new  ArrayList<List<Integer>>();
+        List<List<Integer>> result = new  ArrayList<>();
      
         if(root == null){
             return result;
         }
      
-        LinkedList<TreeNode> current = new LinkedList<TreeNode>();
-        LinkedList<TreeNode> next = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> current = new LinkedList<>();
+        LinkedList<TreeNode> next = new LinkedList<>();
         current.offer(root);
      
-        List<Integer> numberList = new ArrayList<Integer>();
+        List<Integer> numberList = new ArrayList<>();
      
         // need to track when each level starts
         while(!current.isEmpty()){
@@ -54,14 +54,14 @@ public class BinaryTreeLevelOrderTraversalReverseFromLeafLevel {
      
             if(current.isEmpty()){
                 current = next;
-                next = new LinkedList<TreeNode>();
+                next = new LinkedList<>();
                 result.add(numberList);
-                numberList = new ArrayList<Integer>();
+                numberList = new ArrayList<>();
             }
         }
      
         //return Collections.reverse(result);
-        List<List<Integer>> reversedResult = new  ArrayList<List<Integer>>();
+        List<List<Integer>> reversedResult = new  ArrayList<>();
         for(int i=result.size()-1; i>=0; i--){
             reversedResult.add(result.get(i));
         }

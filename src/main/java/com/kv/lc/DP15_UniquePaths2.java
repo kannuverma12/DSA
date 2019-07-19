@@ -26,7 +26,6 @@ package com.kv.lc;
 public class DP15_UniquePaths2 {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         int[][] matrix = {  {0, 0, 0},
                             {0, 1, 0},
                             {0, 0, 0}   };
@@ -41,7 +40,7 @@ public class DP15_UniquePaths2 {
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
      
-        if(obstacleGrid[0][0]==1||obstacleGrid[m-1][n-1]==1) 
+        if (obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1)
             return 0;
      
      

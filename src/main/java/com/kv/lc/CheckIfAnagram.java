@@ -3,7 +3,6 @@ package com.kv.lc;
 public class CheckIfAnagram {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         boolean b = isAnagram("abb", "bab");
         System.out.println("Is Anagram  = " + b);
     }

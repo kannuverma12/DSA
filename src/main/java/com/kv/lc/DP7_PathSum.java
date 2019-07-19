@@ -47,8 +47,8 @@ public class DP7_PathSum {
         if (root == null)
             return false;
 
-        LinkedList<TreeNode> nodes = new LinkedList<TreeNode>();
-        LinkedList<Integer> values = new LinkedList<Integer>();
+        LinkedList<TreeNode> nodes = new LinkedList<>();
+        LinkedList<Integer> values = new LinkedList<>();
 
         nodes.add(root);
         values.add(root.val);

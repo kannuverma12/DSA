@@ -30,7 +30,7 @@ public class DP6_PalindromePartioning {
     // Method 1 - DP
     public static List<String> palindromePartitioning(String s) {
 
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
 
         if (s == null)
             return result;
@@ -68,13 +68,13 @@ public class DP6_PalindromePartioning {
 
     // Method 1 - DFS
     public static List<List<String>> partition(String s) {
-        List<List<String>> result = new ArrayList<List<String>>();
+        List<List<String>> result = new ArrayList<>();
 
         if (s == null || s.length() == 0) {
             return result;
         }
 
-        List<String> partition = new ArrayList<String>();// track each possible partition
+        List<String> partition = new ArrayList<>();// track each possible partition
         addPalindrome(s, 0, partition, result);
 
         return result;
@@ -83,7 +83,7 @@ public class DP6_PalindromePartioning {
     private static void addPalindrome(String s, int start, List<String> partition, List<List<String>> result) {
         // stop condition
         if (start == s.length()) {
-            List<String> temp = new ArrayList<String>(partition);
+            List<String> temp = new ArrayList<>(partition);
             result.add(temp);
             return;
         }

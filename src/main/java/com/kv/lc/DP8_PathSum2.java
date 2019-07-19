@@ -62,7 +62,7 @@ public class DP8_PathSum2 {
 
     public static void dfs(TreeNode t, int sum, List<List<Integer>> result, List<Integer> l) {
         if (t.left == null && t.right == null && sum == 0) {
-            List<Integer> temp = new ArrayList<Integer>();
+            List<Integer> temp = new ArrayList<>();
             temp.addAll(l);
             result.add(temp);
         }
