@@ -1,0 +1,65 @@
+package com.kv.lc;
+
+/**
+ * 
+ *  @author karanverma
+ *  
+ *  Given two non-negative integers num1 and num2 represented as strings, return the product 
+ *  of num1 and num2, also represented as a string.
+ *  
+ *  Input: num1 = "123", num2 = "456" Output: "56088"
+ *  
+ *  The length of both num1 and num2 is < 110. 
+ *  Both num1 and num2 contain only digits 0-9.
+ *  Both num1 and num2 do not contain any leading zero, except the number 0 itself.
+ *  You must not use any built-in BigInteger library or convert the inputs to integer directly.
+ */
+public class L8_MultiplyStrings {
+    
+    /*
+     * The key to solve this problem is multiplying each digit of the numbers at the corresponding 
+     * positions and get the sum values at each position. That is how we do multiplication manually.
+     */
+
+    public static void main(String[] args) {
+        System.out.println(multiply("12", "12"));
+    }
+    
+    public static String multiply(String num1, String num2) {
+        String n1 = new StringBuilder(num1).reverse().toString();
+        String n2 = new StringBuilder(num2).reverse().toString();
+
+        int[] d = new int[num1.length() + num2.length()];
+
+        // multiply each digit and sum at the corresponding positions
+        for (int i = 0; i < n1.length(); i++) {
+            for (int j = 0; j < n2.length(); j++) {
+                // logic for multiplication
+                d[i + j] += (n1.charAt(i) - '0') * (n2.charAt(j) - '0');
+                System.out.println("i : " + i + ", j : " + j + ", i th : " + (n1.charAt(i) - '0') + ", j th : "
+                        + (n2.charAt(j) - '0') + ", i+j : " + (i + j) + ", d[i+j] : " + d[i + j]);
+
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        // calculate each digit
+        for (int i = 0; i < d.length; i++) {
+            int mod = d[i] % 10;
+            int carry = d[i] / 10;
+            if (i + 1 < d.length) {
+                d[i + 1] += carry;
+            }
+            sb.insert(0, mod);
+        }
+
+        // remove front 0's
+        while (sb.charAt(0) == '0' && sb.length() > 1) {
+            sb.deleteCharAt(0);
+        }
+
+        return sb.toString();
+    }
+
+}

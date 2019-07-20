@@ -5,10 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 
- * @author karanverma
- *  
- *  Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), 
+ *  @author karanverma
+ *  Given a set of candidate numbers (candidates) (without duplicates) and a target number (target),
  *  find all unique combinations in candidates where the candidate numbers sums to target.
  *  
  *  The same repeated number may be chosen from candidates unlimited number of times:
@@ -30,7 +28,7 @@ public class DP2_CombinationSum {
         System.out.println(Arrays.toString(combinationSum(arr, 7).toArray()));
     }
     
-    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+    private static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
         dfs(candidates, 0, target, 0, temp, result);

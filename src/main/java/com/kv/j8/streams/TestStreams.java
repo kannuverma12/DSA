@@ -63,6 +63,8 @@ public class TestStreams {
 	    for(int i=0;i<10;i++){
             list.add("String "+i);
         }
+
+
 	    
 	    checkBitwiseOperator();
 	    

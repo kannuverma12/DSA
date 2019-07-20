@@ -24,7 +24,6 @@ public class DP9_Permutation2 {
         int[] arr = { 1, 1, 3 };
 
         System.out.println("Recursive : "+Arrays.toString(permuteUnique(arr).toArray()));
-        
         System.out.println("Using sets : "+Arrays.toString(permuteUniqueUsingSet(arr).toArray()));
     }
     
