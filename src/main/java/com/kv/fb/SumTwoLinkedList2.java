@@ -19,6 +19,7 @@ public class SumTwoLinkedList2 {
     int carry;
     
     public static void main(String args[]) {
+
         SumTwoLinkedList2 list = new SumTwoLinkedList2();
         list.head1 = null;
         list.head2 = null;
@@ -51,7 +52,8 @@ public class SumTwoLinkedList2 {
         //sumUpRecursive(l1, l2, l3, false);
         //System.out.println("Add linked list Recursive : "+Arrays.toString(l3.toArray()));
     }
-    
+
+
     // The main function that adds two linked lists represented by head1 and head2. The sum of two
     // lists is stored in a list referred by result
     void addlists() {
@@ -100,7 +102,7 @@ public class SumTwoLinkedList2 {
 
     }
     
- // Adds two linked lists of same size represented by head1 and head2 and returns head of the resultant
+    // Adds two linked lists of same size represented by head1 and head2 and returns head of the resultant
     // linked list. Carry is propagated while returning from the recursion
     void addsamesize(node n, node m) {
         // Since the function assumes linked lists are of same size, check any of the two head pointers
@@ -137,7 +139,6 @@ public class SumTwoLinkedList2 {
             this.val = val;
         }
     }
-    
 
     // Function to print linked list
     void printlist(node head) {
@@ -146,8 +147,6 @@ public class SumTwoLinkedList2 {
             head = head.next;
         }
     }
-
-    
 
     /* A utility function to push a value to linked list */
     void push(int val, int list) {
