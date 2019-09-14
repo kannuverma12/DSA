@@ -72,8 +72,8 @@ public class DP4_GenerateParenthesis {
                 }
             }
      
-            result = new ArrayList<String>(temp1);
-            diff = new ArrayList<Integer>(temp2);
+            result = new ArrayList<>(temp1);
+            diff = new ArrayList<>(temp2);
         }
      
         return result;

@@ -50,7 +50,7 @@ public class DP9_L9_Permutations {
                 }
             }
 
-            result = new ArrayList<List<Integer>>(current);
+            result = new ArrayList<>(current);
         }
 
         return result;

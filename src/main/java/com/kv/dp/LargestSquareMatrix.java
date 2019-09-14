@@ -54,10 +54,8 @@ public class LargestSquareMatrix {
             S[0][j] = M[0][j]; 
           
         /* Construct other entries of S[][]*/
-        for(i = 1; i < R; i++) 
-        { 
-            for(j = 1; j < C; j++) 
-            { 
+        for(i = 1; i < R; i++) {
+            for(j = 1; j < C; j++) {
                 if(M[i][j] == 1)  
                     S[i][j] = Math.min(S[i][j-1], 
                                 Math.min(S[i-1][j], S[i-1][j-1])) + 1; 
@@ -66,8 +64,7 @@ public class LargestSquareMatrix {
             }  
         }      
           
-        /* Find the maximum entry, and indexes of maximum entry  
-            in S[][] */
+        /* Find the maximum entry, and indexes of maximum entry in S[][] */
         max_of_s = S[0][0];
         max_i = 0;
         max_j = 0;
@@ -82,10 +79,8 @@ public class LargestSquareMatrix {
         }     
           
         System.out.println("Maximum size sub-matrix is: "); 
-        for(i = max_i; i > max_i - max_of_s; i--) 
-        { 
-            for(j = max_j; j > max_j - max_of_s; j--) 
-            { 
+        for(i = max_i; i > max_i - max_of_s; i--) {
+            for(j = max_j; j > max_j - max_of_s; j--) {
                 System.out.print(M[i][j] + " "); 
             }  
             System.out.println(); 

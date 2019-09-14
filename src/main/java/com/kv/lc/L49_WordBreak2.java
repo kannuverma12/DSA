@@ -24,7 +24,7 @@ public class L49_WordBreak2 {
     public static List<String> wordBreak(String s, Set<String> dict) {
         //create an array of ArrayList<String>
         List<String> dp[] = new ArrayList[s.length()+1];
-        dp[0] = new ArrayList<String>();
+        dp[0] = new ArrayList<>();
      
         for(int i=0; i<s.length(); i++){
             if( dp[i] == null ) 
@@ -80,7 +80,7 @@ public class L49_WordBreak2 {
     
     public List<String> wordBreak2(String s, Set<String> wordDict) {
         ArrayList<String> [] pos = new ArrayList[s.length()+1];
-        pos[0]=new ArrayList<String>();
+        pos[0]=new ArrayList<>();
      
         for(int i=0; i<s.length(); i++){
             if(pos[i]!=null){

@@ -32,7 +32,7 @@ public class L50_WordLadder {
     }
     
     public int ladderLength(String beginWord, String endWord, Set<String> wordDict) {
-        LinkedList<WordNode> queue = new LinkedList<WordNode>();
+        LinkedList<WordNode> queue = new LinkedList<>();
         queue.add(new WordNode(beginWord, 1));
  
         wordDict.add(endWord);

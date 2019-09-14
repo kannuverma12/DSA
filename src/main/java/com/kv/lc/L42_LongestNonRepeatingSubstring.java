@@ -30,6 +30,7 @@ public class L42_LongestNonRepeatingSubstring {
         return ans;
     }
 
+
     public int lengthOfLongestSubstring2(String s) {
         int n = s.length();
         Set<Character> set = new HashSet<>();

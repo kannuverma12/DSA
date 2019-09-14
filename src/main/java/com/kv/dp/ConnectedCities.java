@@ -17,7 +17,8 @@ public class ConnectedCities {
 
     }
     
-    public static List<Integer> connectedCities(int n, int g, List<Integer> originCities, List<Integer> destinationCities){
+    public static List<Integer> connectedCities(int n, int g, List<Integer> originCities,
+            List<Integer> destinationCities){
         List<Integer> ret = new ArrayList<>();
         
         for(int i=0; i<originCities.size();i++) {
@@ -33,12 +34,8 @@ public class ConnectedCities {
                     if(ddivi.contains(od)) {
                         ret.add(i, 1);
                     }
-                        
                 }
             }
-            
-            
-            
         }
         
         return ret;

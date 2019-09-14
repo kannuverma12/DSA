@@ -36,16 +36,34 @@ import com.kv.lc.FindTopKOccurancesInALargeFile.WordCount;
 public class FindTopKOccurancesInALargeFile {
 
 	public static void main(String[] args) {
-		
-		
-		//getWordCount("/Users/karan.verma/Downloads/bigFile.txt");
-		
-		getWordCountUsingJ8FileAndPath("/Users/karanverma/Downloads/bigFile.txt");
+		String filename = "/Users/karan.verma/Downloads/bigFile.txt";
+		//getWordCount(filename);
+		getWordCountUsingJ8FileAndPath(filename);
 		
 		//getWordCountAdhoc();
-		
-		
-		
+	}
+
+	// Method 1 :
+	private static void getWordCountUsingJ8FileAndPath(String fileName) {
+		long curtime = System.currentTimeMillis();
+		try {
+			TopOccurrence topOccurrence = new TopOccurrence(10);
+
+			Stream<String> fstream = Files.lines(Paths.get(fileName));
+			if(fstream == null) {
+				System.out.println("Lines Empty -> waiting");
+				Thread.sleep(1*1000);
+			}
+
+			fstream.parallel().flatMap(line -> Arrays.asList(line.split(" ")).stream())
+					.collect(Collectors.toConcurrentMap(w -> w.toLowerCase(), w -> 1, Integer::sum))
+					.forEach((s, count) -> topOccurrence.add(new WordCount(s, count)));
+
+			System.out.println(topOccurrence);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Time taken = "+((System.currentTimeMillis() - curtime)/1000)+" sec.");
 	}
 	
 	private static void getWordCountAdhoc() {
@@ -62,27 +80,6 @@ public class FindTopKOccurancesInALargeFile {
 		System.out.println(topOccurrence);
 		System.out.println("Time taken = "+((System.currentTimeMillis() - curtime)/1000)+" sec.");
 
-	}
-
-	public static void getWordCountUsingJ8FileAndPath(String fileName) {
-		long curtime = System.currentTimeMillis();
-		try {
-			TopOccurrence topOccurrence = new TopOccurrence(10);
-			
-			Stream<String> fstream = Files.lines(Paths.get(fileName));
-			if(fstream == null) {
-				System.out.println("Lines Empty -> waiting");
-				Thread.sleep(1*1000);
-			}
-				
-			fstream.parallel().flatMap(a -> Arrays.asList(a.split(" ")).stream())
-					.collect(Collectors.toConcurrentMap(w -> w.toString().toLowerCase(), w -> 1, Integer::sum))
-					.forEach((s, coun) -> topOccurrence.add(new WordCount(s, coun)));
-			System.out.println(topOccurrence);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("Time taken = "+((System.currentTimeMillis() - curtime)/1000)+" sec.");
 	}
 	
 	public static void getWordCount(String fileName) {
@@ -119,23 +116,24 @@ public class FindTopKOccurancesInALargeFile {
 	}
 	
 	static class TopOccurrence{
-		
+
 		private final PriorityQueue<WordCount> minHeap;
         private final int maxSize;
         public TopOccurrence(int maxSize) {
             this.maxSize = maxSize;
             this.minHeap = new PriorityQueue<WordCount>(Comparator.comparingInt((WordCount wc) -> wc.count));
             //this.minHeap = new PriorityQueue<WordCount>(new WordComparator().reversed());
-            
-         /* 
-          * 	This constructs a min heap (when order of elements is natural i.e. ascending order).
+
+         /*
+          * This constructs a min heap (when order of elements is natural i.e. ascending order).
           	We are using Natural order for integers (wc.count)
-          	In order to create a max-heap, we just need to provide reversed comparator i.e. that sorts in descending order,as shown below
+          	In order to create a max-heap, we just need to provide reversed comparator i.e. that
+          	sorts in descending order,as shown below
           	this.minHeap = new PriorityQueue<WordCount>(Comparator.comparingInt((WordCount wc) -> wc.count).reversed());
          */
         }
-        
-        
+
+
         public void add(WordCount data) {
             if (minHeap.size() < maxSize) { 		// size() is Big O(1)
                 minHeap.offer(data); 			// Big O(log(k)) where k is the number of top occurrences required
@@ -144,14 +142,14 @@ public class FindTopKOccurancesInALargeFile {
                 minHeap.offer(data); 			// Big O(log(k))
             }
         }
-        
+
         @Override
         public String toString() {
             return "TopOccurrence {" + "minHeap=" + minHeap + ", maxSize=" + maxSize + '}';
         }
-		
+
 	}
-	
+
 	static class WordCount{
         protected final String word;
         protected final int count;
@@ -163,8 +161,8 @@ public class FindTopKOccurancesInALargeFile {
         public String toString() {
             return "{" + "word='" + word + '\'' + ", count=" + count + '}'+"\r\n";
         }
-        
-		
+
+
     }
 	
 	static class WordComparator implements Comparator<WordCount>{

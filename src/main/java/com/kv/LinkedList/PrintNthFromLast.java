@@ -104,7 +104,6 @@ public class PrintNthFromLast {
 			}
 			System.out.println("Usig 2 prts : Node no. "+n+" from last is "+ main_ptr.data);
 		}
-		
 	}
 	
     void removeNthFromLast(Node head, int n) {

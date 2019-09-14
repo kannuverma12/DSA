@@ -30,7 +30,7 @@ public class L41_FlattenBinaryTreeToLinkedList {
     }
 
     public static void flatten(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<>();
         TreeNode p = root;
  
         while(p != null || !stack.empty()){

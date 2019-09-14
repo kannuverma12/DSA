@@ -84,8 +84,9 @@ public class RegularExpressionMatching {
         return dp[0][0];
     }
 
+    enum Result {
+        TRUE, FALSE
+    }
 }
 
-enum Result {
-    TRUE, FALSE
-}
+

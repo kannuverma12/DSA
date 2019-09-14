@@ -61,7 +61,6 @@ public class BoundryTravesalOfBT {
             }
             // do nothing if it is a leaf node, this way we avoid duplicates in output
         }
-
     }
 
     // A function to print all right boundry nodes, except a leaf node

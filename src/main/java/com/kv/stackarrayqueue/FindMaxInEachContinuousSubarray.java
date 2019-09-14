@@ -73,7 +73,7 @@ public class FindMaxInEachContinuousSubarray {
         // The queue will store indexes of useful elements in every window and it will
         // maintain decreasing order of values from front to rear in Qi, i.e., 
         // arr[Qi.front[]] to arr[Qi.rear()] are sorted in decreasing order
-        Deque<Integer> Qi = new LinkedList<Integer>();
+        Deque<Integer> Qi = new LinkedList<>();
          
         /* Process first k (or first window) elements of array */
         int i;

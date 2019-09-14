@@ -71,13 +71,14 @@ public class L56_AddTwoNumbersLinkedList {
             head = head.next;
         }
     }
-}
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) {
+            val = x;
+        }
     }
 }
+
+

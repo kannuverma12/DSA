@@ -28,9 +28,10 @@ public class DP5_MinimumPathSum {
         System.out.println("MinimumPathSum DP : "+minPathSumDP(matrix));
 
         //use geeksforgeeks solution
+        System.out.println("MinimumPathSum DP GFGs : "+minCost(matrix, matrix.length, matrix[0].length));
     }
     
- // Dynamic Programming - accepted in leetcode
+    // Dynamic Programming - accepted in leetcode
     public static int minPathSumDP(int[][] grid) {
         if(grid == null || grid.length==0)
             return 0;
@@ -107,9 +108,7 @@ public class DP5_MinimumPathSum {
      */
 
     //geeksforgeeks solution
-    static int minCost(int cost[][], int m,
-            int n)
-    {
+    static int minCost(int cost[][], int m, int n) {
         if (n < 0 || m < 0)
             return Integer.MAX_VALUE;
         else if (m == 0 && n == 0)
@@ -133,24 +132,24 @@ public class DP5_MinimumPathSum {
     private static int minCostDP(int cost[][], int m, int n)
     {
         int i, j;
-        int tc[][]=new int[m+1][n+1];
+        int tc[][] = new int[m + 1][n + 1];
 
         tc[0][0] = cost[0][0];
 
         /* Initialize first column of total cost(tc) array */
         for (i = 1; i <= m; i++)
-            tc[i][0] = tc[i-1][0] + cost[i][0];
+            tc[i][0] = tc[i - 1][0] + cost[i][0];
 
         /* Initialize first row of tc array */
         for (j = 1; j <= n; j++)
-            tc[0][j] = tc[0][j-1] + cost[0][j];
+            tc[0][j] = tc[0][j - 1] + cost[0][j];
 
         /* Construct rest of the tc array */
         for (i = 1; i <= m; i++)
             for (j = 1; j <= n; j++)
-                tc[i][j] = min(tc[i-1][j-1],
-                        tc[i-1][j],
-                        tc[i][j-1]) + cost[i][j];
+                tc[i][j] = min(tc[i - 1][j - 1],
+                        tc[i - 1][j],
+                        tc[i][j - 1]) + cost[i][j];
 
         return tc[m][n];
     }

@@ -44,7 +44,7 @@ public class MirrorOfBinaryTree {
 	    
 	    return node;
 	}
-	
+
 	void inOrder(TreeNode node) {
 	    if(node == null)
 	        return;

@@ -35,7 +35,7 @@ public class L13_SpiralMatrix {
      * Otherwise, if only one row or column left, we process that column or row ONLY.
      */
     public static List<Integer> spiralOrder(int[][] matrix) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return result;
 
@@ -89,13 +89,13 @@ public class L13_SpiralMatrix {
     // using recursion
     public ArrayList<Integer> spiralOrderRecur(int[][] matrix) {
         if (matrix == null || matrix.length == 0)
-            return new ArrayList<Integer>();
+            return new ArrayList<>();
 
         return spiralOrder(matrix, 0, 0, matrix.length, matrix[0].length);
     }
 
     public ArrayList<Integer> spiralOrder(int[][] matrix, int x, int y, int m, int n) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<Integer> result = new ArrayList<>();
 
         if (m <= 0 || n <= 0)
             return result;

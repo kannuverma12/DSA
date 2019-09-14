@@ -39,7 +39,6 @@ public class ReverseLinkedList {
 		node = prev;
 		return node;
 	}
-
 	Node reverseUtil(Node curr, Node prev) {
 
 		/* If last node mark it head */

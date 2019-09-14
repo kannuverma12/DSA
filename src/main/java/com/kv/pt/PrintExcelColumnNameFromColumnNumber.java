@@ -8,7 +8,6 @@ package com.kv.pt;
 public class PrintExcelColumnNameFromColumnNumber {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         // System.out.println("char "+(char)((26 - 1) +'A'));
 
         printString(206);

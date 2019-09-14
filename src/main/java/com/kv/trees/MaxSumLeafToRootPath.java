@@ -70,7 +70,6 @@ public class MaxSumLeafToRootPath {
                 target_leaf = node;
             }
         }
-
         // If this is not a leaf node, then recur down to find the target_leaf
         getTargetLeaf(node.left, max2, curr_sum);
         getTargetLeaf(node.right, max2, curr_sum);

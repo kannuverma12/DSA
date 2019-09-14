@@ -116,8 +116,7 @@ public class ThreeSumProblem {
     si  --> Starting index 
     ei  --> Ending index 
      */
-    void quickSort(int A[], int si, int ei) 
-    { 
+    void quickSort(int A[], int si, int ei) {
         int pi; 
   
         /* Partitioning index */

@@ -39,7 +39,7 @@ public class MaxSumRectangleIn2DMatrix {
         for (int i = 0; i < a.length; i++) {
             currentSum += a[i];
             if (currentSum < 0) {
-                  currentSum = 0;
+                currentSum = 0;
                 localStart = i + 1;
               } else if (currentSum > result[0]) {
                 result[0] = currentSum;

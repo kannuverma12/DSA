@@ -12,7 +12,6 @@ public class MaxLengthSubsequence {
 		int arr[] = {2, 5, 6, 3, 7, 6, 5, 8};
         int n = arr.length;
         System.out.println("Maximum length subsequence = "+maxLenSub(arr, n));
-
     }
 
     private static int maxLenSub(int[] arr, int n) {

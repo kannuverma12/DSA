@@ -20,7 +20,7 @@ public class FindOverlappingEvents {
         arr[1] = new Interval(1, 2);
         arr[2] = new Interval(3, 4);
         arr[3] = new Interval(4, 7);
-        System.out.println("Intevals Overlapping ? " + Arrays.toString(isOverlap(arr)));
+        System.out.println("Intervals Overlapping ? " + Arrays.toString(isOverlap(arr)));
 
     }
 
@@ -45,17 +45,19 @@ public class FindOverlappingEvents {
         return ret.toArray(new Interval[0]);
     }
 
-}
+    static class Interval {
+        int start, end;
 
-class Interval {
-    int start, end;
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
 
-    Interval(int start, int end) {
-        this.start = start;
-        this.end = end;
+        public String toString() {
+            return "(" + this.start + ", " + this.end + ")";
+        }
     }
 
-    public String toString() {
-        return "(" + this.start + ", " + this.end + ")";
-    }
 }
+
+

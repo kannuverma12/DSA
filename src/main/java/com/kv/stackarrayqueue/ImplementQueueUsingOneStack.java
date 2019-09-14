@@ -81,8 +81,10 @@ public class ImplementQueueUsingOneStack {
         top_ref.push(new_data);
     }
 
+	static class MyQueue1{
+		Stack<Integer> stack1;
+	}
+
+
 }
 
-class MyQueue1{
-	Stack<Integer> stack1;
-}

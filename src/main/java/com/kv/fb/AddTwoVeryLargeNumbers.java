@@ -11,7 +11,6 @@ public class AddTwoVeryLargeNumbers {
 
     public static void main(String[] args) {
         System.out.println("Sum Strings "+ sumStrings("124","123"));
-
     }
     
     public static String sumStrings(String a, String b) {

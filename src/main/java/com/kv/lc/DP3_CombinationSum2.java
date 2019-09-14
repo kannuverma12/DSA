@@ -34,7 +34,7 @@ public class DP3_CombinationSum2 {
     
     public static void dfs(int[] candidates, int start, int target, List<Integer> temp, List<List<Integer>> result) {
         if (target == 0) {
-            result.add(new ArrayList<Integer>(temp));
+            result.add(new ArrayList<>(temp));
             return;
         }
         

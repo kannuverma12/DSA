@@ -27,11 +27,11 @@ public class L46_PascalTriangle {
     }
     
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         if (numRows <= 0)
             return result;
      
-        List<Integer> pre = new ArrayList<Integer>();
+        List<Integer> pre = new ArrayList<>();
         pre.add(1);
         result.add(pre);
      

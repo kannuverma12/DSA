@@ -10,7 +10,7 @@ public class L43_LongestPalindromSubstring {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("aabaacbc"));
     }
-    
+
     public static String longestPalindrome(String s) {
         if (s == null || s.length() < 1)
             return "";

@@ -52,14 +52,12 @@ public class ImplemenQueueUsingTwoStacks {
     }
 	
 	/* Function to push an item to stack*/
-    static void push(Stack<Integer> top_ref, int new_data)
-    {
+    static void push(Stack<Integer> top_ref, int new_data) {
         //Push the data onto the stack
         top_ref.push(new_data);
     }
     
-    static int deQueue(MyQueue q)
-    {
+    static int deQueue(MyQueue q) {
         int x;
         /* If both stacks are empty then error */
 		if (q.stack1.isEmpty() && q.stack2.isEmpty()) {
@@ -86,15 +84,12 @@ public class ImplemenQueueUsingTwoStacks {
 		}
 		return top_ref.pop();
 	}
-	
-	
-	
-	
-	
+
+	static class MyQueue{
+		Stack<Integer> stack1 ;
+		Stack<Integer> stack2 ;
+	}
 
 }
 
-class MyQueue{
-	Stack<Integer> stack1 ;
-    Stack<Integer> stack2 ;
-}
+

@@ -41,16 +41,14 @@ public class FindMissingElementInAP {
 			return arr[mid-1] + diff;
 		
 		/*
-		 * If the middle element is equal to n/2th term in Arithmetic Series (Let n be the number of elements in input array), 
-		 * then missing element lies in right half
+		 * If the middle element is equal to n/2th term in Arithmetic Series (Let n be the
+		 * number of elements in input array), then missing element lies in right half
 		 * */
 		if(arr[mid] == arr[0]+mid*diff )
 			return findMissing(arr, mid+1, high, diff);
 		
 		return findMissing(arr, low, mid-1, diff);
 
-
-		
 	}
 
 }

@@ -40,8 +40,6 @@ public class L31_BinaryTreeZigzagLevelOrderTraversal {
 
         // function to print the zigzag traversal
         void printZigZagTraversal() {
-
-            // if null then return
             if (rootNode == null) {
                 return;
             }
@@ -54,9 +52,7 @@ public class L31_BinaryTreeZigzagLevelOrderTraversal {
             currentLevel.push(rootNode);
             boolean leftToRight = true;
 
-            // check if stack is empty
             while (!currentLevel.isEmpty()) {
-
                 // pop out of stack
                 Node node = currentLevel.pop();
 
@@ -68,7 +64,6 @@ public class L31_BinaryTreeZigzagLevelOrderTraversal {
                     if (node.leftChild != null) {
                         nextLevel.push(node.leftChild);
                     }
-
                     if (node.rightChild != null) {
                         nextLevel.push(node.rightChild);
                     }
@@ -76,7 +71,6 @@ public class L31_BinaryTreeZigzagLevelOrderTraversal {
                     if (node.rightChild != null) {
                         nextLevel.push(node.rightChild);
                     }
-
                     if (node.leftChild != null) {
                         nextLevel.push(node.leftChild);
                     }

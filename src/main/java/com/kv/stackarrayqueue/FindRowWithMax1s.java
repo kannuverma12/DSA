@@ -30,8 +30,7 @@ public class FindRowWithMax1s {
 	 * A function to find the index of first index of 1 in a boolean array arr[] */
 	public static int first(int arr[], int low, int high)
 	{
-	  if(high >= low)
-	  {
+	  if(high >= low) {
 	    // get the middle index  
 	    int mid = low + (high - low)/2; 
 	 
@@ -54,14 +53,11 @@ public class FindRowWithMax1s {
 	{
 	    int max_row_index = 0, max = -1; // Initialize max values
 	 
-	    // Traverse for each row and count number of 1s by finding the index 
-	    // of first 1
+	    // Traverse for each row and count number of 1s by finding the index of first 1
 	    int i, index;
-	    for (i = 0; i < mat.length-1; i++)
-	    {
+	    for (i = 0; i < mat.length-1; i++) {
 	       index = first (mat[i], 0, mat[i].length-1);
-	       if (index != -1 && mat[i].length-index > max)
-	       {
+	       if (index != -1 && mat[i].length-index > max) {
 	           max = mat[i].length-1 - index;
 	           max_row_index = i;
 	       }
@@ -89,11 +85,9 @@ public class FindRowWithMax1s {
 	    if (j == -1) // if 1 is not present in first row
 	      j = mat.length-1 - 1;
 	 
-	    for (int i = 1; i < mat[0].length; i++)
-	    {
+	    for (int i = 1; i < mat[0].length; i++) {
 	        // Move left until a 0 is found
-	        while (j >= 0 && mat[i][j] == 1)
-	        {
+	        while (j >= 0 && mat[i][j] == 1) {
 	           j = j-1;  // Update the index of leftmost 1 seen so far
 	           max_row_index = i;  // Update max_row_index
 	        }

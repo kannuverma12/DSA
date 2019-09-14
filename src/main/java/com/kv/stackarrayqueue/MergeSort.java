@@ -7,10 +7,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {23, 25, -12, 54, 7, -22};
         mergeSort(arr, 0, arr.length);
-        
-        
         System.out.println(Arrays.toString(arr));
-
     }
     
     public static void mergeSort(int[] array, int start, int end) {

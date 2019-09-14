@@ -46,7 +46,7 @@ public class FindElementInBinaryTree {
 	// it can be done using a queue
 	private static boolean findElementInBTWithoutRecursion(TreeNode root1, int data) {
 		TreeNode temp;
-		Queue<TreeNode> q = new LinkedList<TreeNode>();
+		Queue<TreeNode> q = new LinkedList<>();
 		if(root1 == null) return false;
 		q.add(root1);
 		while(!q.isEmpty()) {

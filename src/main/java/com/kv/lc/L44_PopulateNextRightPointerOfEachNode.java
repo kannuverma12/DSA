@@ -40,7 +40,7 @@ public class L44_PopulateNextRightPointerOfEachNode {
             Node topNode = nodeQueue.poll();
             int depth = depthQueue.poll();
      
-            if(depthQueue.isEmpty()){
+            if(depthQueue.isEmpty()) {
                 topNode.next = null;
             }else if(depthQueue.peek()>depth){
                 topNode.next = null;
@@ -48,12 +48,12 @@ public class L44_PopulateNextRightPointerOfEachNode {
                 topNode.next = nodeQueue.peek();
             }
      
-            if(topNode.left!=null){
+            if(topNode.left!=null) {
                 nodeQueue.offer(topNode.left);
                 depthQueue.offer(depth+1);
             }
      
-            if(topNode.right!=null){
+            if(topNode.right!=null) {
                 nodeQueue.offer(topNode.right);
                 depthQueue.offer(depth+1);
             }        

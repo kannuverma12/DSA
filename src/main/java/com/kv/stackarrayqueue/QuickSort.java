@@ -22,8 +22,6 @@ public class QuickSort {
         int pivot = partition(input, start, end);
         quickSort(input, start, pivot);
         quickSort(input, pivot+1, end);
-        
-        
     }
 
     private static int partition(int[] input, int start, int end) {

@@ -49,7 +49,6 @@ public class ConvertInfixToPostfix {
                     result += stack.pop();
                 stack.push(c);
             }
-
         }
 
         // pop all the operators from the stack

@@ -24,12 +24,8 @@ public class L63_RangeSumOfBST {
 
         // recursive(root, L, R);
         // return ans;
-
         int retVal = iterative(root, L, R);
         return retVal;
-
-
-
     }
 
     //method 1 : use this
@@ -63,11 +59,13 @@ public class L63_RangeSumOfBST {
             }
         }
     }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+
 }
 
- class TreeNode {
-    int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
