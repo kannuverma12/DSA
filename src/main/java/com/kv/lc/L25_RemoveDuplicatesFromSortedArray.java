@@ -16,29 +16,50 @@ package com.kv.lc;
 public class L25_RemoveDuplicatesFromSortedArray {
 
     public static void main(String[] args) {
-        int[] arr = {1,1,1,2,2,3};
-        System.out.println("Original length : "+arr.length);
-        System.out.println("Length after removing duplicates : "+removeDuplicates(arr));
+        int[] arr = {1, 1, 2};
+        System.out.println("Original length : " + arr.length);
+        System.out.println("Length after removing duplicates : " + removeDuplicates(arr, arr.length));
     }
-    
-    public static int removeDuplicates(int[] A) {
-        if (A.length <= 2)
-            return A.length;
- 
+
+    // emthod 1 - fails for {1,1,2}
+    public static int removeDuplicates(int[] arr) {
+        if (arr.length <= 2)
+            return arr.length;
+
         int prev = 1; // point to previous
         int curr = 2; // point to current
- 
-        while (curr < A.length) {
-            if (A[curr] == A[prev] && A[curr] == A[prev - 1]) {
+
+        while (curr < arr.length) {
+            if (arr[curr] == arr[prev] && arr[curr] == arr[prev - 1]) {
                 curr++;
             } else {
                 prev++;
-                A[prev] = A[curr];
+                arr[prev] = arr[curr];
                 curr++;
             }
         }
- 
+
         return prev + 1;
+    }
+
+    // method 2 - use this
+    static int removeDuplicates(int arr[], int n)
+    {
+        if (n == 0 || n == 1)
+            return n;
+
+        // To store index of next unique element
+        int j = 0;
+
+        // Doing same as done in Method 1
+        // Just maintaining another updated index i.e. j
+        for (int i = 0; i < n-1; i++)
+            if (arr[i] != arr[i+1])
+                arr[j++] = arr[i];
+
+        arr[j++] = arr[n-1];
+
+        return j;
     }
 
 }
