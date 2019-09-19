@@ -26,10 +26,16 @@ public class L57_MedianOfTwoSortedArray {
 
     Now, problem reduces to find index i such that A[i-1] <= B[j] and B[j-1]<=A[i] is true.
 
-        This is where binary search comes into picture. We can start i as mid of array A, j = (n+m+1)/2-i and see if this i satisfies the condition. There can be three possible outcomes for condition.
+        This is where binary search comes into picture. We can start i as mid of array A,
+        j = (n+m+1)/2-i and see if this i satisfies the condition. There can be three possible
+        outcomes for condition.
         1. A[i-1] <= B[j] and B[j-1]<=A[i] is true, we return the index i.
-        2. If B[j-1] > A[i], in this case, A[i] is too small. How can we increase it? by moving towards right. If i is increased, value A[i] is bound to increase, and also it will decrease j. In this case, B[j-1] will decrease and A[i] will increase which will make B[j-1]<=A[i] is true. So, limit search space for i to mid+1 to m and go to step 1.
-        3. A[i-1] > B[j], means A[i-1] is too big. And we must decrease i to get A[i-1]<=B[j]. Limit search space for i to 0 mid-1 and go to step 1
+        2. If B[j-1] > A[i], in this case, A[i] is too small. How can we increase it? by moving
+        towards right. If i is increased, value A[i] is bound to increase, and also it will
+        decrease j. In this case, B[j-1] will decrease and A[i] will increase which will
+        make B[j-1]<=A[i] is true. So, limit search space for i to mid+1 to m and go to step 1.
+        3. A[i-1] > B[j], means A[i-1] is too big. And we must decrease i to get A[i-1]<=B[j].
+        Limit search space for i to 0 mid-1 and go to step 1
      */
     public double findMedianSortedArrays(int[] A, int[] B) {
         int[] temp;
@@ -62,20 +68,26 @@ public class L57_MedianOfTwoSortedArray {
                 // i is perfect
                 int maxLeft = 0;
                 //If there we are at the first element on array A
-                if (i == 0) maxLeft = B[j - 1];
+                if (i == 0)
+                    maxLeft = B[j - 1];
                     //If we are at te first element of array B
-                else if (j == 0) maxLeft = A[i - 1];
+                else if (j == 0)
+                    maxLeft = A[i - 1];
                     //We are in middle somewhere, we have to find max
-                else maxLeft = Integer.max(A[i - 1], B[j - 1]);
+                else
+                    maxLeft = Integer.max(A[i - 1], B[j - 1]);
 
                 //If length of two arrays is odd, return max of left
                 if ((A.length + B.length) % 2 == 1)
                     return maxLeft;
 
                 int minRight = 0;
-                if (i == A.length) minRight = B[j];
-                else if (j == B.length) minRight = A[i];
-                else minRight = Integer.min(A[i], B[j]);
+                if (i == A.length)
+                    minRight = B[j];
+                else if (j == B.length)
+                    minRight = A[i];
+                else
+                    minRight = Integer.min(A[i], B[j]);
 
                 return (maxLeft + minRight) / 2.0;
             }

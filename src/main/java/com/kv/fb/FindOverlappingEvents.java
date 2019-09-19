@@ -26,7 +26,7 @@ public class FindOverlappingEvents {
 
     private static Interval[] isOverlap(Interval[] arr) {
         // Interval[] ret = new Interval[arr.length];
-        List<Interval> ret = new ArrayList<Interval>();
+        List<Interval> ret = new ArrayList<>();
         Arrays.sort(arr, (i1, i2) -> i1.start - i2.start);
 
         System.out.println("Sorted Intervals = " + Arrays.toString(arr));
@@ -37,8 +37,8 @@ public class FindOverlappingEvents {
                 ret.add(arr[i]);
                 // ret[i-1] = arr[i-1];
                 // ret[i] = arr[i];
-                System.out
-                        .println("Overlapping intervals are : " + arr[i - 1].toString() + " and " + arr[i].toString());
+                System.out.println("Overlapping intervals are : " + arr[i - 1].toString() +
+                        " and " + arr[i].toString());
                 // return true;
             }
         }

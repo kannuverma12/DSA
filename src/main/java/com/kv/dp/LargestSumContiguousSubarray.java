@@ -26,6 +26,8 @@ public class LargestSumContiguousSubarray {
 	public static void main(String[] args) {
 		int [] a = {-2, -3, 4, -1, -2, 1, 5, -3};
         System.out.println("Maximum contiguous sum is " + maxSubArraySum(a));
+
+		System.out.println("Method 2 : Maximum contiguous sum is " + maxSubArray(a));
 	}
 
 	private static int maxSubArraySum(int[] n) {
@@ -46,5 +48,18 @@ public class LargestSumContiguousSubarray {
 				
 		return max_so_far;
 	}
+
+	public static int maxSubArray(int[] nums) {
+		int result = nums[0];
+		int sum = nums[0];
+
+		for(int i=1; i<nums.length; i++){
+			sum = Math.max(nums[i], sum + nums[i]);
+			result = Math.max(result, sum);
+		}
+
+		return result;
+	}
+
 
 }

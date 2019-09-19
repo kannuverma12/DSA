@@ -14,7 +14,7 @@ public class MinimumPower {
 
     public static void main(String[] args) {
         Integer[] arr = {-2, 3,1,-5};
-        List<Integer> l = (List<Integer>)Arrays.asList(arr);
+        List<Integer> l = Arrays.asList(arr);
         minP(l);
     }
     

@@ -19,7 +19,6 @@ package com.kv.lc;
 public class DP12_UniqueBinarySearchTrees {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         System.out.println(numTrees(3));
     }
     

@@ -1,5 +1,9 @@
 package com.kv.lc;
 
+
+/**
+ * @author karanverma
+ */
 public class CheckIfAnagram {
 
     public static void main(String[] args) {
@@ -15,7 +19,7 @@ public class CheckIfAnagram {
         for (char c : chars) {
             int index = anagram.indexOf(c);
             if (index != -1) {
-                anagram = anagram.substring(0, index) + anagram.substring(index + 1, anagram.length());
+                anagram = anagram.substring(0, index) + anagram.substring(index + 1);
             } else {
                 return false;
             }

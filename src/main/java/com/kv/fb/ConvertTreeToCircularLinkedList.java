@@ -1,11 +1,9 @@
 package com.kv.fb;
 
 /**
- * 
  * @author karanverma
- * 
+ * <p>
  * Convert a binary tree into doubly linked circular linked list
- *
  */
 public class ConvertTreeToCircularLinkedList {
     public static void main(String args[]) {
@@ -100,8 +98,9 @@ public class ConvertTreeToCircularLinkedList {
         }
     }
 
+
     static class Node {
-        int val;
+        int  val;
         Node left, right;
 
         public Node(int val) {

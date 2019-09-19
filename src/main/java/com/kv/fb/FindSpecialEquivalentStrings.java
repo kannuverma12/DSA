@@ -31,7 +31,7 @@ public class FindSpecialEquivalentStrings {
         String[] arr = { "abcd", "acbd", "adcb", "cdba", "bcda", "badc" };
 
         // convert ArrayList form as it is beneficial to handle
-        ArrayList<String> input = new ArrayList<String>();
+        ArrayList<String> input = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             input.add(i, arr[i]);
         }

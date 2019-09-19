@@ -23,6 +23,7 @@ public class CheckIfANumberIsPowerOf2 {
     }
     
     static boolean checkIfPowerOf2(Integer number) {
+
         return ((number & (number-1)) == 0);
     }
 

@@ -19,7 +19,7 @@ import java.util.Arrays;
  */
 public class L5_NextPermutation {
     /*
-     * The steps to solve this problem:
+     *  The steps to solve this problem:
      *      1) scan from right to left, find the first element that is less than its previous one.
      *          4 5 6 3 2 1 
      *            |
