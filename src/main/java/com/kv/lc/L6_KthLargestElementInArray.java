@@ -35,7 +35,7 @@ public class L6_KthLargestElementInArray {
      */
     public static int findKthLargestUsingHeap(int[] nums, int k) {
         /*
-         * Creates a PriorityQueue with the specified initial capacity that orders its
+         * Creates a ityQueue with the specified initial capacity that orders its
          * elements according to their natural ordering.
          */
         PriorityQueue<Integer> q = new PriorityQueue<>(k);

@@ -33,7 +33,6 @@ public class AnagramDifference {
 
         // iterate though the first String and update count
         for (int i = 0; i < s1.length(); i++) {
-            int x_ = char_count[s1.charAt(i) - 'a'];
             // increment the count of each character in char_count array
             int x = char_count[s1.charAt(i) - 'a']++;
 

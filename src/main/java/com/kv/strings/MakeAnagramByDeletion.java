@@ -9,7 +9,7 @@ public class MakeAnagramByDeletion {
 		char[] ch1 = first.toCharArray();
 		char[] ch2 = second.toCharArray();
 		int count = 0;
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		Map<Character, Integer> map = new HashMap<>();
 		for (int j = 0; j < ch2.length; j++) {
 			char t = ch2[j];
 			if (map.get(t) != null) {
