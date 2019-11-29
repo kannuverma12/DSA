@@ -38,15 +38,15 @@ public class HeightOfBinaryTree {
         }
     }
 
-    
-}
+    static class NodeH {
+        int data;
+        NodeH left, right;
 
-class NodeH {
-    int data;
-    NodeH left, right;
-
-    public NodeH(int item) {
-        data = item;
-        left = right = null;
+        public NodeH(int item) {
+            data = item;
+            left = right = null;
+        }
     }
 }
+
+

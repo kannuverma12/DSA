@@ -93,8 +93,6 @@ public class FilesOps {
 
 			Future<Integer> operation = afileChannel.read(buffer, position);
 			
-			
-
 			while(!operation.isDone()){
 				//do something
 			}

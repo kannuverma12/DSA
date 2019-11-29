@@ -1,103 +1,66 @@
 package com.kv.strings;
 
 /**
- * 
  * @author karanverma
- *
  */
 public class StringPermutation {
-    
+
     public static void main(String[] args) {
-        // String str = "aban";
-        // int n = str.length();
-        // StringPermutation permutation = new StringPermutation();
-        // permutation.permute(str, 0, n-1);
 
-        boolean b = isAnagram("abb", "bab");
-        System.out.println("Is Anagram  = " + b);
-        
-        System.out.println("String permutations = ");
+        System.out.println("\n Method 2 String permutations  = ");
+        printPermutn("abce", "");
 
-        permute("abce", 0, 2);
+        System.out.println("\n Method 3 String permutations unique strings= ");
+        printDistinctPermutn("abce", "");
 
     }
 
-    private static void permutation(String perm, String word) {
-        if (word.isEmpty()) {
-            System.err.println(perm + word);
 
-        } else {
-            for (int i = 0; i < word.length(); i++) {
-                // System.out.println("first prams:"+perm + word.charAt(i) +"second params::"+);
-                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length()));
-            }
+    // method 2
+    static void printPermutn(String str, String ans) {
+
+        if (str.length() == 0) {
+            System.out.print(ans + " ");
+            return;
         }
 
-    }
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
 
-    //check in LC package
-    public static boolean isAnagram(String word, String anagram) {
-//        if (word.length() != anagram.length()) {
-//            return false;
-//        }
-//        char[] chars = word.toCharArray();
-//        for (char c : chars) {
-//            int index = anagram.indexOf(c);
-//            if (index != -1) {
-//                anagram = anagram.substring(0, index) + anagram.substring(index + 1, anagram.length());
-//            } else {
-//                return false;
-//            }
-//        }
-        return anagram.isEmpty();
-    }
+            // Rest of the string after excluding the ith character
+            String ros = str.substring(0, i) + str.substring(i + 1);
 
-    /**
-     * permutation function
-     * 
-     * @param str
-     *            string to calculate permutation for
-     * @param l
-     *            starting index
-     * @param r
-     *            end index
-     */
-    private static void permute(String str, int l, int r) {
-        str = str.toLowerCase();
-        if (l == r) {
-
-            if ((str.startsWith("a") || str.startsWith("e") || str.startsWith("i") || str.startsWith("o")
-                    || str.startsWith("u"))
-                    && !(str.endsWith("a") || str.endsWith("e") || str.endsWith("i") || str.endsWith("o")
-                            || str.endsWith("u")))
-                System.out.println(str);
-        } else {
-            for (int i = l; i <= r; i++) {
-                str = swap(str, l, i);
-                permute(str, l + 1, r);
-                str = swap(str, l, i);
-            }
+            // Recurvise call
+            printPermutn(ros, ans + ch);
         }
     }
 
-    /**
-     * Swap Characters at position
-     * 
-     * @param a
-     *            string value
-     * @param i
-     *            position 1
-     * @param j
-     *            position 2
-     * @return swapped string
-     */
-    public static String swap(String a, int i, int j) {
-        char temp;
-        char[] charArray = a.toCharArray();
-        temp = charArray[i];
-        charArray[i] = charArray[j];
-        charArray[j] = temp;
-        return String.valueOf(charArray);
+
+    // -----------Method 3 unique string ------------------
+    static void printDistinctPermutn(String str, String ans) {
+        if (str.length() == 0) {
+            System.out.print(ans + " ");
+            return;
+        }
+
+        // Make a boolean array of size '26' which stores false by default and make true
+        // at the position which alphabet is being used
+        boolean alpha[] = new boolean[26];
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            // Rest of the string after excluding the ith character
+            String ros = str.substring(0, i) +
+                    str.substring(i + 1);
+
+            // If the character has not been used then recursive call will take place.
+            // Otherwise, there will be no recursive call
+            if (alpha[ch - 'a'] == false)
+                printDistinctPermutn(ros, ans + ch);
+            alpha[ch - 'a'] = true;
+        }
     }
 
 }

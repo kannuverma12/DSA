@@ -10,21 +10,16 @@ package com.kv.LinkedList;
 		popped node with currently visited node.
 	3) If all nodes matched, then return true, else false.
 
-	Time complexity of above method is O(n), but it requires O(n) extra space. Following methods solve this with constant extra space.
- * 
- * 
- */
-
-
-
-/*
+	Time complexity of above method is O(n), but it requires O(n) extra space.
+	* Following methods solve this with constant extra space.
  * 
  * 	METHOD 2 (By reversing the list)
 	This method takes O(n) time and O(1) extra space.
 	1) Get the middle of the linked list.
 	2) Reverse the second half of the linked list.
 	3) Check if the first half and second half are identical.
-	4) Construct the original linked list by reversing the second half again and attaching it back to the first half
+	4) Construct the original linked list by reversing the second half again and attaching
+	* it back to the first half
 
 	To divide the list in two halves, method 2 of this post is used.
 	When number of nodes are even, the first and second half contain exactly half nodes. 
@@ -32,13 +27,9 @@ package com.kv.LinkedList;
 	We don’t want the middle node as part of any of the lists as we are going to compare
 	them for equality. For odd case, we use a separate variable ‘midnode’.
  * 
- * 
- * 
  */
 /**
- * 
  * @author karanverma
- *
  */
 public class CheckPalindromeLinkedList {
 	

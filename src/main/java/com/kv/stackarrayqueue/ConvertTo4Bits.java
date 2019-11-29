@@ -1,7 +1,5 @@
 package com.kv.stackarrayqueue;
 
-import java.io.UnsupportedEncodingException;
-
 public class ConvertTo4Bits {
 
     public static void main(String[] args) {

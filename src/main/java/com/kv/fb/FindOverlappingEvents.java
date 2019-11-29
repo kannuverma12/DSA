@@ -25,7 +25,6 @@ public class FindOverlappingEvents {
     }
 
     private static Interval[] isOverlap(Interval[] arr) {
-        // Interval[] ret = new Interval[arr.length];
         List<Interval> ret = new ArrayList<>();
         Arrays.sort(arr, (i1, i2) -> i1.start - i2.start);
 

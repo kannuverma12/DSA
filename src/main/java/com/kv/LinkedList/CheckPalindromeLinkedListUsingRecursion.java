@@ -39,10 +39,7 @@ public class CheckPalindromeLinkedListUsingRecursion {
         if (right == null)
             return true;
 
-        /*
-         * If sub-list is not palindrome then no need to check for current left and
-         * right, return false
-         */
+        //If sub-list is not palindrome then no need to check for current left and right, return false
         boolean isp = isPalindromeUtil(right.next);
         if (isp == false)
             return false;

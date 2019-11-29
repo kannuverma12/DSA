@@ -42,7 +42,7 @@ public class DP2_CombinationSum {
         }
 
         if (sum == target) {
-            result.add(new ArrayList<>(list));
+            result.add(list);
             return;
         }
 

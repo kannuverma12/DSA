@@ -36,7 +36,7 @@ public class DP1_Combinations {
             List<List<Integer>> res) {
 
         if (item.size() == k) {
-            res.add(new ArrayList<>(item));
+            res.add(item);
             return;
         }
      

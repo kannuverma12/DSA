@@ -40,14 +40,16 @@ public class CheckIfBTisBST {
         // Allow only distinct values
         return (isBSTUtil(node.left, min, node.data - 1) && isBSTUtil(node.right, node.data + 1, max));
     }
-}
 
-class Node2 {
-    int data;
-    Node2 left, right;
+    static class Node2 {
+        int data;
+        Node2 left, right;
 
-    public Node2(int item) {
-        data = item;
-        left = right = null;
+        public Node2(int item) {
+            data = item;
+            left = right = null;
+        }
     }
 }
+
+

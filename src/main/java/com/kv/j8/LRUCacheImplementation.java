@@ -24,8 +24,7 @@ public class LRUCacheImplementation<Key, Value> {
 		map = new ConcurrentHashMap<>(maxSize);
 		queue = new ConcurrentLinkedQueue<>();
 	}
-	
-	
+
 	public void put(final Key key, final Value value) {
 		if(map.get(key) != null) {
 			queue.remove(key);

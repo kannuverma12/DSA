@@ -33,10 +33,7 @@ public class LargestSquareMatrix {
         
     }
     
-    
-    
-    
-    static void printMaxSubSquare(int M[][]) 
+    static void printMaxSubSquare(int M[][])
     { 
         int i,j; 
         int R = M.length;         //no of rows in M[][] 

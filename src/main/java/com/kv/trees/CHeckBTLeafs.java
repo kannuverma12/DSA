@@ -52,19 +52,21 @@ public class CHeckBTLeafs {
         // If this node is not leaf, recursively check left and right subtrees
         return checkUtil(node.left, level + 1, leafLevel) && checkUtil(node.right, level + 1, leafLevel);
     }
-}
 
-// A binary tree node
-class Node1 {
-    int data;
-    Node1 left, right;
+    // A binary tree node
+    static class Node1 {
+        int data;
+        Node1 left, right;
 
-    Node1(int item) {
-        data = item;
-        left = right = null;
+        Node1(int item) {
+            data = item;
+            left = right = null;
+        }
+    }
+
+    static class Leaf {
+        int leaflevel = 0;
     }
 }
 
-class Leaf {
-    int leaflevel = 0;
-}
+

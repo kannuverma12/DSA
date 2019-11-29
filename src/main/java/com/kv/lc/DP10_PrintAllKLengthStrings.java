@@ -17,7 +17,7 @@ public class DP10_PrintAllKLengthStrings {
 
 		System.out.println("\nSecond Test");
 		char set2[] = { 'a', 'b', 'c', 'd' };
-		k = 1;
+		k = 2;
 		printAllKLength(set2, k);
 	}
 

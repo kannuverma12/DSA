@@ -14,7 +14,7 @@ import java.util.List;
 public class DP9_L9_Permutations {
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3 };
+        int[] arr = { 1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12, 23, 34, 45, 56, 67 };
 
         System.out.println("Iterative : "+Arrays.toString(permute(arr).toArray()));
         System.out.println("Recursive : "+Arrays.toString(permuteRecur(arr).toArray()));

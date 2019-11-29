@@ -25,12 +25,10 @@ public class RemoveAdjacentDuplicates {
             if (arr[i - 1] != arr[i])
                 arr[k++] = arr[i - 1];
             else {
-                start = i;
                 while (arr[i - 1] == arr[i]) {
                     count++;
                     i++;
                 }
-                //if(count >= )
             }
         }
         arr[k++] = arr[i-1];  

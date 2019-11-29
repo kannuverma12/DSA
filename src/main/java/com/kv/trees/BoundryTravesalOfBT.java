@@ -44,7 +44,6 @@ public class BoundryTravesalOfBT {
 
             printBoundryRight(node.right);
         }
-
     }
 
     // A function to print all left boundry nodes, except a leaf node.
@@ -89,7 +88,6 @@ public class BoundryTravesalOfBT {
 
             printLeaves(node.right);
         }
-
     }
 
     private void printBoundaryClockWise(TreeNode node) {

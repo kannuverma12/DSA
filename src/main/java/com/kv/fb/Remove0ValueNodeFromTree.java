@@ -65,7 +65,7 @@ public class Remove0ValueNodeFromTree {
                 return node;
         } else {
 
-            ArrayList<Node> temp = new ArrayList<Node>();
+            ArrayList<Node> temp = new ArrayList<>();
 
             for (Node childNode : node.childNodes) {
                 Node resultNode = removeZeroNodes(childNode);

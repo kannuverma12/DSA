@@ -104,7 +104,6 @@ public class FindMaxInEachContinuousSubarray {
              
             // Add current element at the rear of Qi
             Qi.addLast(i);
-             
         }
          
         // Print the maximum element of last window

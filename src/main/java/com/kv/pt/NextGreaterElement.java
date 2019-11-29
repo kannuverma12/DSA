@@ -64,36 +64,36 @@ public class NextGreaterElement {
 	 * 
 	 * 
 	 */
-	
-	
+
+
 	private static void printNGEUsingStack(int[] arr, int n) {
-		int i =0;
+		int i = 0;
 		stack s = new stack();
 		s.top = -1;
 		int element, next;
-		
+
 		s.push(arr[0]);
-		for(i=1;i<n;i++) {
+		for (i = 1; i < n; i++) {
 			next = arr[i];
-			if(!s.isEmpty()) {
+			if (!s.isEmpty()) {
 				// if stack is not empty, then pop an element from stack
 				element = s.pop();
 				
 				/* If the popped element is smaller than next, then a) print the pair b) keep 
                 popping while elements are smaller and stack is not empty */
-				
-				while(element < next) {
+
+				while (element < next) {
 					System.out.println(element + " ---> " + next);
 					if (s.isEmpty() == true)
-                        break;
+						break;
 					element = s.pop();
 				}
-				
+
 				/* If element is greater than next, then push the element back */
-				if(element > next) {
+				if (element > next) {
 					s.push(element);
 				}
-				
+
 			}
 			/* push next to stack so that we can find next
             greater for it */
@@ -101,13 +101,12 @@ public class NextGreaterElement {
 		}
 		/* After iterating over the loop, the remaining  elements in stack do not have the next greater 
         		element, so print -1 for them */
-		
-		 while (s.isEmpty() == false) 
-	        {
-	            element = s.pop();
-	            next = -1;
-	            System.out.println(element + " --- " + next);
-	        }
+
+		while (s.isEmpty() == false) {
+			element = s.pop();
+			next = -1;
+			System.out.println(element + " --- " + next);
+		}
 	}
 	
 	/*
