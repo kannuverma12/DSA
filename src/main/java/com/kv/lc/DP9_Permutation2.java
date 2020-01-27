@@ -68,7 +68,7 @@ public class DP9_Permutation2 {
     // method 2 : use sets
     public static List<List<Integer>> permuteUniqueUsingSet(int[] num) {
         List<List<Integer>> returnList = new ArrayList<>();
-        returnList.add(new ArrayList<Integer>());
+        returnList.add(new ArrayList<>());
 
         for (int i = 0; i < num.length; i++) {
             Set<List<Integer>> currentSet = new HashSet<>();

@@ -13,7 +13,7 @@ Following are the list of algorithms in this project:
 
 Trees : 
 
-1. Java program to check if all leaves are at same level.   -   com.kv.trees.CHeckBTLeafs.java
+1. Java program to check if all leaves are at same level.   -   com.kv.trees.CheckBTLeafs.java
 2. Java implementation to check if given Binary tree is a BST or not.   -   com.kv.trees.CheckIfBTisBST.java
 3. Java program to find distance between two node in a Binary Tree. -   com.kv.trees.FindDistanceBtwTwoNodesInBT.java
 4. Java program to find an element in a binary tree.    -   com.kv.tree.FindElementInBinaryTree.java

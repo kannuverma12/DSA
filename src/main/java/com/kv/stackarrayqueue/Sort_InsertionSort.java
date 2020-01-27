@@ -9,7 +9,7 @@ import java.util.Arrays;
  *  
  */
 
-public class InsertionSort {
+public class Sort_InsertionSort {
 
     public static void main(String[] args) {
         int[] arr = {23, 25, -12, 54, 7, -22};

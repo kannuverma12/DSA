@@ -5,7 +5,7 @@ package com.kv.lc;
  * @author karanverma
  *
  */
-public class L43_LongestPalindromSubstring {
+public class L43_LongestPalindromeSubstring {
 
     public static void main(String[] args) {
         System.out.println(longestPalindrome("aabaacbc"));

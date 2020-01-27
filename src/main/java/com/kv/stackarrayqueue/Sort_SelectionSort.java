@@ -9,7 +9,7 @@ import java.util.Arrays;
  * (considering ascending order) from unsorted part and putting it at the beginning
  */
 
-public class SelectionSort {
+public class Sort_SelectionSort {
 
     public static void main(String[] args) {
         int[] arr = {23, 25, -12, 54, 7};

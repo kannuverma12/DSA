@@ -1,5 +1,7 @@
 package com.kv.strings;
 
+import java.text.MessageFormat;
+
 /**
  * 
  * @author karanverma
@@ -8,6 +10,22 @@ package com.kv.strings;
 public class ReverseAString {
 
     public static void main(String[] args) {
+
+
+        double t = 1000.0;
+
+
+        String examFileName = String.valueOf(t);
+        System.out.println("examFileName = "+examFileName);
+        String examFinalName = examFileName.indexOf(".") > 0 ?
+                examFileName.substring(0, examFileName.indexOf(".")) : examFileName;
+        String ss = MessageFormat.format("exams_{0}.json",
+                examFinalName);
+        System.out.println("ss = "+ss);
+
+        String sss = examFileName.split(".")[0];
+        System.out.println("sss = "+sss);
+
         // TODO Auto-generated method stub
         System.out.println(reverse("mast am karan"));
     }

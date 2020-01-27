@@ -19,7 +19,7 @@ public class L2_ThreeSum {
     }
 
     public static List<List<Integer>> threeSum(int[] arr) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
 
         if (arr == null || arr.length < 3)
             return result;

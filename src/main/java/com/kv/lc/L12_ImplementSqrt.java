@@ -6,10 +6,13 @@ package com.kv.lc;
  * Given a positive number n and precision p, find the square root of number upto p decimal places
  * using binary search.
  *
- * 1) As the square root of number lies in range 0 <= squareRoot <= number, therefore, initialize start and end as : start = 0, end = number.
- * 2) Compare the square of mid integer with the given number. If it is equal to the number, then we found our integral part, else look for the same in left or right side depending upon the scenario.
+ * 1) As the square root of number lies in range 0 <= squareRoot <= number,
+ *      therefore, initialize start and end as : start = 0, end = number.
+ * 2) Compare the square of mid integer with the given number. If it is equal to the number, then
+ *      we found our integral part, else look for the same in left or right side depending upon the scenario.
  * 3) Once we are done with finding the integral part, start computing the fractional part.
- * 4) Initialize the increment variable by 0.1 and iteratively compute the fractional part upto p places. For each iteration, increment changes to 1/10th of it’s previous value.
+ * 4) Initialize the increment variable by 0.1 and iteratively compute the fractional part
+ *      upto p places. For each iteration, increment changes to 1/10th of it’s previous value.
  * 5) Finally return the answer computed.
  */
 public class L12_ImplementSqrt {

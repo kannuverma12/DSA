@@ -13,6 +13,14 @@ public class TestClass {
 			System.out.println("false");
 		}
 
+
+		// tokopedia question
+		boolean x = false;
+		int[] arr = {1,2,3,4};
+		//int z = arr[x];
+		// i answered right
+		/////
+
 	}
 
 }

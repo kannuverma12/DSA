@@ -27,12 +27,12 @@ public class LevelOrderTraversal {
 		root.right.left = new TreeNode(6);
 		root.right.right = new TreeNode(7);
 		
-		levelOrderTravesal(root);
+		levelOrderTraversal(root);
 
 	}
 
-	private static void levelOrderTravesal(TreeNode root) {
-		Queue<TreeNode> q = new LinkedList<TreeNode>();
+	private static void levelOrderTraversal(TreeNode root) {
+		Queue<TreeNode> q = new LinkedList<>();
 		
 		if(root == null)
 			return;

@@ -11,7 +11,7 @@ public class CheckIfAnagram {
         System.out.println("Is Anagram  = " + b);
     }
     
-    public static boolean isAnagram(String word, String anagram) {
+    private static boolean isAnagram(String word, String anagram) {
         if (word.length() != anagram.length()) {
             return false;
         }

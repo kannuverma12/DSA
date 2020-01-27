@@ -5,28 +5,29 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 
  * @author karanverma
- *
- *  Given a string s, partition s such that every substring of the partition is a palindrome.
- *  Return all possible palindrome partitioning of s.
- *  
- *  Input: "aab"
- *  Output:
- *  [
- *      ["aa","b"],
- *      ["a","a","b"]
- *  ]
+ * <p>
+ * Given a string s, partition s such that every substring of the partition is a palindrome.
+ * Return all possible palindrome partitioning of s.
+ * <p>
+ * Input: "aab"
+ * Output:
+ * [
+ * ["aa","b"],
+ * ["a","a","b"]
+ * ]
  */
 public class DP6_PalindromePartioning {
 
     public static void main(String[] args) {
         String string = "aab";
-        System.out.println("Palindrome partitions using DD : "+Arrays.deepToString(palindromePartitioning(string).toArray()));
-        System.out.println("Palindrome partitions usinf DFS : "+Arrays.deepToString(partition(string).toArray()));
+        System.out.println("Palindrome partitions using DD : " + Arrays
+                .deepToString(palindromePartitioning(string).toArray()));
+        System.out.println("Palindrome partitions usinf DFS : " + Arrays
+                .deepToString(partition(string).toArray()));
 
     }
-    
+
     // Method 1 - DP
     public static List<String> palindromePartitioning(String s) {
 
@@ -80,7 +81,8 @@ public class DP6_PalindromePartioning {
         return result;
     }
 
-    private static void addPalindrome(String s, int start, List<String> partition, List<List<String>> result) {
+    private static void addPalindrome(String s, int start, List<String> partition,
+            List<List<String>> result) {
         // stop condition
         if (start == s.length()) {
             List<String> temp = new ArrayList<>(partition);

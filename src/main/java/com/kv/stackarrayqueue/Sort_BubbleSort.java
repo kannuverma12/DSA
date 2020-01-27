@@ -9,7 +9,7 @@ import java.util.Arrays;
  *  Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the 
  *  adjacent elements if they are in wrong order.
  */
-public class BubbleSort {
+public class Sort_BubbleSort {
     
     public static void main(String... strings) {
         int[] arr = {23, 25, -12, 54, 7};

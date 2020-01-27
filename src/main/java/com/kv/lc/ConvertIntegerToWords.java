@@ -21,7 +21,7 @@ public class ConvertIntegerToWords {
     static int HUNDRED = 100;
     static int TEN = 10;
     
-    static Map<Integer, String> map = new HashMap<Integer, String>();
+    static Map<Integer, String> map = new HashMap<>();
     
     static String[] ones = {"zero", "one" , "two", "three", "four" , "five", "six", "seven" , "eight", "nine", "ten",
             "eleven", "twelve", "thirteen", "forteen", "fifteen", "sixteen", "seventeen", "eighteen", "ninteen","twenty"};

@@ -30,11 +30,11 @@ public class L1_TwoSum {
      * of array which takes O(n)O(n) time. Therefore, the time complexity is O(n^2)O(n 2).
      * Space complexity : O(1)O(1).
      */
-    public static int[] twoSum(int[] nums, int target) {
-        for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[j] == target - nums[i]){
-                    return new int[]{i,j};
+    private static int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] == target - nums[i]) {
+                    return new int[] {i, j};
                 }
             }
         }

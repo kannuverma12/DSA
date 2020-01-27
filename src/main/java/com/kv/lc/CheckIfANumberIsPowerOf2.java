@@ -16,7 +16,6 @@ package com.kv.lc;
 public class CheckIfANumberIsPowerOf2 {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         int n = 8;
         System.out.println("Number "+n+" is power of 2 ? "+checkIfPowerOf2(n));
 

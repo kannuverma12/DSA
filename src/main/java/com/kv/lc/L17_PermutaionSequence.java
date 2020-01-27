@@ -20,7 +20,8 @@ public class L17_PermutaionSequence {
         System.out.println("Get DP9_L9_Permutations 2: "+getPermutation2(3, 4));
 
     }
-    
+
+    //
     public static String getPermutation(int n, int k) {
 
         // initialize all numbers

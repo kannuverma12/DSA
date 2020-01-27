@@ -1,18 +1,17 @@
 package com.kv.trees;
 
 /**
- * 
  * @author karanverma
- *
+ * <p>
  * Java program to check if all leaves are at same level
  */
-public class CHeckBTLeafs {
+public class CheckBTLeafs {
 
     Node1 root;
-    Leaf mylevel = new Leaf();
-    
+    Leaf  mylevel = new Leaf();
+
     public static void main(String args[]) {
-        CHeckBTLeafs tree = new CHeckBTLeafs();
+        CheckBTLeafs tree = new CheckBTLeafs();
         tree.root = new Node1(12);
         tree.root.left = new Node1(5);
         tree.root.left.left = new Node1(3);
@@ -24,7 +23,7 @@ public class CHeckBTLeafs {
         else
             System.out.println("Leaves are not at same level");
     }
-    
+
     //The main function to check if all leafs are at same level. It mainly uses checkUtil()
     boolean check(Node1 node) {
         int level = 0;
@@ -50,12 +49,13 @@ public class CHeckBTLeafs {
         }
 
         // If this node is not leaf, recursively check left and right subtrees
-        return checkUtil(node.left, level + 1, leafLevel) && checkUtil(node.right, level + 1, leafLevel);
+        return checkUtil(node.left, level + 1, leafLevel) && checkUtil(node.right, level + 1,
+                leafLevel);
     }
 
     // A binary tree node
     static class Node1 {
-        int data;
+        int   data;
         Node1 left, right;
 
         Node1(int item) {

@@ -64,7 +64,7 @@ public class VerticalSumOfBT {
     private void verticalSum(TreeNode root) {
         if (root == null)
             return;
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         // Calls the VerticalSumUtil() to store the vertical sum values in hM
         verticalSumUtil(root, 0, map);

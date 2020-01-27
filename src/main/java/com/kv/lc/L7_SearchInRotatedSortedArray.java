@@ -29,7 +29,8 @@ public class L7_SearchInRotatedSortedArray {
 
         return binarySearch(nums, 0, nums.length - 1, target);
     }
-     
+
+    //use this
     public static int binarySearch(int[] nums, int left, int right, int target) {
         if (left > right)
             return -1;

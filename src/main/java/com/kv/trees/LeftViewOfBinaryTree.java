@@ -1,32 +1,23 @@
 package com.kv.trees;
 
 /**
- * 
  * @author karanverma
- * 
+ * <p>
  * Java program to print left view of binary tree
  * Class containing left and right child of current node and key value
- * */
-class NodeBT {
-    int data;
-    NodeBT left, right;
+ */
 
-    public NodeBT(int item) {
-        data = item;
-        left = right = null;
-    }
-}
 
 /* Class to print the left view */
-class BinaryTree {
-    
+public class LeftViewOfBinaryTree {
+
     NodeBT root;
     static int max_level = 0;
-    
+
     /* testing for example nodes */
     public static void main(String args[]) {
         /* creating a binary tree and entering the nodes */
-        BinaryTree tree = new BinaryTree();
+        LeftViewOfBinaryTree tree = new LeftViewOfBinaryTree();
         tree.root = new NodeBT(12);
         tree.root.left = new NodeBT(10);
         tree.root.right = new NodeBT(30);
@@ -58,5 +49,15 @@ class BinaryTree {
         leftViewUtil(root, 1);
     }
 
-    
+    static class NodeBT {
+        int    data;
+        NodeBT left, right;
+
+        public NodeBT(int item) {
+            data = item;
+            left = right = null;
+        }
+    }
+
+
 }

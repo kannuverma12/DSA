@@ -24,6 +24,7 @@ public class CheckIfBTisBST {
     }
 
     boolean isBST() {
+
         return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
@@ -38,7 +39,8 @@ public class CheckIfBTisBST {
 
         // otherwise check the subtrees recursively tightening the min/max constraints
         // Allow only distinct values
-        return (isBSTUtil(node.left, min, node.data - 1) && isBSTUtil(node.right, node.data + 1, max));
+        return (isBSTUtil(node.left, min, node.data - 1) &&
+                isBSTUtil(node.right, node.data + 1, max));
     }
 
     static class Node2 {

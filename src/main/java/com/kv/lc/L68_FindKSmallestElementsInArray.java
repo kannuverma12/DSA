@@ -59,9 +59,7 @@ public class L68_FindKSmallestElementsInArray {
     /* Create max heap of smallest k elements. */
     static PriorityQueue<Integer> getKMaxHeap(int[] array,
             int k) {
-        PriorityQueue<Integer> heap =
-
-        new PriorityQueue<Integer>(k, new MaxHeapComparator());
+        PriorityQueue<Integer> heap = new PriorityQueue<>(k, new MaxHeapComparator());
         for (int a : array) {
             if (heap.size() < k) {  //If space remaining
                 heap.add(a);

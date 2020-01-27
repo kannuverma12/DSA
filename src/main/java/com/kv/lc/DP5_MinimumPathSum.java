@@ -25,8 +25,7 @@ public class DP5_MinimumPathSum {
         int[][] matrix = {{1,3,1},{1,5,1},{4,2,1}};
         
         System.out.println("MinimumPathSum DFS : "+minPathSum(matrix));
-        
-        
+
         System.out.println("MinimumPathSum DP : "+minPathSumDP(matrix));
 
         //use geeksforgeeks solution
@@ -73,6 +72,7 @@ public class DP5_MinimumPathSum {
      */
     // not accepted
     public static int minPathSum(int[][] grid) {
+
         return dfs(0, 0, grid);
     }
 

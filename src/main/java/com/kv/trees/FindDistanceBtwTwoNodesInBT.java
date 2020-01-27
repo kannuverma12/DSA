@@ -41,11 +41,11 @@ public class FindDistanceBtwTwoNodesInBT {
 		d1 = -1;
 		d2 = -1;
 		dist = 0;
-		TreeNode lca = findDistUtil(root, n1, n2, 1);
+		TreeNode lca = findLCA(root, n1, n2, 1);
 
 		// If both n1 and n2 were present in Binary Tree, return dist
 		if (d1 != -1 && d2 != -1)
-			return dist;
+		return dist;
 
 		// If n1 is ancestor of n2, consider n1 as root and find level of n2 in subtree rooted with n1
 		if (d1 != -1) {
@@ -68,7 +68,7 @@ public class FindDistanceBtwTwoNodesInBT {
 	// d2 --> To store distance of n2 from root
 	// lvl --> Level (or distance from root) of current node
 	// dist --> To store distance between n1 and n2
-	static TreeNode findDistUtil(TreeNode root, int n1, int n2, int lvl) {
+	static TreeNode findLCA(TreeNode root, int n1, int n2, int lvl) {
 
 		if (root == null)
 			return null;
@@ -85,8 +85,8 @@ public class FindDistanceBtwTwoNodesInBT {
 		}
 
 		// Look for n1 and n2 in left and right subtrees
-		TreeNode left_lca = findDistUtil(root.left, n1, n2, lvl + 1);
-		TreeNode right_lca = findDistUtil(root.right, n1, n2, lvl + 1);
+		TreeNode left_lca = findLCA(root.left, n1, n2, lvl + 1);
+		TreeNode right_lca = findLCA(root.right, n1, n2, lvl + 1);
 
 		// If both of the above calls return Non-NULL, then one key is present in once
 		// subtree and other is present in other, So this node is the LCA

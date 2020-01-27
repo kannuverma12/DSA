@@ -60,7 +60,7 @@ public class MaxSumLeafToRootPath {
         // Update current sum to hold sum of nodes on path from root to this node
         curr_sum = curr_sum + node.data;
 
-        // If this is a leaf node and path to this node has maximum sum so far, the n
+        // If this is a leaf node and path to this node has maximum sum so far, then
         // make this node target_leaf
         if (node.left == null && node.right == null) {
             if (curr_sum > max2) {

@@ -67,8 +67,7 @@ public class FindMaxInEachContinuousSubarray {
 
 	// A Dequeue (Double ended queue) based method for printing maixmum element of
     // all subarrays of size k
-    static void printMax(int arr[],int n, int k)
-    {
+    static void printMax(int arr[],int n, int k) {
         // Create a Double Ended Queue, Qi that will store indexes of array elements
         // The queue will store indexes of useful elements in every window and it will
         // maintain decreasing order of values from front to rear in Qi, i.e., 
