@@ -55,7 +55,7 @@ public class L17_PermutaionSequence {
             numberList.remove(curIndex);
         }
 
-        return result.toString();
+        return result;
     }
 
     private static String getPermutation2(int n, int k) {

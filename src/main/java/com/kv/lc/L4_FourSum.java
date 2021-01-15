@@ -51,7 +51,7 @@ public class L4_FourSum {
                     }else if(nums[i]+nums[j]+nums[k]+nums[l]>target){
                         l--;
                     }else{
-                        List<Integer> t = new ArrayList<Integer>();
+                        List<Integer> t = new ArrayList<>();
                         t.add(nums[i]);
                         t.add(nums[j]);
                         t.add(nums[k]);

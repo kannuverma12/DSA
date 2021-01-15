@@ -43,5 +43,36 @@ class HoldingPriceResponse {
         String  security;
         Integer quantity;
 
+
+        String security;
+        int qunatity;
+        String portfolio;
+
+        public int getQunatity() {
+            return qunatity;
+        }
+
+        public void setQunatity(int qunatity) {
+            this.qunatity = qunatity;
+        }
+
+        public String getPortfolio() {
+            return portfolio;
+        }
+
+        public void setPortfolio(String portfolio) {
+            this.portfolio = portfolio;
+        }
+
+        String security;
+        int marketPrice;
+
+        public int getMarketPrice() {
+            return marketPrice;
+        }
+
+        public void setMarketPrice(int marketPrice) {
+            this.marketPrice = marketPrice;
+        }
     }
 }
