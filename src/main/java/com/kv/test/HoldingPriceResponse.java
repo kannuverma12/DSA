@@ -44,7 +44,6 @@ class HoldingPriceResponse {
         Integer quantity;
 
 
-        String security;
         int qunatity;
         String portfolio;
 
@@ -64,7 +63,7 @@ class HoldingPriceResponse {
             this.portfolio = portfolio;
         }
 
-        String security;
+
         int marketPrice;
 
         public int getMarketPrice() {
